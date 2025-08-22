@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:remedy_mate/features/Auth/presentation/bloc/bloc/auth_bloc.dart';
-import 'package:remedy_mate/features/Chatbot/presentation/bloc/bloc/chatbot_bloc.dart';
+import 'package:remedy_mate/features/auth/presentation/bloc/bloc/auth_bloc.dart';
+import 'package:remedy_mate/features/chatbot/presentation/bloc/bloc/chatbot_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
