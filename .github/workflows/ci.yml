@@ -1,0 +1,44 @@
+name: Flutter CI/CD
+
+on:
+    push:
+        branches:
+            - dev
+            - main
+            - 'features/*'
+    pull_request:
+        branches:
+            - dev
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+              - name: Checkout code
+                uses: actions/checkout@v3
+        
+              - name: Set up Flutter
+                uses: subosito/flutter-action@v2
+                with:
+                  flutter-version: '3.10.0'
+        
+              - name: Install dependencies
+                run: |
+                  cd remedy_mate
+                  flutter pub get
+        
+              - name: Analyze code
+                run: flutter analyze
+        
+              - name: Run tests
+                run: flutter test
+        
+              - name: Build APK (only on push to dev, main, or features/*)
+                if: github.event_name == 'push'
+                run: flutter build apk --debug
+
+            # Add more build steps as needed (e.g., build ios, web, etc.)
+
+    # Optionally, add deployment jobs here for main/dev branches
