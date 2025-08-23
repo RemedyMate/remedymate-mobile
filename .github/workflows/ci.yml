@@ -23,27 +23,22 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 # Best practice to use the latest version of actions
+        uses: actions/checkout@v4
 
-      # FIX 1: Remove the old hardcoded version. This will now install the latest STABLE Flutter.
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
 
       - name: Install dependencies
-        # No `cd` command needed because of the `defaults` setting above
         run: flutter pub get
 
       - name: Analyze code
-        # FIX 2: Added the working directory context via the `defaults` block.
         run: flutter analyze
 
       - name: Run tests
-        # FIX 3: Added the working directory context via the `defaults` block.
         run: flutter test
 
       - name: Build APK (only for pushes)
         if: github.event_name == 'push'
-        # FIX 4: Added the working directory context via the `defaults` block.
         run: flutter build apk --debug
