@@ -1,0 +1,1 @@
+// Manages local data storage (e.g., Hive, sqflite) for offline caching.
