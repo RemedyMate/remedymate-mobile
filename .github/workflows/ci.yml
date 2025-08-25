@@ -15,11 +15,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
-    # This sets the working directory for ALL subsequent steps in this job
-    # which is cleaner than adding `cd remedy_mate` to every single step.
     defaults:
       run:
-        working-directory: remedy_mate
+        working-directory: .
 
     steps:
       - name: Checkout code
