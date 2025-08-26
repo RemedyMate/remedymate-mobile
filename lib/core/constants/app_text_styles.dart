@@ -6,14 +6,14 @@ class AppTextStyles {
   static const TextStyle header = TextStyle(
     fontFamily: 'NotoSansEthiopic',
     color: AppColors.primaryDeepBlue,
-    fontSize: 24, // Example size, adjust as needed
+    fontSize: 24,
     fontWeight: FontWeight.bold,
   );
 
   static const TextStyle bodyText = TextStyle(
     fontFamily: 'Inter',
     fontSize: 16,
-    height: 1.5, // Improves readability
+    height: 1.5,
   );
 
   static const TextStyle bodyText18 = TextStyle(
