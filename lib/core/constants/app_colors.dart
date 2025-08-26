@@ -6,4 +6,6 @@ class AppColors {
   static const Color amberTriage = Color(0xFFF59E0B);
   static const Color redTriage = Color(0xFFEF4444);
   static const Color background = Color(0xFFF1F5F9);
+  static const Color drawerBackground = Color(0xFFE5E7EB);
+  static const Color drawerTextColor = Color(0xFF4B5563);
 }
