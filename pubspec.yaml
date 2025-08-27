@@ -40,6 +40,8 @@ dependencies:
   bloc: ^9.0.0
   flutter_bloc: ^9.1.1
   meta: ^1.16.0
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -90,14 +92,15 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+  generate: true
   fonts:
     - family: NotoSansEthiopic
       fonts:
-        - asset: assets/fonts/NotoSansEthiopic-Regular.ttf
+        - asset: assets/fonts/NotoSansEthiopic-VariableFont_wdth,wght.ttf
         # Add other weights and styles if needed
     - family: Inter
       fonts:
-        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
