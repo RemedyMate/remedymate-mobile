@@ -1,0 +1,17 @@
+import 'package:get_it/get_it.dart';
+
+import 'features/Chatbot/presentation/bloc/chatbot_bloc.dart';
+import 'features/chatbot/data/datasources/mock_datasources.dart';
+import 'features/chatbot/data/repositories/guide_repo_impl.dart';
+import 'features/chatbot/domain/repositories/guide_repo.dart';
+import 'features/chatbot/domain/usecases/get_guide_card.dart';
+
+final sl = GetIt.instance;
+
+void init(){
+  sl.registerLazySingleton<GuideDataSource>(() => MockGuideDataSource());
+  sl.registerLazySingleton<GuideRepository>(() => GuideRepositoryImpl(sl()));
+  sl.registerLazySingleton<StartChatUseCase>(() => StartChatUseCase(sl()));
+  sl.registerFactory<ChatbotBloc>(() => ChatbotBloc(chatUseCase: sl()));
+
+}
