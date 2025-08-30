@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'dependency_injection.dart' as di;
-import 'features/Chatbot/presentation/bloc/chatbot_bloc.dart';
-import 'features/Chatbot/presentation/pages/chat.dart';
+import 'features/chatbot/domain/usecases/get_guide_card.dart';
+import 'features/chatbot/presentation/bloc/chatbot_bloc.dart';
+import 'features/chatbot/presentation/pages/chat.dart';
 
 void main() {
-  di.init(); // initialize DI
+  di.init();
   runApp(const MyApp());
 }
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ChatbotBloc(chatUseCase: di.sl()),
+      create: (context) => ChatbotBloc(startChatUseCase: di.sl<StartChatUseCase>()),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'ChatBot',

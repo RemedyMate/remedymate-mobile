@@ -9,9 +9,9 @@ part 'chatbot_event.dart';
 part 'chatbot_state.dart';
 
 class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
-  final StartChatUseCase chatUseCase;
+  final StartChatUseCase startChatUseCase;
 
-  ChatbotBloc({required this.chatUseCase}) : super(ChatbotInitial()) {
+  ChatbotBloc({required this.startChatUseCase}) : super(ChatbotInitial()) {
     on<StartChatEvent>(_onGetGuidanceCard);
   }
 
@@ -19,7 +19,7 @@ class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
       StartChatEvent event, Emitter<ChatbotState> emit) async {
     emit(ChatbotLoading());
 
-    final result = await chatUseCase(event.symptoms, event.language);
+    final result = await startChatUseCase(event.symptoms, event.language);
 
     result.fold(
       (failure) => emit(ChatbotError(failure.message)),

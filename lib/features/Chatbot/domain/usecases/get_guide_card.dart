@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/error/failures.dart';
-import '../../presentation/bloc/chatbot_bloc.dart';
 import '../entities/guide_entity.dart';
 import '../repositories/guide_repo.dart';
 
