@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-
 import 'app_colors.dart';
 
 class AppTextStyles {
+  
   static const TextStyle header = TextStyle(
     fontFamily: 'NotoSansEthopic',
     color: AppColors.primaryDeepBlue,
@@ -40,10 +40,8 @@ class AppTextStyles {
     fontSize: 16,
   );
 
-
-  // For the "RemedyMate" title
   static const TextStyle drawerHeader = TextStyle(
-    fontFamily: 'Inter', // Using Inter for UI consistency
+    fontFamily: 'Inter',
     color: AppColors.primaryDeepBlue,
     fontSize: 22,
     fontWeight: FontWeight.bold,
@@ -53,10 +51,9 @@ class AppTextStyles {
     fontFamily: 'Inter',
     fontSize: 16,
     color: AppColors.drawerTextColor,
-    fontWeight: FontWeight.w500, // A medium weight
+    fontWeight: FontWeight.w500,
   );
 
-  // For the selected drawer item ("Home" in the image)
   static const TextStyle drawerItemSelected = TextStyle(
     fontFamily: 'Inter',
     fontSize: 16,
@@ -64,18 +61,43 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
   );
 
-  // For the "Version 1.0.0" text at the bottom
   static const TextStyle versionText = TextStyle(
     fontFamily: 'Inter',
     fontSize: 14,
     color: Colors.grey,
   );
 
-  // For the "Logout" button
   static const TextStyle logoutText = TextStyle(
     fontFamily: 'Inter',
     fontSize: 16,
-    color: AppColors.redTriage, // Uses the red from your triage colors
+    color: AppColors.redTriage,
     fontWeight: FontWeight.w500,
   );
+
+
+  // --- NEW STYLES TO ADD FOR THE HOMEPAGE ---
+
+ 
+  static const TextStyle sectionHeader = TextStyle(
+    fontFamily: 'Inter',
+    color: AppColors.primaryDeepBlue,
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+  );
+
+ 
+  static const TextStyle cardTitle = TextStyle(
+    fontFamily: 'Inter',
+    color: AppColors.primaryDeepBlue,
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const TextStyle cardSubtitle = TextStyle(
+    fontFamily: 'Inter',
+    fontSize: 12,
+    color: Colors.black54, 
+    fontWeight: FontWeight.normal,
+  );
+  
 }

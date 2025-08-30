@@ -1,0 +1,32 @@
+{
+  "appName": "RemedyMate",
+  "languageSwitch": "EN ↔ Amh",
+
+  "homeTitle": "Safe, Simple Health Guidance at Home",
+  "homeSubtitle": "Chat with RemedyMate for self-care tips in Amharic or English.",
+  "startChat": "Start Chat",
+  "offline": "Offline",
+  "quickAccessTitle": "Quick Access",
+  "exploreTitle": "Explore",
+  "popularTopicsTitle": "Popular Topics",
+  "localTipsTitle": "Local Tips",
+
+  "quickActionSymptomsTitle": "Check My Symptoms",
+  "quickActionSymptomsSubtitle": "Start chat flow",
+  "quickActionLibraryTitle": "Offline Library",
+  "quickActionLibrarySubtitle": "Cached topics",
+  "quickActionSavedTitle": "Saved Sessions",
+  "quickActionSavedSubtitle": "Last 10 chats",
+  "quickActionEmergencyTitle": "Emergency Help",
+  "quickActionEmergencySubtitle": "Urgent assistance",
+
+  "popularTopicCold": "Cold",
+  "popularTopicHeadache": "Headache",
+  "popularTopicHeartburn": "Heartburn",
+  "popularTopicMotionSickness": "Motion Sickness",
+
+  "localTipRemedies": "Safe home remedies",
+  "localTipWarnings": "Important warnings",
+  "disclaimerText": "RemedyMate gives general info only. Not medical advice.",
+  "learnMore": "Learn More"
+}

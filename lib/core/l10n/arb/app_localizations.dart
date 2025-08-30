@@ -97,6 +97,162 @@ abstract class AppLocalizations {
     Locale('am'),
     Locale('en'),
   ];
+
+  /// No description provided for @appName.
+  ///
+  /// In en, this message translates to:
+  /// **'RemedyMate'**
+  String get appName;
+
+  /// No description provided for @languageSwitch.
+  ///
+  /// In en, this message translates to:
+  /// **'EN ↔ Amh'**
+  String get languageSwitch;
+
+  /// No description provided for @homeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Safe, Simple Health Guidance at Home'**
+  String get homeTitle;
+
+  /// No description provided for @homeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat with RemedyMate for self-care tips in Amharic or English.'**
+  String get homeSubtitle;
+
+  /// No description provided for @startChat.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Chat'**
+  String get startChat;
+
+  /// No description provided for @offline.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline'**
+  String get offline;
+
+  /// No description provided for @quickAccessTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Access'**
+  String get quickAccessTitle;
+
+  /// No description provided for @exploreTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get exploreTitle;
+
+  /// No description provided for @popularTopicsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular Topics'**
+  String get popularTopicsTitle;
+
+  /// No description provided for @localTipsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Local Tips'**
+  String get localTipsTitle;
+
+  /// No description provided for @quickActionSymptomsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Check My Symptoms'**
+  String get quickActionSymptomsTitle;
+
+  /// No description provided for @quickActionSymptomsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Start chat flow'**
+  String get quickActionSymptomsSubtitle;
+
+  /// No description provided for @quickActionLibraryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline Library'**
+  String get quickActionLibraryTitle;
+
+  /// No description provided for @quickActionLibrarySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cached topics'**
+  String get quickActionLibrarySubtitle;
+
+  /// No description provided for @quickActionSavedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved Sessions'**
+  String get quickActionSavedTitle;
+
+  /// No description provided for @quickActionSavedSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Last 10 chats'**
+  String get quickActionSavedSubtitle;
+
+  /// No description provided for @quickActionEmergencyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency Help'**
+  String get quickActionEmergencyTitle;
+
+  /// No description provided for @quickActionEmergencySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Urgent assistance'**
+  String get quickActionEmergencySubtitle;
+
+  /// No description provided for @popularTopicCold.
+  ///
+  /// In en, this message translates to:
+  /// **'Cold'**
+  String get popularTopicCold;
+
+  /// No description provided for @popularTopicHeadache.
+  ///
+  /// In en, this message translates to:
+  /// **'Headache'**
+  String get popularTopicHeadache;
+
+  /// No description provided for @popularTopicHeartburn.
+  ///
+  /// In en, this message translates to:
+  /// **'Heartburn'**
+  String get popularTopicHeartburn;
+
+  /// No description provided for @popularTopicMotionSickness.
+  ///
+  /// In en, this message translates to:
+  /// **'Motion Sickness'**
+  String get popularTopicMotionSickness;
+
+  /// No description provided for @localTipRemedies.
+  ///
+  /// In en, this message translates to:
+  /// **'Safe home remedies'**
+  String get localTipRemedies;
+
+  /// No description provided for @localTipWarnings.
+  ///
+  /// In en, this message translates to:
+  /// **'Important warnings'**
+  String get localTipWarnings;
+
+  /// No description provided for @disclaimerText.
+  ///
+  /// In en, this message translates to:
+  /// **'RemedyMate gives general info only. Not medical advice.'**
+  String get disclaimerText;
+
+  /// No description provided for @learnMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn More'**
+  String get learnMore;
 }
 
 class _AppLocalizationsDelegate

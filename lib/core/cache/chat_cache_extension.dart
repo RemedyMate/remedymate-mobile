@@ -1,4 +1,4 @@
-import '../../features/Chatbot/domain/entities/chat_session_entity.dart';
+/*import '../../features/Chatbot/domain/entities/chat_session_entity.dart';
 import '../../features/Chatbot/domain/entities/message_entity.dart';
 import 'in_memory_cache.dart';
 
@@ -15,4 +15,4 @@ extension ChatCacheExtensions on InMemoryCache<String, ChatSessionEntity> {
       await put(chatId, ChatSession(chatId, [message]));
     }
   }
-}
+} */
