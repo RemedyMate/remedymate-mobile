@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:remedy_mate/core/constants/app_text_styles.dart';
+import '../../../../core/constants/app_text_styles.dart';
 
 class QuickAccessCard extends StatelessWidget {
   final String title;
@@ -43,11 +43,11 @@ class QuickAccessCard extends StatelessWidget {
             )
           ],
         ),
-        // --- THIS IS THE CRITICAL FIX ---
+       
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // The Icon container stays as it is.
+           
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:remedy_mate/features/Chatbot/presentation/pages/chatbot_home_page.dart';
-import 'package:remedy_mate/features/Chatbot/presentation/pages/shell_page.dart'; 
+import '../../features/Chatbot/presentation/pages/chatbot_home_page.dart';
+import '../../features/Chatbot/presentation/pages/shell_page.dart'; 
 final GoRouter router = GoRouter(
   initialLocation: '/home', // Tell the app to start at the '/home' path
   routes: [
@@ -30,7 +30,7 @@ final GoRouter router = GoRouter(
             GoRoute(
               path: '/chats',
               // Since this page isn't ready, we use a simple placeholder.
-              builder: (context, state) => const Center(child: Text("Chats Page")),
+              builder: (context, state) => const Center(child: Text('Chats Page')),
             ),
           ],
         ),
@@ -40,7 +40,7 @@ final GoRouter router = GoRouter(
           routes: [
             GoRoute(
               path: '/library',
-              builder: (context, state) => const Center(child: Text("Library Page")),
+              builder: (context, state) => const Center(child: Text('Library Page')),
             ),
           ],
         ),
@@ -50,7 +50,7 @@ final GoRouter router = GoRouter(
           routes: [
             GoRoute(
               path: '/settings',
-              builder: (context, state) => const Center(child: Text("Settings Page")),
+              builder: (context, state) => const Center(child: Text('Settings Page')),
             ),
           ],
         ),

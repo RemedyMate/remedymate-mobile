@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:remedy_mate/core/constants/app_colors.dart';
-import 'package:remedy_mate/core/constants/app_text_styles.dart';
-import 'package:remedy_mate/core/l10n/arb/app_localizations.dart';
-import 'package:remedy_mate/dependency_injection.dart';
-import 'package:remedy_mate/features/Chatbot/presentation/bloc/chatbot_bloc.dart';
-import '../widgets/explore_section.dart';
+import '../../../../core/constants/app_colors.dart';
+import '../../../../core/constants/app_text_styles.dart';
+import '../../../../core/l10n/arb/app_localizations.dart';
+import '../../../../dependency_injection.dart';
+import '../bloc/chatbot_bloc.dart';
 import '../widgets/disclaimer_widget.dart';
 import '../widgets/home_header.dart';
-import '../widgets/local_tips_card.dart';
 import '../widgets/quick_access_card.dart';
-
 
 class ChatbotHomePage extends StatelessWidget {
   const ChatbotHomePage({super.key});
@@ -23,14 +20,13 @@ class ChatbotHomePage extends StatelessWidget {
       create: (_) => sl<ChatbotBloc>()..add(LoadHomePageData()),
       child: BlocBuilder<ChatbotBloc, ChatbotState>(
         builder: (context, state) {
-   
           return SafeArea(
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(16),
-             
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+      
                   const HomeHeader(),
                   const SizedBox(height: 16),
                   Container(
@@ -39,35 +35,35 @@ class ChatbotHomePage extends StatelessWidget {
                       color: AppColors.drawerBackground,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: const Center(child: Text("Home photo placeholder")),
+                    child: const Center(child: Text('Home photo placeholder')),
                   ),
                   const SizedBox(height: 16),
                   Center(
                     child: Column(
                       children: [
-                        Text(
-                          l10n.homeTitle,
-                          textAlign: TextAlign.center,
-                          style: AppTextStyles.sectionHeader.copyWith(fontSize: 20),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          l10n.homeSubtitle,
-                          textAlign: TextAlign.center,
-                          style: AppTextStyles.cardSubtitle.copyWith(fontSize: 14),
-                        ),
-                        const SizedBox(height: 24),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.primaryDeepBlue,
-                            foregroundColor: AppColors.white,
-                            padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                            textStyle: AppTextStyles.bodyText.copyWith(fontWeight: FontWeight.bold),
-                          ),
-                          child: Text(l10n.startChat),
-                        ),
+                         Text(
+                      l10n.homeTitle,
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.sectionHeader.copyWith(fontSize: 20),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      l10n.homeSubtitle,
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.cardSubtitle.copyWith(fontSize: 14),
+                    ),
+                    const SizedBox(height: 24),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.primaryDeepBlue,
+                        foregroundColor: AppColors.white,
+                        padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                        textStyle: AppTextStyles.bodyText.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      child: Text(l10n.startChat),
+                    ),
                       ],
                     ),
                   ),
@@ -76,32 +72,32 @@ class ChatbotHomePage extends StatelessWidget {
                     height: 40,
                     child: Stack(
                       children: [
-                        Align(
-                          alignment: Alignment.center,
-                          child: Container(
-                            padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: AppColors.drawerBackground,
-                              shape: BoxShape.circle,
-                            ),
-                            child: const Icon(Icons.mic_none, color: Colors.black54, size: 20),
-                          ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: const BoxDecoration(
+                          color: AppColors.drawerBackground,
+                          shape: BoxShape.circle,
                         ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                            decoration: BoxDecoration(
-                              color: AppColors.greenTriage,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Text(
-                              l10n.offline,
-                              style: TextStyle(color: AppColors.white, fontWeight: FontWeight.w500),
-                            ),
-                          ),
+                        child: const Icon(Icons.mic_none, color: Colors.black54, size: 20),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                        decoration: BoxDecoration(
+                          color: AppColors.greenTriage,
+                          borderRadius: BorderRadius.circular(20),
                         ),
-                      ],
+                        child: Text(
+                          l10n.offline,
+                          style: const TextStyle(color: AppColors.white, fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ),
+                  ],
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -119,15 +115,15 @@ class ChatbotHomePage extends StatelessWidget {
                         title: l10n.quickActionSymptomsTitle,
                         subtitle: l10n.quickActionSymptomsSubtitle,
                         icon: Icons.medical_services_outlined,
-                        iconContainerColor: const Color(0xffFEECEB),
-                        iconColor: const Color(0xffD32F2F),
+                        iconContainerColor:AppColors.background,
+                        iconColor: AppColors.redTriage,
                         onTap: () {},
                       ),
                       QuickAccessCard(
                         title: l10n.quickActionLibraryTitle,
                         subtitle: l10n.quickActionLibrarySubtitle,
                         icon: Icons.inventory_2_outlined,
-                        iconContainerColor: const Color(0xffE3F2FD),
+                        iconContainerColor: AppColors.background,
                         iconColor: const Color(0xff1565C0),
                         onTap: () {},
                       ),
@@ -135,8 +131,8 @@ class ChatbotHomePage extends StatelessWidget {
                         title: l10n.quickActionSavedTitle,
                         subtitle: l10n.quickActionSavedSubtitle,
                         icon: Icons.chat_bubble_outline,
-                        iconContainerColor: const Color(0xffE8F5E9),
-                        iconColor: const Color(0xff2E7D32),
+                        iconContainerColor: AppColors.background,
+                        iconColor: AppColors.greenTriage,
                         onTap: () {},
                       ),
                       QuickAccessCard(
@@ -150,33 +146,17 @@ class ChatbotHomePage extends StatelessWidget {
                         subtitleColor: AppColors.redTriage.withOpacity(0.8),
                         onTap: () {},
                       ),
+                  
                     ],
                   ),
-                  const SizedBox(height: 20),
-                  Text(l10n.exploreTitle, style: AppTextStyles.sectionHeader),
-                  const SizedBox(height: 12),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.only(bottom: 4, top: 2),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.65,
-                          child: ExploreSection(
-                            title: l10n.popularTopicsTitle,
-                            items: state.popularTopics,
-                            onItemTap: (topicKey) {},
-                          ),
-                        ),
-                        const SizedBox(width: 12),
-                        const LocalTipsCard(),
-                       
-                      ],
-                    ),
-                  ),
-                   const SizedBox(height: 20),
-          const DisclaimerWidget(),
+
+              
+                  const SizedBox(height: 24), 
+
+                 
+                  const DisclaimerWidget(),
+
+        
                 ],
               ),
             ),

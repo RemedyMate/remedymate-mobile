@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:remedy_mate/dependency_injection.dart' as di; // Use a prefix
 
 import 'app.dart';
+import 'dependency_injection.dart' as di; 
 
 Future<void> main() async {
 

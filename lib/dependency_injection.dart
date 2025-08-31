@@ -1,6 +1,6 @@
 // It's likely your project uses the 'get_it' package for this.
 import 'package:get_it/get_it.dart';
-import 'package:remedy_mate/features/Chatbot/presentation/bloc/chatbot_bloc.dart';
+import 'features/Chatbot/presentation/bloc/chatbot_bloc.dart';
 // ... other imports for other services
 
 final sl = GetIt.instance; // sl stands for Service Locator

@@ -4,7 +4,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:meta/meta.dart';
-import 'package:remedy_mate/features/Chatbot/models/quick_action_model.dart';
+import '../../models/quick_action_model.dart';
 
 part 'chatbot_event.dart';
 part 'chatbot_state.dart';

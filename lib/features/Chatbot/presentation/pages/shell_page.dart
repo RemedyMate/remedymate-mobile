@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:remedy_mate/features/Chatbot/presentation/widgets/bottom_nav.dart';
+import '../widgets/bottom_nav.dart';
 
 class ShellPage extends StatelessWidget {
  

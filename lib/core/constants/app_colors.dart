@@ -8,6 +8,7 @@ class AppColors {
   static const Color background = Color(0xFFF1F5F9);
   static const Color drawerBackground = Color(0xFFE5E7EB);
   static const Color drawerTextColor = Color(0xFF4B5563);
+  static Color backgrounddisclaimer = const Color(0xFFFFF3E0);
 
 
 

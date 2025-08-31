@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import '../../../../core/constants/app_colors.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key});
@@ -13,19 +13,19 @@ class HomeHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           
-          Row(
+          const Row(
             children: [
-              const CircleAvatar(
-                backgroundColor: Color(0xFF0B2D48), 
+              CircleAvatar(
+                backgroundColor: AppColors.primaryDeepBlue, 
                 child: Text(
-                  "R",
+                  'R',
                   style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                 ),
               ),
-              const SizedBox(width: 8),
-              const Text(
-                "RemedyMate",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFF0B2D48)),
+              SizedBox(width: 8),
+              Text(
+                'RemedyMate',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: AppColors.primaryDeepBlue),
               ),
             ],
           ),
@@ -37,10 +37,10 @@ class HomeHeader extends StatelessWidget {
 
               
               borderRadius: BorderRadius.circular(25),
-              color: const Color(0xFF0B2D48), 
+              color: AppColors.primaryDeepBlue, 
             ),
             child: const Text(
-              "EN ↔ Amh",
+              'EN ↔ Amh',
               style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
           ),

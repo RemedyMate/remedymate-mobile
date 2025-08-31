@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:remedy_mate/core/l10n/arb/app_localizations.dart';
-import 'package:remedy_mate/core/navigation/app_router.dart'; // <-- IMPORT THE ROUTER
+import 'core/l10n/arb/app_localizations.dart';
+import 'core/navigation/app_router.dart'; 
 
 class App extends StatelessWidget {
   const App({super.key});
