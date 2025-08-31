@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
 import '../../domain/entities/guide_entity.dart';
-import '../../domain/usecases/get_guide_card.dart';
+import '../../domain/usecases/start_chat_usecase.dart';
 
 part 'chatbot_event.dart';
 part 'chatbot_state.dart';

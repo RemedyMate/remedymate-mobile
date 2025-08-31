@@ -1,13 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'dependency_injection.dart' as di;
-import 'features/chatbot/domain/usecases/get_guide_card.dart';
+import 'features/chatbot/domain/usecases/start_chat_usecase.dart';
 import 'features/chatbot/presentation/bloc/chatbot_bloc.dart';
 import 'features/chatbot/presentation/pages/chat.dart';
 
-void main() {
-  di.init();
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  // Initialize dependencies
+  try {
+    di.init();
+    runApp(const MyApp());
+  } catch (e) {
+    // Fallback in case dependency injection fails
+    runApp(
+      const MaterialApp(
+        home: Scaffold(
+          body: Center(
+            child: Text('Failed to initialize app. Please restart.'),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {

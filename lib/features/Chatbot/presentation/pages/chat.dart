@@ -5,7 +5,6 @@ import '../widget/bot_response.dart';
 import '../widget/guide_card.dart';
 import '../widget/offline_mode.dart';
 import '../widget/quick_chip.dart';
-import '../widget/user_message.dart';
 
 class SymptomCheckerPage extends StatefulWidget {
   const SymptomCheckerPage({super.key});

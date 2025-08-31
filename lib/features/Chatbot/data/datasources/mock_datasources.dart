@@ -41,6 +41,6 @@ class MockGuideDataSource implements GuideDataSource {
       _step++;
       return Right(FollowUpMessage(conversationId: '23', question: _followup!['question'] as String));
     }
-    return Left(GuideModel.fromJson(_compose! as Map<String, dynamic>));
+    return Left(GuideModel.fromJson(_compose!));
   }
 }

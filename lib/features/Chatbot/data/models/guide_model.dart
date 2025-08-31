@@ -2,16 +2,11 @@ import '../../domain/entities/guide_entity.dart';
 
 class GuideModel extends GuideEntity {
   const GuideModel({
-    required String flag,
-    required List<String> selfCare,
-    required List<String> otc,
-    required List<String> medical,
-  }) : super(
-          flag: flag,
-          selfCare: selfCare,
-          otc: otc,
-          medical: medical,
-        );
+    required super.flag,
+    required super.selfCare,
+    required super.otc,
+    required super.medical,
+  });
 
   factory GuideModel.fromJson(Map<String, dynamic> json) {
     return GuideModel(
