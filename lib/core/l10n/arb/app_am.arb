@@ -1,0 +1,39 @@
+{
+  "@@locale": "am",
+  "settings": "ቅንብሮች",
+  "guestUser": "እንግዳ ተጠቃሚ",
+  "anonymousSession": "የማይታወቅ ክፍለ ጊዜ",
+  "editProfile": "መገለጫ አርትዕ",
+
+  "account": "መለያ",
+  "manageProfile": "መገለጫ አስተዳደር",
+  "manageProfileSubtitle": "መረጃዎን ያዘምኑ",
+  "savedSessions": "የተቀመጡ ክፍለ ጊዜዎች",
+  "savedSessionsSubtitle": "የውይይት ታሪክ ይመልከቱ",
+  "notifications": "ማሳወቂያዎች",
+  "notificationsSubtitle": "ማሳወቂያዎችን ያስተዳድሩ",
+
+  "preferences": "ምርጫዎች",
+  "language": "ቋንቋ",
+  "languageSubtitle": "እንግሊዝኛ ↔ አማርኛ",
+  "textSize": "የጽሑፍ መጠን",
+  "textSizeSubtitle": "ንባብን ለማሻሻል",
+  "offlineMode": "ከመስመር ውጭ ሁነታ",
+  "offlineModeSubtitle": "ይዘቶችን በአካባቢ ያስቀምጡ",
+
+  "support": "ድጋፍ",
+  "faq": "ተደጋጋሚ ጥያቄዎች",
+  "faqSubtitle": "የተለመዱ ጥያቄዎች",
+  "contactSupport": "ድጋፍን ያነጋግሩ",
+  "contactSupportSubtitle": "ከቡድናችን ድጋፍ ያግኙ",
+  "emergencyHelp": "ድንገተኛ እርዳታ",
+  "emergencyHelpSubtitle": "አስቸኳይ እርዳታ",
+
+  "about": "ስለ እኛ",
+  "terms": "የአገልግሎት ውሎች እና የግላዊነት ፖሊሲ",
+  "termsSubtitle": "ህጋዊ መረጃ",
+  "versionInfo": "የስሪት መረጃ",
+  "versionInfoSubtitle": "RemedyMate ስሪት 2.1.0",
+
+  "signOut": "ዘግተው ይውጡ"
+}

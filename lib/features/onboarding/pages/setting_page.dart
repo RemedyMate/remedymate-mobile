@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import '../../../core/constants/app_colors.dart';
+import '../../../core/l10n/arb/app_localizations.dart';
 
-import '../../../generated/app_localizations.dart';
 import '../widgets/section_card.dart';
 import '../widgets/section_tiles.dart';
+
 class SettingPage extends StatefulWidget {
   final void Function(Locale) onLocaleChanged;
 
@@ -15,8 +17,8 @@ class SettingPage extends StatefulWidget {
 class _SettingPageState extends State<SettingPage> {
   bool notificationsOn = true;
   bool offlineModeOn = false;
-  String textSize = "Medium";
-  String language = "EN ↔ Ahm";
+  String textSize = 'Medium';
+  String language = 'EN ↔ Ahm';
 
   @override
   void initState() {
@@ -28,11 +30,11 @@ class _SettingPageState extends State<SettingPage> {
   // Get font size based on textSize
   double getFontSize() {
     switch (textSize) {
-      case "Small":
+      case 'Small':
         return 12;
-      case "Medium":
+      case 'Medium':
         return 16;
-      case "Large":
+      case 'Large':
         return 20;
       default:
         return 16;
@@ -42,31 +44,31 @@ class _SettingPageState extends State<SettingPage> {
   // Toggle language
   void toggleLanguage() {
     setState(() {
-      if (language == "EN ↔ Ahm") {
-        language = "Ahm ↔ EN";
+      if (language == 'EN ↔ Ahm') {
+        language = 'Ahm ↔ EN';
         widget.onLocaleChanged(const Locale('am'));
       } else {
-        language = "EN ↔ Ahm";
+        language = 'EN ↔ Ahm';
         widget.onLocaleChanged(const Locale('en'));
       }
     });
-    debugPrint("Language toggled: $language");
+    debugPrint('Language toggled: $language');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
         title: Text(
-          S.of(context)!.settings,
+          AppLocalizations.of(context)!.settings,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: getFontSize(),
           ),
         ),
         centerTitle: false,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.appBarColor,
         elevation: 0,
         actions: [
           GestureDetector(
@@ -75,10 +77,13 @@ class _SettingPageState extends State<SettingPage> {
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               margin: const EdgeInsets.only(right: 12, top: 8, bottom: 8),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey.shade300),
+                border: Border.all(color: AppColors.border),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Text(language, style: TextStyle(fontSize: getFontSize() - 2)),
+              child: Text(
+                language,
+                style: TextStyle(fontSize: getFontSize() - 2),
+              ),
             ),
           ),
         ],
@@ -101,18 +106,18 @@ class _SettingPageState extends State<SettingPage> {
 
   SectionCard _buildAccountSection(BuildContext context) {
     return SectionCard(
-      title: S.of(context)!.account,
+      title: AppLocalizations.of(context)!.account,
       children: [
         buildTile(
           Icons.history,
-          S.of(context)!.savedSessions,
-          S.of(context)!.savedSessionsSubtitle,
+          AppLocalizations.of(context)!.savedSessions,
+          AppLocalizations.of(context)!.savedSessionsSubtitle,
           textStyle: TextStyle(fontSize: getFontSize()),
         ),
         switchTile(
           Icons.notifications,
-          S.of(context)!.notifications,
-          S.of(context)!.notificationsSubtitle,
+          AppLocalizations.of(context)!.notifications,
+          AppLocalizations.of(context)!.notificationsSubtitle,
           notificationsOn,
           (val) => setState(() => notificationsOn = val),
           fontSize: getFontSize(),
@@ -123,13 +128,13 @@ class _SettingPageState extends State<SettingPage> {
 
   SectionCard _buildPreferencesSection(BuildContext context) {
     return SectionCard(
-      title: S.of(context)!.preferences,
+      title: AppLocalizations.of(context)!.preferences,
       children: [
-        sectionTitle(S.of(context)!.preferences, getFontSize()),
+        sectionTitle(AppLocalizations.of(context)!.preferences, getFontSize()),
         buildTile(
           Icons.language,
-          S.of(context)!.language,
-          S.of(context)!.languageSubtitle,
+          AppLocalizations.of(context)!.language,
+          AppLocalizations.of(context)!.languageSubtitle,
           textStyle: TextStyle(fontSize: getFontSize()),
           onTap: toggleLanguageFunc,
         ),
@@ -139,8 +144,8 @@ class _SettingPageState extends State<SettingPage> {
         ),
         switchTile(
           Icons.offline_bolt,
-          S.of(context)!.offlineMode,
-          S.of(context)!.offlineModeSubtitle,
+          AppLocalizations.of(context)!.offlineMode,
+          AppLocalizations.of(context)!.offlineModeSubtitle,
           offlineModeOn,
           (val) => setState(() => offlineModeOn = val),
           fontSize: getFontSize(),
@@ -151,27 +156,27 @@ class _SettingPageState extends State<SettingPage> {
 
   SectionCard _buildSupportSection(BuildContext context) {
     return SectionCard(
-      title: S.of(context)!.support,
+      title: AppLocalizations.of(context)!.support,
       children: [
-        sectionTitle(S.of(context)!.support, getFontSize()),
+        sectionTitle(AppLocalizations.of(context)!.support, getFontSize()),
         buildTile(
           Icons.help_outline,
-          S.of(context)!.faq,
-          S.of(context)!.faqSubtitle,
+          AppLocalizations.of(context)!.faq,
+          AppLocalizations.of(context)!.faqSubtitle,
           textStyle: TextStyle(fontSize: getFontSize()),
         ),
         buildTile(
           Icons.support_agent,
-          S.of(context)!.contactSupport,
-          S.of(context)!.contactSupportSubtitle,
+          AppLocalizations.of(context)!.contactSupport,
+          AppLocalizations.of(context)!.contactSupportSubtitle,
           textStyle: TextStyle(fontSize: getFontSize()),
         ),
         buildTile(
           Icons.warning_amber_rounded,
-          S.of(context)!.emergencyHelp,
-          S.of(context)!.emergencyHelpSubtitle,
-          textColor: Colors.red,
-          iconColor: Colors.red,
+          AppLocalizations.of(context)!.emergencyHelp,
+          AppLocalizations.of(context)!.emergencyHelpSubtitle,
+          textColor: AppColors.redTriage,
+          iconColor: AppColors.redTriage,
           textStyle: TextStyle(fontSize: getFontSize()),
         ),
       ],
@@ -180,19 +185,19 @@ class _SettingPageState extends State<SettingPage> {
 
   SectionCard _buildAboutSection(BuildContext context) {
     return SectionCard(
-      title: S.of(context)!.about,
+      title: AppLocalizations.of(context)!.about,
       children: [
-        sectionTitle(S.of(context)!.about, getFontSize()),
+        sectionTitle(AppLocalizations.of(context)!.about, getFontSize()),
         buildTile(
           Icons.article_outlined,
-          S.of(context)!.terms,
-          S.of(context)!.termsSubtitle,
+          AppLocalizations.of(context)!.terms,
+          AppLocalizations.of(context)!.termsSubtitle,
           textStyle: TextStyle(fontSize: getFontSize()),
         ),
         buildTile(
           Icons.info_outline,
-          S.of(context)!.versionInfo,
-          "RemedyMate v2.1.0",
+          AppLocalizations.of(context)!.versionInfo,
+          'RemedyMate v2.1.0',
           textStyle: TextStyle(fontSize: getFontSize()),
         ),
       ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/constants/app_colors.dart';
+
 /// Section Title Widget
 Widget sectionTitle(String title, double fontSize) {
   return Padding(
@@ -9,7 +11,7 @@ Widget sectionTitle(String title, double fontSize) {
       style: TextStyle(
         fontSize: fontSize,
         fontWeight: FontWeight.bold,
-        color: Colors.grey,
+        color: AppColors.border,
       ),
     ),
   );
@@ -27,20 +29,20 @@ Widget buildTile(
 }) {
   return ListTile(
     contentPadding: EdgeInsets.zero,
-    leading: Icon(icon, color: iconColor ?? Colors.grey.shade700),
+    leading: Icon(icon, color: iconColor ?? AppColors.border),
     title: Text(
       title,
       style: textStyle.copyWith(
         fontWeight: FontWeight.w500,
-        color: textColor ?? Colors.black,
+        color: textColor ?? AppColors.black,
       ),
     ),
     subtitle: Text(
       subtitle,
-      style: const TextStyle(fontSize: 13, color: Colors.grey),
+      style: const TextStyle(fontSize: 13, color: AppColors.border),
     ),
-    trailing: const Icon(Icons.chevron_right, color: Colors.grey),
-    onTap: onTap ?? () => debugPrint("$title clicked"),
+    trailing: const Icon(Icons.chevron_right, color: AppColors.border),
+    onTap: onTap ?? () => debugPrint('$title clicked'),
   );
 }
 
@@ -55,14 +57,19 @@ Widget switchTile(
 }) {
   return SwitchListTile(
     contentPadding: EdgeInsets.zero,
-    secondary: Icon(icon, color: Colors.grey.shade700),
-    title: Text(title, style: TextStyle(fontWeight: FontWeight.w500, fontSize: fontSize)),
+    secondary: Icon(icon, color: AppColors.border),
+    title: Text(
+      title,
+      style: TextStyle(fontWeight: FontWeight.w500, fontSize: fontSize),
+    ),
     subtitle: Text(
       subtitle,
-      style: const TextStyle(fontSize: 13, color: Colors.grey),
+      style: const TextStyle(fontSize: 13, color: AppColors.border),
     ),
     value: value,
     onChanged: onChanged,
+    // activeColor: AppColors.background, // Thumb color when ON
+    activeTrackColor: AppColors.primaryDeepBlue, // Track color when ON
   );
 }
 
@@ -73,23 +80,23 @@ Widget textSizeTile({
 }) {
   return ListTile(
     contentPadding: EdgeInsets.zero,
-    leading: Icon(Icons.text_fields, color: Colors.grey.shade700),
+    leading: const Icon(Icons.text_fields, color: AppColors.border),
     title: const Text(
-      "Text Size",
+      'Text Size',
       style: TextStyle(fontWeight: FontWeight.w500),
     ),
     subtitle: const Text(
-      "Adjust readability",
-      style: TextStyle(fontSize: 13, color: Colors.grey),
+      'Adjust readability',
+      style: TextStyle(fontSize: 13, color: AppColors.border),
     ),
     trailing: Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        sizeChip("Small", selectedSize, onChanged),
+        sizeChip('Small', selectedSize, onChanged),
         const SizedBox(width: 6),
-        sizeChip("Medium", selectedSize, onChanged),
+        sizeChip('Medium', selectedSize, onChanged),
         const SizedBox(width: 6),
-        sizeChip("Large", selectedSize, onChanged),
+        sizeChip('Large', selectedSize, onChanged),
       ],
     ),
   );
@@ -101,19 +108,19 @@ Widget sizeChip(String label, String selectedSize, Function(String) onChanged) {
   return GestureDetector(
     onTap: () {
       onChanged(label);
-      debugPrint("Text size changed: $label");
+      debugPrint('Text size changed: $label');
     },
     child: Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: selected ? Colors.blue.shade900 : Colors.grey.shade200,
+        color: selected ? AppColors.primaryDeepBlue : AppColors.border,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Text(
         label,
         style: TextStyle(
           fontSize: 13,
-          color: selected ? Colors.white : Colors.black87,
+          color: selected ? AppColors.drawerBackground : AppColors.black,
           fontWeight: FontWeight.w500,
         ),
       ),

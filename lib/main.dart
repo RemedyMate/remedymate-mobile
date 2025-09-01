@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'core/l10n/arb/app_localizations.dart';
+
 import 'features/onboarding/pages/setting_page.dart';
-import 'generated/app_localizations.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -30,9 +31,9 @@ class _MyAppState extends State<MyApp> {
       title: 'Remedy Mate',
       debugShowCheckedModeBanner: false,
       locale: _locale,
-      supportedLocales: S.supportedLocales, // <- Use this
+      supportedLocales: AppLocalizations.supportedLocales, // <- Use this
       localizationsDelegates: const [
-        S.delegate, // Generated localization delegate
+        AppLocalizations.delegate, // Generated localization delegate
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,

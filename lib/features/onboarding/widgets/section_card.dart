@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/constants/app_colors.dart';
+
 class SectionCard extends StatelessWidget {
   final String title;
   final List<Widget> children;
@@ -13,7 +15,7 @@ class SectionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color.fromARGB(255, 241, 241, 241),
+      color: AppColors.tileBackground,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
