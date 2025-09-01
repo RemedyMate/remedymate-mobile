@@ -1,4 +1,5 @@
 {
+  "@@locale": "en",
   "settings": "Settings",
   "guestUser": "Guest User",
   "anonymousSession": "Anonymous Session",
