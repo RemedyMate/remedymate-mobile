@@ -34,3 +34,13 @@ class ChatbotError extends ChatbotState {
   @override
   List<Object?> get props => [message];
 }
+
+class ChatSessionLoading extends ChatbotState {}
+
+class ChatSessionLoaded extends ChatbotState {
+  final List<ChatSession> sessions;
+  ChatSessionLoaded(this.sessions);
+  
+  @override
+  List<Object?> get props => [sessions];
+}

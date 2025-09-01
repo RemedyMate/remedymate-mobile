@@ -14,3 +14,5 @@ class AnswerFollowUpEvent extends ChatbotEvent {
   final String answer;
   AnswerFollowUpEvent(this.conversationId, this.answer);
 }
+
+class LoadChatSessions extends ChatbotEvent {}
