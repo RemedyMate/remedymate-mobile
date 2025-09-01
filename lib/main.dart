@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ChatbotBloc(startChatUseCase: di.sl<StartChatUseCase>()),
+      create: (context) => ChatbotBloc(startChatUseCase: di.sl<StartChatUseCase>())..add(LoadChatSessions()),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'ChatBot',

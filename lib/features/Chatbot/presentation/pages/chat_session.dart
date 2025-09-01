@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../core/constants/app_colors.dart';
 import '../../domain/entities/chat_session_entity.dart';
 import '../bloc/chatbot_bloc.dart';
 
@@ -9,32 +11,84 @@ class ChatHistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: AppColors.background,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: AppColors.appBarColor,
           title: Row(
             children: [
-              const Icon(Icons.arrow_back),
-              const SizedBox(width: 8),
-              const Text('AI Chat Sessions'),
-              const SizedBox(width: 8),
+              // Back arrow
+              IconButton(
+                icon: const Icon(Icons.arrow_back_ios, color: AppColors.drawerTextColor),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.all(4),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
+                  color: AppColors.greenTriage,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Icon(Icons.check, color: AppColors.primaryDeepBlue)
+              ),
+              const SizedBox(width: 6),
+              // Title
+              const Text(
+                'AI Chat Sessions',
+                style: TextStyle(color: AppColors.drawerTextColor, fontSize: 20),
+              ),
+
+              const Spacer(), // Push buttons to the right
+
+              // Offline button (smaller)
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: AppColors.amberTriage,
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: TextButton(
                   onPressed: () {},
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero, // remove extra padding
+                    minimumSize: const Size(40, 20), // make button smaller
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
                   child: const Text(
-                    'offline',
-                    style: TextStyle(color: Colors.blue),
+                    'Offline',
+                    style: TextStyle(color: AppColors.drawerTextColor, fontSize: 12),
+                  ),
+                ),
+              ),
+
+              const SizedBox(width: 8),
+
+              // EN <-> AM button (smaller)
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: AppColors.primaryDeepBlue,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                    minimumSize: const Size(40, 20),
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: const  Text(
+                    'EN ↔ AM',
+                    style: TextStyle(color: AppColors.drawerBackground, fontSize: 12),
                   ),
                 ),
               ),
             ],
           ),
-
-          
         ),
+
         body: BlocBuilder<ChatbotBloc, ChatbotState>(
           builder: (context, state) {
             if (state is ChatSessionLoading) {
@@ -55,10 +109,11 @@ class ChatHistoryPage extends StatelessWidget {
           },
         ),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: AppColors.primaryDeepBlue,
           onPressed: () {
             // Add new session
           },
-          child: const Icon(Icons.add),
+          child: const Icon(Icons.add, color: AppColors.drawerBackground,),
         ),
       );
   }
@@ -70,25 +125,43 @@ class ChatSessionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(
-        session.title,
-        style: const TextStyle(fontWeight: FontWeight.bold),
-      ),
-      trailing: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.circle, size: 12, color: session.statusColor),
-          const SizedBox(width: 6),
-          Text(
-            session.status,
-            style: TextStyle(color: session.statusColor),
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      decoration: BoxDecoration(
+        color: AppColors.tileBackground,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.1),
+            spreadRadius: 1,
+            blurRadius: 3,
+            offset: const Offset(0, 1), // changes position of shadow
           ),
         ],
+        border: Border(bottom: BorderSide(color: Colors.grey.shade300)),
       ),
-      onTap: () {
-        // Navigate to session details
-      },
+      child: ListTile(
+        
+        title: Text(
+          session.title,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.circle, size: 12, color: session.statusColor),
+            const SizedBox(width: 6),
+            Text(
+              session.status,
+              style: TextStyle(color: session.statusColor),
+            ),
+          ],
+        ),
+        onTap: () {
+          // Navigate to session details
+        },
+      )
     );
   }
 }
