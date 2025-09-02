@@ -28,6 +28,13 @@ class _SettingPageState extends State<SettingPage> {
   }
 
   // Get font size based on textSize
+  /// Returns the font size based on the selected [textSize].
+  ///
+  /// Returns:
+  /// - 12 if [textSize] is 'Small'
+  /// - 16 if [textSize] is 'Medium'
+  /// - 20 if [textSize] is 'Large'
+  /// - 16 if [textSize] is anything else
   double getFontSize() {
     switch (textSize) {
       case 'Small':
@@ -42,6 +49,11 @@ class _SettingPageState extends State<SettingPage> {
   }
 
   // Toggle language
+  /// Toggle the language between English and Amharic.
+  ///
+  /// This function is called when the user taps on the language toggle button.
+  /// It updates the [language] variable and calls [onLocaleChanged] with the
+  /// selected locale.
   void toggleLanguage() {
     setState(() {
       if (language == 'EN ↔ Ahm') {
@@ -56,6 +68,7 @@ class _SettingPageState extends State<SettingPage> {
   }
 
   @override
+  /// The settings page, with sections for account, preferences, support, and about.
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -126,6 +139,9 @@ class _SettingPageState extends State<SettingPage> {
     );
   }
 
+  /// Build the preferences section card.
+  ///
+  /// This section contains language, text size, and offline mode preferences.
   SectionCard _buildPreferencesSection(BuildContext context) {
     return SectionCard(
       title: AppLocalizations.of(context)!.preferences,
@@ -154,6 +170,10 @@ class _SettingPageState extends State<SettingPage> {
     );
   }
 
+  /// Build the support section card.
+  ///
+  /// This section contains frequently asked questions, contact support, and
+  /// emergency help links.
   SectionCard _buildSupportSection(BuildContext context) {
     return SectionCard(
       title: AppLocalizations.of(context)!.support,
@@ -183,6 +203,12 @@ class _SettingPageState extends State<SettingPage> {
     );
   }
 
+  /// Build the about section card.
+  ///
+  /// This section contains terms and conditions and version information.
+  ///
+  /// The terms and conditions tile navigates to a web page with terms and
+  /// conditions. The version info tile displays the current version of the app.
   SectionCard _buildAboutSection(BuildContext context) {
     return SectionCard(
       title: AppLocalizations.of(context)!.about,

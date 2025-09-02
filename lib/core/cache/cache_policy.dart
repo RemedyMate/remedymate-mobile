@@ -4,9 +4,7 @@ enum EvictionPolicy { fifo, lru }
 class CachePolicy {
   final int maxItems;
   final EvictionPolicy evictionPolicy;
+  final List keys;
 
-  const CachePolicy({
-    this.maxItems = 10,
-    this.evictionPolicy = EvictionPolicy.fifo,
-  });
+  const CachePolicy({required this.maxItems, required this.evictionPolicy, required this.keys});
 }

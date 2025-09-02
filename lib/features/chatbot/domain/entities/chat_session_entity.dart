@@ -20,4 +20,5 @@ class ChatSession {
     this.isCompleted = false,
     required this.messages,
   });
+  
 }
