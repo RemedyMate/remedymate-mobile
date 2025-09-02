@@ -1,45 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'core/l10n/arb/app_localizations.dart';
+import 'dependency_injection.dart' as di;
+import 'features/chatbot/domain/usecases/start_chat_usecase.dart';
+import 'features/chatbot/presentation/bloc/chatbot_bloc.dart';
+import 'features/chatbot/presentation/pages/chat.dart';
 
-import 'features/onboarding/pages/setting_page.dart';
-void main() {
-  runApp(const MyApp());
-}
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  Locale _locale = const Locale('en'); // default locale
-
-  // Callback to update the app's locale
-  void setLocale(Locale locale) {
-    setState(() {
-      _locale = locale;
-    });
+  // Initialize dependencies
+  try {
+    di.init();
+    runApp(const MyApp());
+  } catch (e) {
+    // Fallback in case dependency injection fails
+    runApp(
+      const MaterialApp(
+        home: Scaffold(
+          body: Center(
+            child: Text('Failed to initialize app. Please restart.'),
+          ),
+        ),
+      ),
+    );
   }
+}
 
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Remedy Mate',
-      debugShowCheckedModeBanner: false,
-      locale: _locale,
-      supportedLocales: AppLocalizations.supportedLocales, // <- Use this
-      localizationsDelegates: const [
-        AppLocalizations.delegate, // Generated localization delegate
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: SettingPage(onLocaleChanged: setLocale),
+    return BlocProvider(
+      create: (context) =>
+          ChatbotBloc(startChatUseCase: di.sl<StartChatUseCase>())
+            ..add(LoadChatSessions()),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'ChatBot',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        ),
+        home: const SymptomCheckerPage(),
+      ),
     );
   }
 }
