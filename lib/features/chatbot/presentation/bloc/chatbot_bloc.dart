@@ -19,23 +19,31 @@ class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
   }
 
   Future<void> _onGetGuidanceCard(
-      StartChatEvent event, Emitter<ChatbotState> emit) async {
+    StartChatEvent event,
+    Emitter<ChatbotState> emit,
+  ) async {
     emit(ChatbotLoading());
 
     final result = await startChatUseCase(event.symptoms, event.language);
 
     result.fold(
       (failure) => emit(ChatbotError(failure.message)),
-      (guide) =>
-        guide.fold(
-          (guideEntity) => emit(GuideLoaded(guideEntity)),
-          (followUpMessage) => emit(FollowUpLoaded(followUpMessage.question, followUpMessage.conversationId)),
-        )
+      (guide) => guide.fold(
+        (guideEntity) => emit(GuideLoaded(guideEntity)),
+        (followUpMessage) => emit(
+          FollowUpLoaded(
+            followUpMessage.question,
+            followUpMessage.conversationId,
+          ),
+        ),
+      ),
     );
   }
 
   Future<void> _onLoadChatSessions(
-      ChatbotEvent event, Emitter<ChatbotState> emit) async {
+    ChatbotEvent event,
+    Emitter<ChatbotState> emit,
+  ) async {
     emit(ChatSessionLoading());
 
     await Future.delayed(const Duration(seconds: 1));
@@ -47,6 +55,7 @@ class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
         status: 'High',
         statusColor: AppColors.redTriage,
         timeStamp: '2024-10-01 10:00 AM',
+        messages: [],
       ),
       ChatSession(
         id: '1',
@@ -54,6 +63,7 @@ class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
         status: 'Open',
         statusColor: AppColors.greenTriage,
         timeStamp: '2024-10-02 02:30 PM',
+        messages: [],
       ),
       ChatSession(
         id: '3',
@@ -61,6 +71,7 @@ class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
         status: 'Low',
         statusColor: AppColors.amberTriage,
         timeStamp: '2024-10-03 11:15 AM',
+        messages: [],
       ),
       ChatSession(
         id: '4',
@@ -68,11 +79,10 @@ class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
         status: 'Low',
         statusColor: AppColors.greenTriage,
         timeStamp: '2024-10-04 09:45 AM',
+        messages: [],
       ),
     ];
 
     emit(ChatSessionLoaded(sessions));
   }
-
-
 }
