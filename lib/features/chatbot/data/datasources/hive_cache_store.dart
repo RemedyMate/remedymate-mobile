@@ -4,7 +4,7 @@ import '../../../../core/cache/cache_policy.dart';
 import '../../../../core/cache/cache_store.dart';
 import '../models/message_model.dart';
 
-class HiveCacheStore<K, V> implements CacheStore<K, V> {
+class HiveCacheStore<K, V> extends CacheStore<K, V> {
   final Box _box;
   final CachePolicy policy;
 

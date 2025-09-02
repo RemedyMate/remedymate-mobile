@@ -14,7 +14,13 @@ class ChatSessionCache extends CacheStore<String, ChatSession> {
   final LinkedHashMap<String, ChatSession> _store = LinkedHashMap();
 
   ChatSessionCache({CachePolicy? policy})
-    : _policy = policy ?? const CachePolicy();
+    : _policy =
+          policy ??
+          const CachePolicy(
+            maxItems: 10,
+            evictionPolicy: EvictionPolicy.lru,
+            keys: [],
+          );
 
   @override
   Future<void> put(String key, ChatSession value) async {
@@ -100,5 +106,23 @@ class ChatSessionCache extends CacheStore<String, ChatSession> {
 
     final firstKey = _store.keys.first;
     _store.remove(firstKey);
+  }
+
+  @override
+  Future<String> addMessage(String key, ChatSession message) {
+    // TODO: implement addMessage
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> clearMessages(String key) {
+    // TODO: implement clearMessages
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> removeMessage(String key, String messageId) {
+    // TODO: implement removeMessage
+    throw UnimplementedError();
   }
 }
