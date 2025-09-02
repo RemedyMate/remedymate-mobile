@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../core/constants/app_colors.dart';
 import '../bloc/chatbot_bloc.dart';
 import '../widget/bot_response.dart';
 import '../widget/guide_card.dart';
@@ -29,13 +32,13 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
         title: const Text('Symptom Checker'),
       ),
       body: Container(
-        color: Colors.grey[200],
+        color: AppColors.background,
         child: Column(
           children: [
             // Offline banner
             Container(
               width: double.infinity,
-              color: Colors.amber[100],
+              color: AppColors.amberTriage,
               padding: const EdgeInsets.all(8),
               child: const OfflineMode(),
             ),
@@ -84,8 +87,8 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
             // Input section
             Container(
               padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                border: Border(top: BorderSide(color: Colors.grey.shade300)),
+              decoration: const BoxDecoration(
+                border: Border(top:BorderSide(color: AppColors.border)),
               ),
               child: Column(
                 children: [
@@ -120,7 +123,7 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
                       ),
                       const SizedBox(width: 8),
                       CircleAvatar(
-                        backgroundColor: const Color(0xFF10B981),
+                        backgroundColor: AppColors.greenTriage,
                         child: IconButton(
                           icon: const Icon(Icons.send, color: Colors.black),
                           onPressed: () {

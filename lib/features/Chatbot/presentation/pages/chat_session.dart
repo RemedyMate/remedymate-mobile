@@ -131,12 +131,12 @@ class ChatSessionTile extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.tileBackground,
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
+            color: Colors.grey,
             spreadRadius: 1,
             blurRadius: 3,
-            offset: const Offset(0, 1), // changes position of shadow
+            offset: Offset(0, 1), // changes position of shadow
           ),
         ],
         border: Border(bottom: BorderSide(color: Colors.grey.shade300)),

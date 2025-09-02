@@ -5,8 +5,8 @@ import 'app_localizations.dart';
 // ignore_for_file: type=lint
 
 /// The translations for Amharic (`am`).
-class AppLocalizationsAm extends AppLocalizations {
-  AppLocalizationsAm([String locale = 'am']) : super(locale);
+class SAm extends S {
+  SAm([String locale = 'am']) : super(locale);
 
   @override
   String get settings => 'ቅንብሮች';
