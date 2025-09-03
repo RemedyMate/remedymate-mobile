@@ -1,0 +1,22 @@
+import 'package:flutter/material.dart';
+
+class BotMessage extends StatelessWidget {
+  final String text;
+  const BotMessage(this.text, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 4),
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Text(text),
+      ),
+    );
+  }
+}
