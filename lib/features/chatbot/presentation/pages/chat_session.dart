@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/l10n/arb/app_localizations.dart';
 import '../../domain/entities/chat_session_entity.dart';
 import '../bloc/chatbot_bloc.dart';
 
