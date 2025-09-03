@@ -1,39 +1,241 @@
 {
   "@@locale": "en",
+
   "settings": "Settings",
+  "@settings": {
+    "description": "Label for the settings section"
+  },
   "guestUser": "Guest User",
+  "@guestUser": {
+    "description": "Label for a guest user"
+  },
   "anonymousSession": "Anonymous Session",
+  "@anonymousSession": {
+    "description": "Label for an anonymous session"
+  },
   "editProfile": "Edit Profile",
+  "@editProfile": {
+    "description": "Label for editing user profile"
+  },
 
   "account": "Account",
+  "@account": {
+    "description": "Header for the account section"
+  },
   "manageProfile": "Manage Profile",
+  "@manageProfile": {
+    "description": "Label for managing user profile"
+  },
   "manageProfileSubtitle": "Update your information",
+  "@manageProfileSubtitle": {
+    "description": "Subtitle for managing user profile"
+  },
   "savedSessions": "Saved Sessions",
+  "@savedSessions": {
+    "description": "Label for saved chat sessions"
+  },
   "savedSessionsSubtitle": "View chat history",
+  "@savedSessionsSubtitle": {
+    "description": "Subtitle for saved chat sessions"
+  },
   "notifications": "Notifications",
+  "@notifications": {
+    "description": "Label for notifications"
+  },
   "notificationsSubtitle": "Manage alerts",
+  "@notificationsSubtitle": {
+    "description": "Subtitle for notifications management"
+  },
 
   "preferences": "Preferences",
+  "@preferences": {
+    "description": "Header for the preferences section"
+  },
   "language": "Language",
+  "@language": {
+    "description": "Label for language selection"
+  },
   "languageSubtitle": "English ↔ Amharic",
+  "@languageSubtitle": {
+    "description": "Subtitle for language selection, showing current languages"
+  },
   "textSize": "Text Size",
+  "@textSize": {
+    "description": "Label for text size adjustment"
+  },
   "textSizeSubtitle": "Adjust readability",
+  "@textSizeSubtitle": {
+    "description": "Subtitle for text size adjustment"
+  },
   "offlineMode": "Offline Mode",
+  "@offlineMode": {
+    "description": "Label for offline mode setting"
+  },
   "offlineModeSubtitle": "Cache content locally",
+  "@offlineModeSubtitle": {
+    "description": "Subtitle for offline mode, explaining its function"
+  },
 
   "support": "Support",
+  "@support": {
+    "description": "Header for the support section"
+  },
   "faq": "FAQ & Help Center",
+  "@faq": {
+    "description": "Label for FAQ and Help Center"
+  },
   "faqSubtitle": "Common questions",
+  "@faqSubtitle": {
+    "description": "Subtitle for FAQ, indicating common questions"
+  },
   "contactSupport": "Contact Support",
+  "@contactSupport": {
+    "description": "Label for contacting support"
+  },
   "contactSupportSubtitle": "Get help from our team",
+  "@contactSupportSubtitle": {
+    "description": "Subtitle for contacting support"
+  },
   "emergencyHelp": "Emergency Help",
+  "@emergencyHelp": {
+    "description": "Label for emergency help"
+  },
   "emergencyHelpSubtitle": "Urgent assistance",
+  "@emergencyHelpSubtitle": {
+    "description": "Subtitle for emergency help"
+  },
 
   "about": "About",
+  "@about": {
+    "description": "Header for the about section"
+  },
   "terms": "Terms & Privacy Policy",
+  "@terms": {
+    "description": "Label for terms and privacy policy"
+  },
   "termsSubtitle": "Legal information",
+  "@termsSubtitle": {
+    "description": "Subtitle for terms and privacy policy"
+  },
   "versionInfo": "Version Info",
+  "@versionInfo": {
+    "description": "Label for version information"
+  },
   "versionInfoSubtitle": "RemedyMate v2.1.0",
+  "@versionInfoSubtitle": {
+    "description": "Subtitle for version information, showing app version"
+  },
 
-  "signOut": "Sign Out"
+  "signOut": "Sign Out",
+  "@signOut": {
+    "description": "Label for signing out"
+  },
+  "appName": "RemedyMate",
+  "@appName": {
+    "description": "The name of the application"
+  },
+  "languageSwitch": "EN ↔ Amh",
+  "@languageSwitch": {
+    "description": "Text for language switch button, indicating English and Amharic"
+  },
+
+  "homeTitle": "Safe, Simple Health Guidance at Home",
+  "@homeTitle": {
+    "description": "Title displayed on the home screen"
+  },
+  "homeSubtitle": "Chat with RemedyMate for self-care tips in Amharic or English.",
+  "@homeSubtitle": {
+    "description": "Subtitle displayed on the home screen"
+  },
+  "startChat": "Start Chat",
+  "@startChat": {
+    "description": "Button label to start a chat"
+  },
+  "offline": "Offline",
+  "@offline": {
+    "description": "Status indicator for offline mode"
+  },
+  "quickAccessTitle": "Quick Access",
+  "@quickAccessTitle": {
+    "description": "Title for the quick access section"
+  },
+  "exploreTitle": "Explore",
+  "@exploreTitle": {
+    "description": "Title for the explore section"
+  },
+  "popularTopicsTitle": "Popular Topics",
+  "@popularTopicsTitle": {
+    "description": "Title for the popular topics section"
+  },
+  "localTipsTitle": "Local Tips",
+  "@localTipsTitle": {
+    "description": "Title for the local tips section"
+  },
+
+  "quickActionSymptomsTitle": "Check My Symptoms",
+  "@quickActionSymptomsTitle": {
+    "description": "Title for the 'Check My Symptoms' quick action"
+  },
+  "quickActionSymptomsSubtitle": "Start chat flow",
+  "@quickActionSymptomsSubtitle": {
+    "description": "Subtitle for the 'Check My Symptoms' quick action"
+  },
+  "quickActionLibraryTitle": "Offline Library",
+  "@quickActionLibraryTitle": {
+    "description": "Title for the 'Offline Library' quick action"
+  },
+  "quickActionLibrarySubtitle": "Cached topics",
+  "@quickActionLibrarySubtitle": {
+    "description": "Subtitle for the 'Offline Library' quick action"
+  },
+  "quickActionSavedTitle": "Saved Sessions",
+  "@quickActionSavedTitle": {
+    "description": "Title for the 'Saved Sessions' quick action"
+  },
+  "quickActionSavedSubtitle": "Last 10 chats",
+  "@quickActionSavedSubtitle": {
+    "description": "Subtitle for the 'Saved Sessions' quick action"
+  },
+  "quickActionEmergencyTitle": "Emergency Help",
+  "@quickActionEmergencyTitle": {
+    "description": "Title for the 'Emergency Help' quick action"
+  },
+  "quickActionEmergencySubtitle": "Urgent assistance",
+  "@quickActionEmergencySubtitle": {
+    "description": "Subtitle for the 'Emergency Help' quick action"
+  },
+
+  "popularTopicCold": "Cold",
+  "@popularTopicCold": {
+    "description": "Popular topic: Cold"
+  },
+  "popularTopicHeadache": "Headache",
+  "@popularTopicHeadache": {
+    "description": "Popular topic: Headache"
+  },
+  "popularTopicHeartburn": "Heartburn",
+  "@popularTopicHeartburn": {
+    "description": "Popular topic: Heartburn"
+  },
+  "popularTopicMotionSickness": "Motion Sicknes",
+  "@popularTopicMotionSickness": {
+    "description": "Popular topic: Motion Sickness"
+  },
+
+  "localTipRemedies": "Safe home remedies",
+  "@localTipRemedies": {
+    "description": "Local tip: Safe home remedies"
+  },
+  "localTipWarnings": "Important warnings",
+  "@localTipWarnings": {
+    "description": "Local tip: Important warnings"
+  },
+  "disclaimerText": "RemedyMate gives general info only. Not medical advice.",
+  "@disclaimerText": {
+    "description": "Disclaimer text regarding medical advice"
+  },
+  "learnMore": "Learn More",
+  "@learnMore": {
+    "description": "Button label to learn more"
+  }
 }

@@ -12,4 +12,11 @@ class AppColors {
   static const Color appBarColor = Color(0xFFE5E7EB);
   static const Color border = Colors.grey;
   static const Color black = Colors.black;
+  static Color backgrounddisclaimer = const Color(0xFFFFF3E0);
+
+  // Additional colors for consistency
+  static const Color accentGreenDarkText = Color(0xff004D40);
+  static const Color emergencyRedLight = Color(0xffFFCDD2);
+
+  static const Color white = Colors.white;
 }
