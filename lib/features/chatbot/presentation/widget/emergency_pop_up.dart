@@ -75,7 +75,7 @@ class EmergencyModal {
                         },
                         child: Text(
                           AppLocalizations.of(context)!.call,
-                          style: TextStyle(color: Colors.white),
+                          style: const TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
