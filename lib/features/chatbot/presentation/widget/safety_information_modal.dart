@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/l10n/arb/app_localizations.dart';
+
 class SafetyInformationModal extends StatelessWidget {
   const SafetyInformationModal({super.key});
 
@@ -30,8 +32,8 @@ class SafetyInformationModal extends StatelessWidget {
           children: [
             _buildCloseButton(context),
             const SizedBox(height: 10),
-            const Text(
-              'Important Safety Information',
+            Text(
+              AppLocalizations.of(context)!.importantSafetyInfo,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 15),

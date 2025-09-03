@@ -100,4 +100,89 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get signOut => 'ዘግተው ይውጡ';
+
+  @override
+  String get aiChatSessions => 'የ AI ውይይት ክፍሎች';
+
+  @override
+  String get chatHistory => 'የውይይት ታሪክ';
+
+  @override
+  String get offline => 'ኦፍላይን';
+
+  @override
+  String get enAmToggle => 'EN ↔ አማ';
+
+  @override
+  String get symptomChecker => 'የምልክት ተቆጣሪ';
+
+  @override
+  String get welcomeMessage =>
+      'ሰላም! እኔ ሪመዲሜት ነኝ። የምልክቶችዎን ለመረዳት እና ደህንነቱ የተጠበቀ የራስ-እንክብካቤ መመሪያ ለመስጠት እረዳለሁ። ዛሬ ምን ዓይነት ምልክቶች አሉዎት?';
+
+  @override
+  String get quickChipToday => 'ዛሬ';
+
+  @override
+  String get quickChipYesterday => 'ትናንት';
+
+  @override
+  String get quickChipOneWeek => '1 ሳምንት';
+
+  @override
+  String get quickChipSeverePain => 'ከባድ ህመም';
+
+  @override
+  String get typeYourMessage => 'መልእክትዎን ይተይቡ...';
+
+  @override
+  String get send => 'ላክ';
+
+  @override
+  String get offlineMessage => 'ከመስመር ውጭ — በጥቂት መምሪያ ላይ መጠቀም';
+
+  @override
+  String get back => 'ተመለስ';
+
+  @override
+  String get selfCareSteps => '✔ ራስ-እንክብካቤ ደረጃዎች';
+
+  @override
+  String get otcReliefOptions => '💊 የውጭ መድሃኒቶች አማራጮች';
+
+  @override
+  String get seekMedicalCareIf => '🚨 ሕክምና ማግኘት ካስፈለገ';
+
+  @override
+  String get flagRed => 'አስፈላጊ — አስቸኳይ ሕክምና ይፈልጉ';
+
+  @override
+  String get flagYellow => 'በቅርብ ይከታተሉ\nምልክቶች እንዲመጣ ተጠንቀቁ';
+
+  @override
+  String get flagGreen => 'ምልክቶች ቀላል — ራስዎን መቆጣጠር ይቻላል';
+
+  @override
+  String get flagGeneral => 'አጠቃላይ መመሪያ';
+
+  @override
+  String get emergencyNumbers => 'አስቸኳይ ቁጥሮች';
+
+  @override
+  String get call => 'ይደውሉ';
+
+  @override
+  String get close => 'ዝጋ';
+
+  @override
+  String get emergencyServices => 'አስቸኳይ አገልግሎቶች';
+
+  @override
+  String get poisonControl => 'የተፈሰሰ ንጥረ ነገር መቆጣጠሪያ';
+
+  @override
+  String get mentalHealthCrisis => 'የአእምሮ ጤና ከባድ ሁኔታ';
+
+  @override
+  String get importantSafetyInfo => 'አስፈላጊ የደህንነት መረጃ';
 }

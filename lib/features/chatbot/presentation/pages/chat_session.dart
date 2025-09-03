@@ -36,9 +36,9 @@ class ChatHistoryPage extends StatelessWidget {
               ),
               const SizedBox(width: 6),
               // Title
-              const Text(
-                'AI Chat Sessions',
-                style: TextStyle(color: AppColors.drawerTextColor, fontSize: 20),
+              Text(
+                AppLocalizations.of(context)!.aiChatSessions,
+                style: const TextStyle(color: AppColors.drawerTextColor, fontSize: 20),
               ),
 
               const Spacer(), // Push buttons to the right
@@ -57,9 +57,9 @@ class ChatHistoryPage extends StatelessWidget {
                     minimumSize: const Size(40, 20), // make button smaller
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   ),
-                  child: const Text(
-                    'Offline',
-                    style: TextStyle(color: AppColors.drawerTextColor, fontSize: 12),
+                  child: Text(
+                    AppLocalizations.of(context)!.offline,
+                    style: const TextStyle(color: AppColors.drawerTextColor, fontSize: 12),
                   ),
                 ),
               ),
@@ -80,9 +80,9 @@ class ChatHistoryPage extends StatelessWidget {
                     minimumSize: const Size(40, 20),
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   ),
-                  child: const  Text(
-                    'EN ↔ AM',
-                    style: TextStyle(color: AppColors.drawerBackground, fontSize: 12),
+                  child: Text(
+                    AppLocalizations.of(context)!.enAmToggle,
+                    style: const TextStyle(color: AppColors.drawerBackground, fontSize: 12),
                   ),
                 ),
               ),

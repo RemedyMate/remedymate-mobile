@@ -100,4 +100,89 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get signOut => 'Sign Out';
+
+  @override
+  String get aiChatSessions => 'AI Chat Sessions';
+
+  @override
+  String get chatHistory => 'Chat History';
+
+  @override
+  String get offline => 'Offline';
+
+  @override
+  String get enAmToggle => 'EN ↔ AM';
+
+  @override
+  String get symptomChecker => 'Symptom Checker';
+
+  @override
+  String get welcomeMessage =>
+      'Hello! I\'m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?';
+
+  @override
+  String get quickChipToday => 'Today';
+
+  @override
+  String get quickChipYesterday => 'Yesterday';
+
+  @override
+  String get quickChipOneWeek => '1 Week';
+
+  @override
+  String get quickChipSeverePain => 'Severe pain';
+
+  @override
+  String get typeYourMessage => 'Type your message...';
+
+  @override
+  String get send => 'SEND';
+
+  @override
+  String get offlineMessage => 'Offline — using limited guidance';
+
+  @override
+  String get back => 'Back';
+
+  @override
+  String get selfCareSteps => '✔ Self-Care Steps';
+
+  @override
+  String get otcReliefOptions => '💊 OTC Relief Options';
+
+  @override
+  String get seekMedicalCareIf => '🚨 Seek Medical Care If';
+
+  @override
+  String get flagRed => 'Critical — Seek immediate medical attention';
+
+  @override
+  String get flagYellow => 'Monitor closely\nWatch for worsening symptoms';
+
+  @override
+  String get flagGreen => 'Mild symptoms — Safe to self-manage';
+
+  @override
+  String get flagGeneral => 'General guidance';
+
+  @override
+  String get emergencyNumbers => 'Emergency Numbers';
+
+  @override
+  String get call => 'Call';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get emergencyServices => 'Emergency Services';
+
+  @override
+  String get poisonControl => 'Poison Control';
+
+  @override
+  String get mentalHealthCrisis => 'Mental Health Crisis';
+
+  @override
+  String get importantSafetyInfo => 'Important Safety Information';
 }
