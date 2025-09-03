@@ -8,4 +8,8 @@ class AppColors {
   static const Color background = Color(0xFFF1F5F9);
   static const Color drawerBackground = Color(0xFFE5E7EB);
   static const Color drawerTextColor = Color(0xFF4B5563);
+  static const Color tileBackground = Color(0xFFFFFFFF);
+  static const Color appBarColor = Color(0xFFE5E7EB);
+  static const Color border = Colors.grey;
+  static const Color black = Colors.black;
 }

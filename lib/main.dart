@@ -1,9 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'features/Chatbot/presentation/bloc/chatbot_bloc.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'dependency_injection.dart' as di;
+import 'features/chatbot/domain/usecases/start_chat_usecase.dart';
+import 'features/chatbot/presentation/bloc/chatbot_bloc.dart';
+import 'features/chatbot/presentation/pages/chat.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize dependencies
+  try {
+    di.init();
+    runApp(const MyApp());
+  } catch (e) {
+    // Fallback in case dependency injection fails
+    runApp(
+      const MaterialApp(
+        home: Scaffold(
+          body: Center(
+            child: Text('Failed to initialize app. Please restart.'),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -11,12 +32,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ChatbotBloc(),
+      create: (context) =>
+          ChatbotBloc(startChatUseCase: di.sl<StartChatUseCase>())
+            ..add(LoadChatSessions()),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'ChatBot',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
+        home: const SymptomCheckerPage(),
       ),
     );
   }

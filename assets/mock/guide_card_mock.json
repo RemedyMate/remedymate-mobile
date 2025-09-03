@@ -1,0 +1,32 @@
+{
+  "compose": {
+    "flag": "YELLOW",
+
+    "safe-care": [
+      "Stay hydrated - drink plenty of water",
+      "Rest in a quiet, dark room",
+      "Apply a cold or warm compress to your head",
+      "Avoid bright lights and loud sounds",
+      "Try gentle neck and shoulder stretches"
+    ],
+
+    "otc": [
+      "Paracetamol 500mg every 4–6 hours (if available)",
+      "Ibuprofen 200–400mg every 6–8 hours (if no allergies)",
+      "Do not exceed recommended doses"
+    ],
+
+    "medical": [
+      "Severe, sudden headache unlike any before",
+      "Headache with fever, stiff neck, or rash",
+      "Vision changes or confusion",
+      "Headache after head injury",
+      "Worsening pain despite treatment"
+    ]
+  },
+
+  "followup": {
+    "question": "Do you have a fever?"
+    
+  }
+}

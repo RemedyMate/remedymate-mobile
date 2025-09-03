@@ -1,0 +1,39 @@
+{
+  "@@locale": "en",
+  "settings": "Settings",
+  "guestUser": "Guest User",
+  "anonymousSession": "Anonymous Session",
+  "editProfile": "Edit Profile",
+
+  "account": "Account",
+  "manageProfile": "Manage Profile",
+  "manageProfileSubtitle": "Update your information",
+  "savedSessions": "Saved Sessions",
+  "savedSessionsSubtitle": "View chat history",
+  "notifications": "Notifications",
+  "notificationsSubtitle": "Manage alerts",
+
+  "preferences": "Preferences",
+  "language": "Language",
+  "languageSubtitle": "English ↔ Amharic",
+  "textSize": "Text Size",
+  "textSizeSubtitle": "Adjust readability",
+  "offlineMode": "Offline Mode",
+  "offlineModeSubtitle": "Cache content locally",
+
+  "support": "Support",
+  "faq": "FAQ & Help Center",
+  "faqSubtitle": "Common questions",
+  "contactSupport": "Contact Support",
+  "contactSupportSubtitle": "Get help from our team",
+  "emergencyHelp": "Emergency Help",
+  "emergencyHelpSubtitle": "Urgent assistance",
+
+  "about": "About",
+  "terms": "Terms & Privacy Policy",
+  "termsSubtitle": "Legal information",
+  "versionInfo": "Version Info",
+  "versionInfoSubtitle": "RemedyMate v2.1.0",
+
+  "signOut": "Sign Out"
+}

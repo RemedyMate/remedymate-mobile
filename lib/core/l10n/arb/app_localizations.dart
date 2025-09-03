@@ -97,6 +97,192 @@ abstract class AppLocalizations {
     Locale('am'),
     Locale('en'),
   ];
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @guestUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Guest User'**
+  String get guestUser;
+
+  /// No description provided for @anonymousSession.
+  ///
+  /// In en, this message translates to:
+  /// **'Anonymous Session'**
+  String get anonymousSession;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
+  /// No description provided for @account.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get account;
+
+  /// No description provided for @manageProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage Profile'**
+  String get manageProfile;
+
+  /// No description provided for @manageProfileSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Update your information'**
+  String get manageProfileSubtitle;
+
+  /// No description provided for @savedSessions.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved Sessions'**
+  String get savedSessions;
+
+  /// No description provided for @savedSessionsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'View chat history'**
+  String get savedSessionsSubtitle;
+
+  /// No description provided for @notifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notifications;
+
+  /// No description provided for @notificationsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage alerts'**
+  String get notificationsSubtitle;
+
+  /// No description provided for @preferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences'**
+  String get preferences;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @languageSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'English ↔ Amharic'**
+  String get languageSubtitle;
+
+  /// No description provided for @textSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Text Size'**
+  String get textSize;
+
+  /// No description provided for @textSizeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust readability'**
+  String get textSizeSubtitle;
+
+  /// No description provided for @offlineMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline Mode'**
+  String get offlineMode;
+
+  /// No description provided for @offlineModeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cache content locally'**
+  String get offlineModeSubtitle;
+
+  /// No description provided for @support.
+  ///
+  /// In en, this message translates to:
+  /// **'Support'**
+  String get support;
+
+  /// No description provided for @faq.
+  ///
+  /// In en, this message translates to:
+  /// **'FAQ & Help Center'**
+  String get faq;
+
+  /// No description provided for @faqSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Common questions'**
+  String get faqSubtitle;
+
+  /// No description provided for @contactSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Support'**
+  String get contactSupport;
+
+  /// No description provided for @contactSupportSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Get help from our team'**
+  String get contactSupportSubtitle;
+
+  /// No description provided for @emergencyHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency Help'**
+  String get emergencyHelp;
+
+  /// No description provided for @emergencyHelpSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Urgent assistance'**
+  String get emergencyHelpSubtitle;
+
+  /// No description provided for @about.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get about;
+
+  /// No description provided for @terms.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms & Privacy Policy'**
+  String get terms;
+
+  /// No description provided for @termsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Legal information'**
+  String get termsSubtitle;
+
+  /// No description provided for @versionInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Version Info'**
+  String get versionInfo;
+
+  /// No description provided for @versionInfoSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'RemedyMate v2.1.0'**
+  String get versionInfoSubtitle;
+
+  /// No description provided for @signOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out'**
+  String get signOut;
 }
 
 class _AppLocalizationsDelegate
