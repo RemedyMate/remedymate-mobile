@@ -14,23 +14,27 @@ import 'features/chatbot/presentation/bloc/chatbot_bloc.dart';
 final sl = GetIt.instance;
 
 Future<void> init() async {
-  // Init Hive
-  await Hive.initFlutter();
-  Hive.registerAdapter(MessageModelAdapter());
+ await Hive.initFlutter();
 
-  final chatBox = await Hive.openBox('chat_cache');
+// Register the Hive adapter for MessageModel
+Hive.registerAdapter(MessageModelAdapter());
 
-  // Register HiveCacheStore for sessions
-  sl.registerSingleton<CacheStore<String, List<MessageModel>>>(
-    HiveCacheStore<String, List<MessageModel>>(
-      chatBox,
-      const CachePolicy(
-        maxItems: 10, // max 10 sessions
-        evictionPolicy: EvictionPolicy.lru,
-        keys: [],
-      ),
+// Open the Hive box for chat cache
+final chatBox = await Hive.openBox('chat_cache');
+
+// Register HiveCacheStore for sessions in your service locator
+sl.registerSingleton<CacheStore<String, List<MessageModel>>>(
+  HiveCacheStore<String>(
+    chatBox,
+    // ignore: prefer_const_constructors
+    CachePolicy(
+      maxItems: 10, // maximum 10 sessions
+      evictionPolicy: EvictionPolicy.lru,
+      keys: [], // modifiable list
     ),
-  );
+  ),
+);
+
 
   sl.registerLazySingleton<GuideDataSource>(() => MockGuideDataSource());
   sl.registerLazySingleton<GuideRepository>(() => GuideRepositoryImpl(sl()));

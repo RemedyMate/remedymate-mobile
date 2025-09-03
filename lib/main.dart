@@ -19,7 +19,7 @@ Future<void> main() async {
     // Example: Using Hive cache to pre-fill messages
     final chatCache = sl<CacheStore<String, List<MessageModel>>>();
 
-    await chatCache.addMessage('session1', [
+    await chatCache.addMessage('session3', [
       MessageModel(
         id: '1',
         content: 'Hello, how can I help you today?',
@@ -28,7 +28,7 @@ Future<void> main() async {
       ),
     ]);
 
-    await chatCache.addMessage('session1', [
+    await chatCache.addMessage('session3', [
       MessageModel(
         id: '2',
         content: 'How are you?',
@@ -39,20 +39,24 @@ Future<void> main() async {
 
     final messages = await chatCache.get('session1');
     if (messages != null) {
-      print('Messages in session1:');
+      debugPrint('Messages in session3:');
       for (var msg in messages) {
-        print('${DateFormat.Hms().format(msg.timeStamp)}: ${msg.content}');
+        debugPrint('${msg.id}${msg.isUser ? 'You: ' : 'Bot: '} ${DateFormat.Hms().format(msg.timeStamp)}: ${msg.content}');
       }
+
+      chatCache.clearMessages('session3');
+      // chatCache.getAll().then((value) => debugPrint('All sessions: $value'));
+
     }
 
     runApp(const MyApp());
   } catch (e) {
     // Fallback if initialization fails
     runApp(
-      const MaterialApp(
+      MaterialApp(
         home: Scaffold(
           body: Center(
-            child: Text('Failed to initialize app. Please restart.'),
+            child: Text('Failed to initialize app. Please restart. $e'),
           ),
         ),
       ),

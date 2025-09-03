@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -36,10 +38,10 @@ Future<void> main() async {
   // Retrieve messages for session1
   final messages = await chatCache.get('session1');
 
-  print('Messages in session1:');
+  debugPrint('Messages in session1:');
   if (messages != null) {
     for (var msg in messages) {
-      print('${DateFormat.Hms().format(msg.timeStamp)}: ${msg.content}');
+      debugPrint('${DateFormat.Hms().format(msg.timeStamp)}: ${msg.content}');
     }
   }
 

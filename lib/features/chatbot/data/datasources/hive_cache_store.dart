@@ -1,10 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import '../../../../core/cache/cache_policy.dart';
 import '../../../../core/cache/cache_store.dart';
 import '../models/message_model.dart';
 
-class HiveCacheStore<K, V> implements CacheStore<K, V> {
+class HiveCacheStore<K> implements CacheStore<K, List<MessageModel>> {
   final Box _box;
   final CachePolicy policy;
 
@@ -35,13 +36,17 @@ class HiveCacheStore<K, V> implements CacheStore<K, V> {
   }
 
   Future<void> _updateAccessOrder(K key) async {
-    policy.keys.remove(key);
+    if (policy.keys.contains(key)) {
+      policy.keys.remove(key);
+    } else {
+      policy.keys.add(key);
+    }
     policy.keys.add(key);
     await _saveKeys();
   }
 
   @override
-  Future<void> put(K key, V value) async {
+  Future<void> put(K key, List<MessageModel> value) async {
     await _evictIfNeeded();
     await _box.put(key, value);
 
@@ -54,8 +59,8 @@ class HiveCacheStore<K, V> implements CacheStore<K, V> {
   }
 
   @override
-  Future<V?> get(K key) async {
-    final value = _box.get(key) as V?;
+  Future<List<MessageModel>?> get(K key) async {
+    final value = (_box.get(key) as List<dynamic>?)?.cast<MessageModel>();
     if (value != null && policy.evictionPolicy == EvictionPolicy.lru) {
       await _updateAccessOrder(key);
     }
@@ -70,12 +75,13 @@ class HiveCacheStore<K, V> implements CacheStore<K, V> {
   }
 
   @override
-  Future<List<V>> getAll() async {
+  Future<List<List<MessageModel>>> getAll() async {
     await _loadKeys();
-    final values = <V>[];
+    final values = <List<MessageModel>>[];
+    debugPrint('All sessions keys are: ${policy.keys}');
     for (var key in policy.keys) {
-      final value = _box.get(key);
-      if (value != null) values.add(value as V);
+      final value = (_box.get(key) as List<dynamic>?)?.cast<MessageModel>();
+      if (value != null) values.add(value);
     }
     return values;
   }
@@ -87,33 +93,30 @@ class HiveCacheStore<K, V> implements CacheStore<K, V> {
     await _saveKeys();
   }
 
+  // ===== Message-specific methods =====
+
   @override
-  Future<String> addMessage(K key, V message) async {
-    // cast message to single MessageModel
-    final singleMessage = message as MessageModel;
+  Future<String> addMessage(K key, List<MessageModel> messages) async {
+    final current = (await get(key)) ?? [];
+    current.addAll(messages); // add multiple messages
 
-    // get current messages list
-    final current = (await get(key)) as List<MessageModel>? ?? [];
-    current.add(singleMessage);
-
-    // save updated list
     try {
-      await put(key, current as V);
-      return 'Message added in $key';
+      await put(key, current);
+      return 'Messages added in $key';
     } on Exception catch (e) {
-      return 'Failed to add message: $e';
+      return 'Failed to add messages: $e';
     }
   }
 
   @override
   Future<void> removeMessage(K key, String messageId) async {
-    final current = (await get(key)) as List<MessageModel>? ?? [];
+    final current = (await get(key)) ?? [];
     current.removeWhere((msg) => msg.id == messageId);
-    await put(key, current as V);
+    await put(key, current);
   }
 
   @override
   Future<void> clearMessages(K key) async {
-    await put(key, [] as V);
+    await put(key, []);
   }
 }
