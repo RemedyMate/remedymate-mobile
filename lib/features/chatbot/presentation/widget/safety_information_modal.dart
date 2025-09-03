@@ -34,7 +34,7 @@ class SafetyInformationModal extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               AppLocalizations.of(context)!.importantSafetyInfo,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 15),
             ..._safetyTexts.map(
