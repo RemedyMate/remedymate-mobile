@@ -4,7 +4,7 @@ import '../../../../core/cache/cache_policy.dart';
 import '../../../../core/cache/cache_store.dart';
 import '../models/message_model.dart';
 
-class HiveCacheStore<K, V> extends CacheStore<K, V> {
+class HiveCacheStore<K, V> implements CacheStore<K, V> {
   final Box _box;
   final CachePolicy policy;
 
@@ -89,14 +89,20 @@ class HiveCacheStore<K, V> extends CacheStore<K, V> {
 
   @override
   Future<String> addMessage(K key, V message) async {
+    // cast message to single MessageModel
     final singleMessage = message as MessageModel;
 
+    // get current messages list
     final current = (await get(key)) as List<MessageModel>? ?? [];
     current.add(singleMessage);
 
-    await put(key, current as V);
-
-    return 'Message added in $key';
+    // save updated list
+    try {
+      await put(key, current as V);
+      return 'Message added in $key';
+    } on Exception catch (e) {
+      return 'Failed to add message: $e';
+    }
   }
 
   @override
@@ -110,5 +116,4 @@ class HiveCacheStore<K, V> extends CacheStore<K, V> {
   Future<void> clearMessages(K key) async {
     await put(key, [] as V);
   }
-
 }
