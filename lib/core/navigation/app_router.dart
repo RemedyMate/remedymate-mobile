@@ -26,7 +26,7 @@ GoRouter router(void Function(Locale) onLocaleChanged) {
             routes: [
               GoRoute(
                 path: '/chats',
-                builder: (context, state) => const SymptomCheckerPage(),
+                builder: (context, state) => SymptomCheckerPage(onLocaleChanged: onLocaleChanged),
               ),
             ],
           ),
