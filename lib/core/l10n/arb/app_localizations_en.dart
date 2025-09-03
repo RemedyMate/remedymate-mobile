@@ -100,6 +100,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get signOut => 'Sign Out';
+
+  @override
   String get appName => 'RemedyMate';
 
   @override
@@ -164,7 +166,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get popularTopicHeartburn => 'Heartburn';
 
   @override
-  String get popularTopicMotionSickness => 'Motion Sickness';
+  String get popularTopicMotionSickness => 'Motion Sicknes';
 
   @override
   String get localTipRemedies => 'Safe home remedies';

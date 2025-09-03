@@ -166,7 +166,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get popularTopicHeartburn => 'Heartburn';
 
   @override
-  String get popularTopicMotionSickness => 'Motion Sickness';
+  String get popularTopicMotionSickness => 'Motion Sicknes';
 
   @override
   String get localTipRemedies => 'Safe home remedies';
