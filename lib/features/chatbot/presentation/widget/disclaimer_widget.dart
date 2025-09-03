@@ -13,14 +13,13 @@ class DisclaimerWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color:AppColors.backgrounddisclaimer,
+        color: AppColors.backgrounddisclaimer,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color:AppColors.redTriage,),
+        border: Border.all(color: AppColors.redTriage),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-     
           const Icon(
             Icons.warning_amber_rounded,
             color: AppColors.redTriage,
@@ -28,7 +27,7 @@ class DisclaimerWidget extends StatelessWidget {
           ),
           const SizedBox(width: 12),
 
-          Flexible( 
+          Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -41,7 +40,7 @@ class DisclaimerWidget extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    print('Learn More about disclaimer tapped');
+                    debugPrint('Learn More about disclaimer tapped');
                   },
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
@@ -52,7 +51,7 @@ class DisclaimerWidget extends StatelessWidget {
                     l10n.learnMore,
                     style: const TextStyle(
                       fontFamily: 'Inter',
-                      color:AppColors.redTriage,
+                      color: AppColors.redTriage,
                       fontWeight: FontWeight.bold,
                       decoration: TextDecoration.underline,
                     ),
@@ -61,7 +60,6 @@ class DisclaimerWidget extends StatelessWidget {
               ],
             ),
           ),
-        
         ],
       ),
     );
