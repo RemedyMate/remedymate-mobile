@@ -16,3 +16,5 @@ class AnswerFollowUpEvent extends ChatbotEvent {
 }
 
 class LoadChatSessions extends ChatbotEvent {}
+
+class LoadHomePageData extends ChatbotEvent {}
