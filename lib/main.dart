@@ -6,6 +6,7 @@ import 'features/chatbot/domain/usecases/start_chat_usecase.dart';
 import 'features/chatbot/presentation/bloc/chatbot_bloc.dart';
 import 'features/chatbot/presentation/pages/chat.dart';
 import 'features/chatbot/presentation/pages/chat_session.dart';
+import 'app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +14,7 @@ void main() async {
   try {
     // Initialize dependencies
     di.init();
-    runApp(const MyApp());
+    runApp(const App());
   } catch (e) {
     // Fallback in case dependency injection fails
     runApp(
@@ -27,6 +28,7 @@ void main() async {
     );
   }
 }
+
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});

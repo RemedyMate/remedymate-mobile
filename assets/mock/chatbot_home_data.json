@@ -1,0 +1,30 @@
+{
+  "quickActions": [
+    {
+      "titleKey": "quickActionSymptomsTitle",
+      "subtitleKey": "quickActionSymptomsSubtitle"
+    },
+    {
+      "titleKey": "quickActionLibraryTitle",
+      "subtitleKey": "quickActionLibrarySubtitle"
+    },
+    {
+      "titleKey": "quickActionSavedTitle",
+      "subtitleKey": "quickActionSavedSubtitle"
+    },
+    {
+      "titleKey": "quickActionEmergencyTitle",
+      "subtitleKey": "quickActionEmergencySubtitle"
+    }
+  ],
+  "popularTopics": [
+    "popularTopicCold",
+    "popularTopicHeadache",
+    "popularTopicHeartburn",
+    "popularTopicMotionSickness"
+  ],
+  "localTips": [
+    "localTipRemedies",
+    "localTipWarnings"
+  ]
+}
