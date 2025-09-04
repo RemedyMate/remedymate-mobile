@@ -1,6 +1,5 @@
 {
   "@@locale": "en",
-
   "settings": "Settings",
   "@settings": {
     "description": "Label for the settings section"
@@ -217,7 +216,7 @@
   "@popularTopicHeartburn": {
     "description": "Popular topic: Heartburn"
   },
-  "popularTopicMotionSickness": "Motion Sicknes",
+  "popularTopicMotionSickness": "Motion Sickness",
   "@popularTopicMotionSickness": {
     "description": "Popular topic: Motion Sickness"
   },

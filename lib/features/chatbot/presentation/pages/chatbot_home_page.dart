@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/l10n/arb/app_localizations.dart';
 import '../bloc/chatbot_bloc.dart';
+import '../pages/chat.dart';
 import '../widget/disclaimer_widget.dart';
 import '../widget/home_header.dart';
 import '../widget/quick_access_card.dart';
@@ -134,7 +136,16 @@ class ChatbotHomePage extends StatelessWidget {
                       icon: Icons.medical_services_outlined,
                       iconContainerColor: AppColors.background,
                       iconColor: AppColors.redTriage,
-                      onTap: () {},
+                      onTap: () {
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SymptomCheckerPage(),
+                          ),
+                        );
+
+                      },
                     ),
                     QuickAccessCard(
                       title: l10n.quickActionLibraryTitle,

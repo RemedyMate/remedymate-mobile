@@ -413,7 +413,7 @@ abstract class AppLocalizations {
   /// Popular topic: Motion Sickness
   ///
   /// In en, this message translates to:
-  /// **'Motion Sicknes'**
+  /// **'Motion Sickness'**
   String get popularTopicMotionSickness;
 
   /// Local tip: Safe home remedies
