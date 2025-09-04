@@ -25,7 +25,6 @@ class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
     String symptoms,
     String language,
   ) async {
-    print("Starting chat with symptoms: $symptoms and language: $language");
     try {
       final response = await apiClient.post('/conversation/', {
         'symptom': symptoms,
@@ -35,7 +34,6 @@ class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
     } on ApiException catch (e) {
       return Left(ServerFailure(e.message));
     } catch (e) {
-      print("Unexpected error occurred: $e");
       return Left(UnexpectedFailure(e.toString()));
     }
   }

@@ -13,9 +13,7 @@ sealed class ChatMessageModel extends Equatable {
 
   /// Factory for decoding from JSON
   factory ChatMessageModel.fromJson(Map<String, dynamic> json) {
-    print("Decoding ChatMessageModel from JSON: $json");
     if (json.containsKey('question')) {
-      print("Detected FollowUpMessage structure");
       return FollowUpMessageModel.fromJson(json);
     }
 

@@ -14,7 +14,6 @@ class StartChatUseCase {
     String language,
   ) async {
     final result = await repository.startChat(symptoms, language);
-    print("StartChatUseCase result: $result");
     return result;
   }
 }

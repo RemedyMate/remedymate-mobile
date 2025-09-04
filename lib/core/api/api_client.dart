@@ -41,16 +41,12 @@ class ApiClient {
     try {
       final res = await _dio.post(endpoint, data: body);
       final data = res.data;
-      print(
-        "+++++++++++++++++++++++++++++++ ${res.data} +++++++++++++++++++++++++++++++",
-      );
       if (data is Map<String, dynamic>) return data;
       throw ApiException(
         'Expected JSON object but got ${data.runtimeType}',
         statusCode: res.statusCode,
       );
     } on DioException catch (e) {
-      print("Dio Error: ${e.response?.statusCode} ${e.response?.realUri}");
       throw ApiException.fromDioError(e);
     }
   }

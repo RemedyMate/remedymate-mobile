@@ -39,13 +39,11 @@ class ChatRepositoryImpl implements ChatRepository {
         timestamp: message.timestamp,
       );
       final result = await dataSource.answerFollowUp(model);
-      print("ChatRepositoryImpl answerFollowUp result: $result");
       return result.fold(
         (failure) => Left(failure),
         (message) => Right(message.toEntity()),
       );
     } catch (e) {
-      print("Error in answerFollowUp: $e");
       return Left(ServerFailure(e.toString()));
     }
   }

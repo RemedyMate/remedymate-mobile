@@ -10,7 +10,7 @@ class SafetyInformationModal extends StatelessWidget {
     showGeneralDialog(
       context: context,
       barrierDismissible: false,
-      barrierColor: Colors.black.withOpacity(0.5),
+      barrierColor: Colors.black.withValues(alpha: 0.5),
       transitionDuration: const Duration(milliseconds: 300),
       pageBuilder: (context, _, __) => const SafetyInformationModal(),
       transitionBuilder: (context, animation, secondaryAnimation, child) {
