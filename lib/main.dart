@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'app.dart';
 import 'dependency_injection.dart' as di;
 import 'features/chatbot/domain/usecases/start_chat_usecase.dart';
 import 'features/chatbot/presentation/bloc/chatbot_bloc.dart';
-import 'app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
