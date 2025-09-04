@@ -1,39 +1,312 @@
 {
-  "@@locale": "am",
-  "settings": "ቅንብሮች",
-  "guestUser": "እንግዳ ተጠቃሚ",
-  "anonymousSession": "የማይታወቅ ክፍለ ጊዜ",
-  "editProfile": "መገለጫ አርትዕ",
-
-  "account": "መለያ",
-  "manageProfile": "መገለጫ አስተዳደር",
-  "manageProfileSubtitle": "መረጃዎን ያዘምኑ",
-  "savedSessions": "የተቀመጡ ክፍለ ጊዜዎች",
-  "savedSessionsSubtitle": "የውይይት ታሪክ ይመልከቱ",
-  "notifications": "ማሳወቂያዎች",
-  "notificationsSubtitle": "ማሳወቂያዎችን ያስተዳድሩ",
-
-  "preferences": "ምርጫዎች",
-  "language": "ቋንቋ",
-  "languageSubtitle": "እንግሊዝኛ ↔ አማርኛ",
-  "textSize": "የጽሑፍ መጠን",
-  "textSizeSubtitle": "ንባብን ለማሻሻል",
-  "offlineMode": "ከመስመር ውጭ ሁነታ",
-  "offlineModeSubtitle": "ይዘቶችን በአካባቢ ያስቀምጡ",
-
-  "support": "ድጋፍ",
-  "faq": "ተደጋጋሚ ጥያቄዎች",
-  "faqSubtitle": "የተለመዱ ጥያቄዎች",
-  "contactSupport": "ድጋፍን ያነጋግሩ",
-  "contactSupportSubtitle": "ከቡድናችን ድጋፍ ያግኙ",
-  "emergencyHelp": "ድንገተኛ እርዳታ",
-  "emergencyHelpSubtitle": "አስቸኳይ እርዳታ",
-
-  "about": "ስለ እኛ",
-  "terms": "የአገልግሎት ውሎች እና የግላዊነት ፖሊሲ",
-  "termsSubtitle": "ህጋዊ መረጃ",
-  "versionInfo": "የስሪት መረጃ",
-  "versionInfoSubtitle": "RemedyMate ስሪት 2.1.0",
-
-  "signOut": "ዘግተው ይውጡ"
+    "@@locale": "am",
+    "settings": "ቅንብሮች",
+    "@settings": {
+        "description": "ቅንብሮች ክፍል መለያ"
+    },
+    "guestUser": "የእንግዳ ተጠቃሚ",
+    "@guestUser": {
+        "description": "የእንግዳ ተጠቃሚ መለያ"
+    },
+    "anonymousSession": "ያልታወቀ ክፍለ ጊዜ",
+    "@anonymousSession": {
+        "description": "ያልታወቀ ክፍለ ጊዜ መለያ"
+    },
+    "editProfile": "መገለጫ አስተካክል",
+    "@editProfile": {
+        "description": "የተጠቃሚ መገለጫ ለማስተካከል መለያ"
+    },
+    "account": "መለያ",
+    "@account": {
+        "description": "የመለያ ክፍል ራስጌ"
+    },
+    "manageProfile": "መገለጫ አስተዳድር",
+    "@manageProfile": {
+        "description": "የተጠቃሚ መገለጫ ለማስተዳደር መለያ"
+    },
+    "manageProfileSubtitle": "መረጃዎን ያዘምኑ",
+    "@manageProfileSubtitle": {
+        "description": "የመገለጫ አስተዳደር ንዑስ ርዕስ"
+    },
+    "savedSessions": "የተቀመጡ ክፍለ ጊዜዎች",
+    "@savedSessions": {
+        "description": "የተቀመጡ የውይይት ክፍለ ጊዜዎች መለያ"
+    },
+    "savedSessionsSubtitle": "የውይይት ታሪክ ይመልከቱ",
+    "@savedSessionsSubtitle": {
+        "description": "የተቀመጡ የውይይት ክፍለ ጊዜዎች ንዑስ ርዕስ"
+    },
+    "notifications": "ማሳወቂያዎች",
+    "@notifications": {
+        "description": "ማሳወቂያዎች መለያ"
+    },
+    "notificationsSubtitle": "ማንቂያዎችን ያቀናብሩ",
+    "@notificationsSubtitle": {
+        "description": "ማሳወቂያዎችን ለማስተዳደር ንዑስ ርዕስ"
+    },
+    "preferences": "ምርጫዎች",
+    "@preferences": {
+        "description": "የምርጫዎች ክፍል ራስጌ"
+    },
+    "language": "ቋንቋ",
+    "@language": {
+        "description": "የቋንቋ ምርጫ መለያ"
+    },
+    "languageSubtitle": "እንግሊዝኛ ↔ አማርኛ",
+    "@languageSubtitle": {
+        "description": "የቋንቋ ምርጫ ንዑስ ርዕስ፣ የአሁኑ ቋንቋዎችን ያሳያል"
+    },
+    "textSize": "የጽሁፍ መጠን",
+    "@textSize": {
+        "description": "የጽሁፍ መጠን ለማስተካከል መለያ"
+    },
+    "textSizeSubtitle": "ንባቡን ያስተካክሉ",
+    "@textSizeSubtitle": {
+        "description": "የጽሁፍ መጠን ለማስተካከል ንዑስ ርዕስ"
+    },
+    "offlineMode": "የከፍተኛ መጠቀሚያ ሁነታ",
+    "@offlineMode": {
+        "description": "የከፍተኛ መጠቀሚያ ሁነታ መለያ"
+    },
+    "offlineModeSubtitle": "ይዘቱን በአካባቢ ያከማቹ",
+    "@offlineModeSubtitle": {
+        "description": "የከፍተኛ መጠቀሚያ ሁነታ ንዑስ ርዕስ፣ ስለ ስራው ያብራራል"
+    },
+    "support": "ድጋፍ",
+    "@support": {
+        "description": "የድጋፍ ክፍል ራስጌ"
+    },
+    "faq": "የተደጋጋሚ ጥያቄዎች እና የእርዳታ ማዕከል",
+    "@faq": {
+        "description": "የተደጋጋሚ ጥያቄዎች እና የእርዳታ ማዕከል መለያ"
+    },
+    "faqSubtitle": "የተደጋጋሚ ጥያቄዎች",
+    "@faqSubtitle": {
+        "description": "የተደጋጋሚ ጥያቄዎች ንዑስ ርዕስ"
+    },
+    "contactSupport": "ድጋፍ ያግኙ",
+    "@contactSupport": {
+        "description": "ድጋፍ ለማግኘት መለያ"
+    },
+    "contactSupportSubtitle": "ከቡድናችን ድጋፍ ይውሰዱ",
+    "@contactSupportSubtitle": {
+        "description": "ድጋፍ ለማግኘት ንዑስ ርዕስ"
+    },
+    "emergencyHelp": "ድንገተኛ እርዳታ",
+    "@emergencyHelp": {
+        "description": "ድንገተኛ እርዳታ መለያ"
+    },
+    "emergencyHelpSubtitle": "አስቸኳይ እርዳታ",
+    "@emergencyHelpSubtitle": {
+        "description": "ድንገተኛ እርዳታ ንዑስ ርዕስ"
+    },
+    "about": "ስለ",
+    "@about": {
+        "description": "የስለ ክፍል ራስጌ"
+    },
+    "terms": "ውሎች እና የግላዊነት ፖሊሲ",
+    "@terms": {
+        "description": "የውሎች እና የግላዊነት ፖሊሲ መለያ"
+    },
+    "termsSubtitle": "የህግ መረጃ",
+    "@termsSubtitle": {
+        "description": "የውሎች እና የግላዊነት ፖሊሲ ንዑስ ርዕስ"
+    },
+    "versionInfo": "የስሪት መረጃ",
+    "@versionInfo": {
+        "description": "የስሪት መረጃ መለያ"
+    },
+    "versionInfoSubtitle": "RemedyMate v2.1.0",
+    "@versionInfoSubtitle": {
+        "description": "የስሪት መረጃ ንዑስ ርዕስ፣ የመተግበሪያውን ስሪት ያሳያል"
+    },
+    "signOut": "ውጣ",
+    "@signOut": {
+        "description": "ለመውጣት መለያ"
+    },
+    "appName": "ሪሚዲ ሜት",
+    "@appName": {
+        "description": "የመተግበሪያው ስም"
+    },
+    "languageSwitch": "እንግሊዝኛ ↔ አማርኛ",
+    "@languageSwitch": {
+        "description": "የቋንቋ መቀየሪያ ቁልፍ ጽሑፍ፣ እንግሊዝኛና አማርኛ ይጠቀማል"
+    },
+    "homeTitle": "በቤትዎ ውስጥ ደህና፣ ቀላል የጤና መመሪያ",
+    "@homeTitle": {
+        "description": "በመነሻ ገፅ ላይ የሚታየው ርዕስ"
+    },
+    "homeSubtitle": "ሪሚዲ ሜትን በአማርኛ ወይም በእንግሊዝኛ ለራስዎ የጤና ምክር ይጠይቁ።",
+    "@homeSubtitle": {
+        "description": "በመነሻ ገፅ ላይ የሚታየው ንዑስ ርዕስ"
+    },
+    "startChat": "ውይይት ጀምር",
+    "@startChat": {
+        "description": "ውይይት ለማስጀመር የቁልፍ መለያ"
+    },
+    "offline": "ከመስመር ውጭ",
+    "@offline": {
+        "description": "የከፍተኛ ሁነታ ማሳያ"
+    },
+    "quickAccessTitle": "ፈጣን መዳረሻ",
+    "@quickAccessTitle": {
+        "description": "የፈጣን መዳረሻ ክፍል ርዕስ"
+    },
+    "exploreTitle": "ያስሱ",
+    "@exploreTitle": {
+        "description": "የማስሱ ክፍል ርዕስ"
+    },
+    "popularTopicsTitle": "ታዋቂ ርዕሶች",
+    "@popularTopicsTitle": {
+        "description": "የታዋቂ ርዕሶች ክፍል ርዕስ"
+    },
+    "localTipsTitle": "የአካባቢ ምክሮች",
+    "@localTipsTitle": {
+        "description": "የአካባቢ ምክሮች ክፍል ርዕስ"
+    },
+    "quickActionSymptomsTitle": "ምልክቶቼን ይመርምሩ",
+    "@quickActionSymptomsTitle": {
+        "description": "የፈጣን ድርጊት፡ ምልክቶቼን ይመርምሩ"
+    },
+    "quickActionSymptomsSubtitle": "የውይይት ፍሰት ይጀምሩ",
+    "@quickActionSymptomsSubtitle": {
+        "description": "የፈጣን ድርጊት፡ ምልክቶቼን ይመርምሩ ንዑስ ርዕስ"
+    },
+    "quickActionLibraryTitle": "ከመስመር ውጭ ላይብረሪ",
+    "@quickActionLibraryTitle": {
+        "description": "የፈጣን ድርጊት፡ ከመስመር ውጭ ላይብረሪ"
+    },
+    "quickActionLibrarySubtitle": "የተቀመጡ ርዕሶች",
+    "@quickActionLibrarySubtitle": {
+        "description": "የፈጣን ድርጊት፡ ከመስመር ውጭ ላይብረሪ ንዑስ ርዕስ"
+    },
+    "quickActionSavedTitle": "የተቀመጡ ክፍለ ጊዜዎች",
+    "@quickActionSavedTitle": {
+        "description": "የፈጣን ድርጊት፡ የተቀመጡ ክፍለ ጊዜዎች"
+    },
+    "quickActionSavedSubtitle": "10 የመጨረሻ ውይይቶች",
+    "@quickActionSavedSubtitle": {
+        "description": "የፈጣን ድርጊት፡ የተቀመጡ ክፍለ ጊዜዎች ንዑስ ርዕስ"
+    },
+    "quickActionEmergencyTitle": "ድንገተኛ እርዳታ",
+    "@quickActionEmergencyTitle": {
+        "description": "የፈጣን ድርጊት፡ ድንገተኛ እርዳታ"
+    },
+    "quickActionEmergencySubtitle": "አስቸኳይ እርዳታ",
+    "@quickActionEmergencySubtitle": {
+        "description": "የፈጣን ድርጊት፡ ድንገተኛ እርዳታ ንዑስ ርዕስ"
+    },
+    "popularTopicCold": "ውሃ በሽታ",
+    "@popularTopicCold": {
+        "description": "ታዋቂ ርዕስ፡ ውሃ በሽታ"
+    },
+    "popularTopicHeadache": "ራስ ህመም",
+    "@popularTopicHeadache": {
+        "description": "ታዋቂ ርዕስ፡ ራስ ህመም"
+    },
+    "popularTopicHeartburn": "የልብ ቃጠሎ",
+    "@popularTopicHeartburn": {
+        "description": "ታዋቂ ርዕስ፡ የልብ ቃጠሎ"
+    },
+    "popularTopicMotionSickness": "የእንቅስቃሴ በሽታ",
+    "@popularTopicMotionSickness": {
+        "description": "ታዋቂ ርዕስ፡ የእንቅስቃሴ በሽታ"
+    },
+    "localTipRemedies": "ደህና የቤት መድሀኒቶች",
+    "@localTipRemedies": {
+        "description": "የአካባቢ ምክር፡ ደህና የቤት መድሀኒቶች"
+    },
+    "localTipWarnings": "አስፈላጊ ማስጠንቀቂያዎች",
+    "@localTipWarnings": {
+        "description": "የአካባቢ ምክር፡ አስፈላጊ ማስጠንቀቂያዎች"
+    },
+    "disclaimerText": "ሪሚዲ ሜት አጠቃላይ መረጃ ብቻ ይሰጣል። የህክምና ምክር አይደለም።",
+    "@disclaimerText": {
+        "description": "የህክምና ምክር ስለማይሰጥ ማስጠንቀቂያ"
+    },
+    "learnMore": "ተጨማሪ ይማሩ",
+    "@learnMore": {
+        "description": "ተጨማሪ ለማወቅ የቁልፍ መለያ"
+    },
+    "online": "በመስመር ላይ",
+    "@online": {
+        "description": "የመስመር ላይ ሁነታ ማሳያ"
+    }
+    ,
+    "safetyInfoTitle": "አስፈላጊ የደህንነት መረጃ",
+    "@safetyInfoTitle": {
+        "description": "አስፈላጊ የደህንነት መረጃ ክፍል ርዕስ"
+    },
+    "safetyInfoPoint1": "ሪሚዲ ሜት የአርቲፊሻል ኢንተሊጀንስ የተመሰረተ የጤና መረጃ መሳሪያ ሲሆን አጠቃላይ መመሪያ ብቻ ይሰጣል።",
+    "@safetyInfoPoint1": {
+        "description": "በደህንነት መረጃ ክፍል ውስጥ የመጀመሪያ ነጥብ"
+    },
+    "safetyInfoPoint2": "ይህ መተግበሪያ የሙያ የህክምና ምክር፣ ምርመራ ወይም ሕክምናን አይተካይም።",
+    "@safetyInfoPoint2": {
+        "description": "በደህንነት መረጃ ክፍል ውስጥ የሁለተኛ ነጥብ"
+    },
+    "safetyInfoPoint3": "ሁልጊዜ ለየተሟላ የጤና አገልጋዮች ምክር ይጠይቁ።",
+    "@safetyInfoPoint3": {
+        "description": "በደህንነት መረጃ ክፍል ውስጥ የሶስተኛ ነጥብ"
+    },
+    "safetyInfoPoint4": "በድንገተኛ ሁኔታዎች ወዲያውኑ የአካባቢዎን ድንገተኛ አገልግሎት ይደውሉ።",
+    "@safetyInfoPoint4": {
+        "description": "በደህንነት መረጃ ክፍል ውስጥ የአራተኛ ነጥብ"
+    },
+    "safetyInfoAction": "ተረድቻለሁ",
+    "@safetyInfoAction": {
+        "description": "የደህንነት መረጃን ለማረጋገጥ የቁልፍ መለያ"
+    },
+    "emergencyTitle": "የድንገተኛ ቁጥሮች",
+    "@emergencyTitle": {
+        "description": "የድንገተኛ ቁጥሮች ክፍል ርዕስ"
+    },
+    "emergencyServices": "የድንገተኛ አገልግሎቶች",
+    "@emergencyServices": {
+        "description": "የድንገተኛ አገልግሎቶች መለያ"
+    },
+    "poisonControl": "የመርዝ ቁጥጥር",
+    "@poisonControl": {
+        "description": "የመርዝ ቁጥጥር መለያ"
+    },
+    "mentalHealthCrisis": "የአእምሮ ጤና አስቸኳይ ሁኔታ",
+    "@mentalHealthCrisis": {
+        "description": "የአእምሮ ጤና አስቸኳይ ሁኔታ መለያ"
+    },
+    "callAction": "ይደውሉ",
+    "@callAction": {
+        "description": "ደውል ለማስጀመር የቁልፍ መለያ"
+    },
+    "closeAction": "ዝጋ",
+    "@closeAction": {
+        "description": "ዝጋ ለመዝጋት የቁልፍ መለያ"
+    },
+    "symptomCheckerTitle": "የምልክት መርመራ",
+    "@symptomCheckerTitle": {
+        "description": "የምልክት መርመራ ክፍል ርዕስ"
+    },
+    "symptomCheckerGreeting": "ሰላም! እኔ ሪሚዲ ሜት ነኝ። ምልክቶችዎን ለመረዳት እና ደህና የሆነ የራስዎን ዕይታ መመሪያ ለመስጠት እችላለሁ። ዛሬ ምን ዓይነት ምልክቶች አሉዎት?",
+    "@symptomCheckerGreeting": {
+        "description": "በምልክት መርመራ መጀመሪያ የሚታየው ሰላምታ መልእክት"
+    },
+    "symptomCheckerHint": "ምልክቶችዎን ይግለጹ...",
+    "@symptomCheckerHint": {
+        "description": "በምልክት መግለጫ የግቤት መስክ ላይ የሚታየው መስተካከያ ጽሑፍ"
+    },
+    "today": "ዛሬ",
+    "@today": {
+        "description": "የዛሬ ቀን መለያ"
+    },
+    "yesterday": "ትናንት",
+    "@yesterday": {
+        "description": "የትናንት ቀን መለያ"
+    },
+    "oneWeek": "1 ሳምንት",
+    "@oneWeek": {
+        "description": "ለአንድ ሳምንት የጊዜ ግዜ መለያ"
+    },
+    "severePain": "ጠንካራ ህመም",
+    "@severePain": {
+        "description": "ለጠንካራ ህመም ምልክት መለያ"
+    }
 }

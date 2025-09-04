@@ -237,5 +237,86 @@
   "learnMore": "Learn More",
   "@learnMore": {
     "description": "Button label to learn more"
+  },
+  "online": "Online",
+  "@online": {
+    "description": "Status indicator for online mode"
+  },
+  "safetyInfoTitle": "Important Safety Information",
+  "@safetyInfoTitle": {
+    "description": "Title for the important safety information section"
+  },
+  "safetyInfoPoint1": "RemedyMate is an AI-powered health information tool designed to provide general guidance only.",
+  "@safetyInfoPoint1": {
+    "description": "First point in the safety information section"
+  },
+  "safetyInfoPoint2": "This app does NOT replace professional medical advice, diagnosis, or treatment.",
+  "@safetyInfoPoint2": {
+    "description": "Second point in the safety information section"
+  },
+  "safetyInfoPoint3": "Always consult with qualified healthcare providers for medical concerns.",
+  "@safetyInfoPoint3": {
+    "description": "Third point in the safety information section"
+  },
+  "safetyInfoPoint4": "In emergencies, call local emergency services immediately.",
+  "@safetyInfoPoint4": {
+    "description": "Fourth point in the safety information section"
+  },
+  "safetyInfoAction": "I Understand",
+  "@safetyInfoAction": {
+    "description": "Button label to acknowledge safety information"
+  },
+  "emergencyTitle": "Emergency Numbers",
+  "@emergencyTitle": {
+    "description": "Title for the emergency numbers section"
+  },
+  "emergencyServices": "Emergency Services",
+  "@emergencyServices": {
+    "description": "Label for emergency services"
+  },
+  "poisonControl": "Poison Control",
+  "@poisonControl": {
+    "description": "Label for poison control"
+  },
+  "mentalHealthCrisis": "Mental Health Crisis",
+  "@mentalHealthCrisis": {
+    "description": "Label for mental health crisis"
+  },
+  "callAction": "Call",
+  "@callAction": {
+    "description": "Button label to initiate a call"
+  },
+  "closeAction": "Close",
+  "@closeAction": {
+    "description": "Button label to close a dialog or screen"
+  },
+  "symptomCheckerTitle": "Symptom Checker",
+  "@symptomCheckerTitle": {
+    "description": "Title for the symptom checker section"
+  },
+  "symptomCheckerGreeting": "Hello! I’m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?",
+  "@symptomCheckerGreeting": {
+    "description": "Greeting message shown at the start of the symptom checker"
+  },
+  "symptomCheckerHint": "Describe your symptoms...",
+  "@symptomCheckerHint": {
+    "description": "Hint text for the symptom description input field"
+  },
+  "today": "Today",
+  "@today": {
+    "description": "Label for today's date"
+  },
+  "yesterday": "Yesterday",
+  "@yesterday": {
+    "description": "Label for yesterday's date"
+  },
+  "oneWeek": "1 Week",
+  "@oneWeek": {
+    "description": "Label for a one week time period"
+  },
+  "severePain": "Severe pain",
+  "@severePain": {
+    "description": "Label for severe pain symptom"
   }
+
 }

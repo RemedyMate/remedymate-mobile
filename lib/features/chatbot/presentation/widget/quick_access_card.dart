@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
+
+import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_text_styles.dart';
 
 class QuickAccessCard extends StatelessWidget {
   final String title;
   final String subtitle;
   final IconData icon;
+  final VoidCallback onTap;
+
   final Color? cardColor;
-  final Color iconContainerColor;
-  final Color iconColor;
+  final Color? iconContainerColor;
+  final Color? iconColor;
   final Color? titleColor;
   final Color? subtitleColor;
-  final VoidCallback onTap;
 
   const QuickAccessCard({
     super.key,
     required this.title,
     required this.subtitle,
     required this.icon,
-    required this.iconContainerColor,
-    required this.iconColor,
     required this.onTap,
     this.cardColor,
+    this.iconContainerColor,
+    this.iconColor,
     this.titleColor,
     this.subtitleColor,
   });
@@ -29,14 +32,14 @@ class QuickAccessCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       borderRadius: BorderRadius.circular(16),
-      color: Colors.white,
+      color: AppColors.cardBackground,
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(16),
         child: Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: cardColor ?? Colors.white,
+            color: cardColor ?? AppColors.cardBackground,
             borderRadius: BorderRadius.circular(16),
             boxShadow: [
               BoxShadow(
@@ -46,19 +49,20 @@ class QuickAccessCard extends StatelessWidget {
               ),
             ],
           ),
-
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Icon container
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: iconContainerColor,
+                  color: iconContainerColor ?? AppColors.primaryBlue,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Icon(icon, color: iconColor, size: 24),
+                child: Icon(icon, color: iconColor ?? Colors.white, size: 24),
               ),
 
+              // Title + Subtitle
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -66,18 +70,17 @@ class QuickAccessCard extends StatelessWidget {
                   children: [
                     Text(
                       title,
-
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: AppTextStyles.cardTitle.copyWith(
-                        color: titleColor,
+                        color: titleColor ?? AppColors.textGrey,
                       ),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       subtitle,
                       style: AppTextStyles.cardSubtitle.copyWith(
-                        color: subtitleColor,
+                        color: subtitleColor ?? AppColors.subtitleGrey,
                       ),
                     ),
                   ],

@@ -439,6 +439,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Learn More'**
   String get learnMore;
+
+  /// Status indicator for online mode
+  ///
+  /// In en, this message translates to:
+  /// **'Online'**
+  String get online;
+
+  /// Title for the important safety information section
+  ///
+  /// In en, this message translates to:
+  /// **'Important Safety Information'**
+  String get safetyInfoTitle;
+
+  /// First point in the safety information section
+  ///
+  /// In en, this message translates to:
+  /// **'RemedyMate is an AI-powered health information tool designed to provide general guidance only.'**
+  String get safetyInfoPoint1;
+
+  /// Second point in the safety information section
+  ///
+  /// In en, this message translates to:
+  /// **'This app does NOT replace professional medical advice, diagnosis, or treatment.'**
+  String get safetyInfoPoint2;
+
+  /// Third point in the safety information section
+  ///
+  /// In en, this message translates to:
+  /// **'Always consult with qualified healthcare providers for medical concerns.'**
+  String get safetyInfoPoint3;
+
+  /// Fourth point in the safety information section
+  ///
+  /// In en, this message translates to:
+  /// **'In emergencies, call local emergency services immediately.'**
+  String get safetyInfoPoint4;
+
+  /// Button label to acknowledge safety information
+  ///
+  /// In en, this message translates to:
+  /// **'I Understand'**
+  String get safetyInfoAction;
+
+  /// Title for the emergency numbers section
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency Numbers'**
+  String get emergencyTitle;
+
+  /// Label for emergency services
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency Services'**
+  String get emergencyServices;
+
+  /// Label for poison control
+  ///
+  /// In en, this message translates to:
+  /// **'Poison Control'**
+  String get poisonControl;
+
+  /// Label for mental health crisis
+  ///
+  /// In en, this message translates to:
+  /// **'Mental Health Crisis'**
+  String get mentalHealthCrisis;
+
+  /// Button label to initiate a call
+  ///
+  /// In en, this message translates to:
+  /// **'Call'**
+  String get callAction;
+
+  /// Button label to close a dialog or screen
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get closeAction;
+
+  /// Title for the symptom checker section
+  ///
+  /// In en, this message translates to:
+  /// **'Symptom Checker'**
+  String get symptomCheckerTitle;
+
+  /// Greeting message shown at the start of the symptom checker
+  ///
+  /// In en, this message translates to:
+  /// **'Hello! I’m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?'**
+  String get symptomCheckerGreeting;
+
+  /// Hint text for the symptom description input field
+  ///
+  /// In en, this message translates to:
+  /// **'Describe your symptoms...'**
+  String get symptomCheckerHint;
+
+  /// Label for today's date
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get today;
+
+  /// Label for yesterday's date
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get yesterday;
+
+  /// Label for a one week time period
+  ///
+  /// In en, this message translates to:
+  /// **'1 Week'**
+  String get oneWeek;
+
+  /// Label for severe pain symptom
+  ///
+  /// In en, this message translates to:
+  /// **'Severe pain'**
+  String get severePain;
 }
 
 class _AppLocalizationsDelegate

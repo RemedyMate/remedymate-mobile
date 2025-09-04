@@ -12,19 +12,19 @@ class AppLocalizationsAm extends AppLocalizations {
   String get settings => 'ቅንብሮች';
 
   @override
-  String get guestUser => 'እንግዳ ተጠቃሚ';
+  String get guestUser => 'የእንግዳ ተጠቃሚ';
 
   @override
-  String get anonymousSession => 'የማይታወቅ ክፍለ ጊዜ';
+  String get anonymousSession => 'ያልታወቀ ክፍለ ጊዜ';
 
   @override
-  String get editProfile => 'መገለጫ አርትዕ';
+  String get editProfile => 'መገለጫ አስተካክል';
 
   @override
   String get account => 'መለያ';
 
   @override
-  String get manageProfile => 'መገለጫ አስተዳደር';
+  String get manageProfile => 'መገለጫ አስተዳድር';
 
   @override
   String get manageProfileSubtitle => 'መረጃዎን ያዘምኑ';
@@ -39,7 +39,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get notifications => 'ማሳወቂያዎች';
 
   @override
-  String get notificationsSubtitle => 'ማሳወቂያዎችን ያስተዳድሩ';
+  String get notificationsSubtitle => 'ማንቂያዎችን ያቀናብሩ';
 
   @override
   String get preferences => 'ምርጫዎች';
@@ -51,31 +51,31 @@ class AppLocalizationsAm extends AppLocalizations {
   String get languageSubtitle => 'እንግሊዝኛ ↔ አማርኛ';
 
   @override
-  String get textSize => 'የጽሑፍ መጠን';
+  String get textSize => 'የጽሁፍ መጠን';
 
   @override
-  String get textSizeSubtitle => 'ንባብን ለማሻሻል';
+  String get textSizeSubtitle => 'ንባቡን ያስተካክሉ';
 
   @override
-  String get offlineMode => 'ከመስመር ውጭ ሁነታ';
+  String get offlineMode => 'የከፍተኛ መጠቀሚያ ሁነታ';
 
   @override
-  String get offlineModeSubtitle => 'ይዘቶችን በአካባቢ ያስቀምጡ';
+  String get offlineModeSubtitle => 'ይዘቱን በአካባቢ ያከማቹ';
 
   @override
   String get support => 'ድጋፍ';
 
   @override
-  String get faq => 'ተደጋጋሚ ጥያቄዎች';
+  String get faq => 'የተደጋጋሚ ጥያቄዎች እና የእርዳታ ማዕከል';
 
   @override
-  String get faqSubtitle => 'የተለመዱ ጥያቄዎች';
+  String get faqSubtitle => 'የተደጋጋሚ ጥያቄዎች';
 
   @override
-  String get contactSupport => 'ድጋፍን ያነጋግሩ';
+  String get contactSupport => 'ድጋፍ ያግኙ';
 
   @override
-  String get contactSupportSubtitle => 'ከቡድናችን ድጋፍ ያግኙ';
+  String get contactSupportSubtitle => 'ከቡድናችን ድጋፍ ይውሰዱ';
 
   @override
   String get emergencyHelp => 'ድንገተኛ እርዳታ';
@@ -84,100 +84,162 @@ class AppLocalizationsAm extends AppLocalizations {
   String get emergencyHelpSubtitle => 'አስቸኳይ እርዳታ';
 
   @override
-  String get about => 'ስለ እኛ';
+  String get about => 'ስለ';
 
   @override
-  String get terms => 'የአገልግሎት ውሎች እና የግላዊነት ፖሊሲ';
+  String get terms => 'ውሎች እና የግላዊነት ፖሊሲ';
 
   @override
-  String get termsSubtitle => 'ህጋዊ መረጃ';
+  String get termsSubtitle => 'የህግ መረጃ';
 
   @override
   String get versionInfo => 'የስሪት መረጃ';
 
   @override
-  String get versionInfoSubtitle => 'RemedyMate ስሪት 2.1.0';
+  String get versionInfoSubtitle => 'RemedyMate v2.1.0';
 
   @override
-  String get signOut => 'ዘግተው ይውጡ';
+  String get signOut => 'ውጣ';
 
   @override
-  String get appName => 'RemedyMate';
+  String get appName => 'ሪሚዲ ሜት';
 
   @override
-  String get languageSwitch => 'EN ↔ Amh';
+  String get languageSwitch => 'እንግሊዝኛ ↔ አማርኛ';
 
   @override
-  String get homeTitle => 'Safe, Simple Health Guidance at Home';
+  String get homeTitle => 'በቤትዎ ውስጥ ደህና፣ ቀላል የጤና መመሪያ';
 
   @override
-  String get homeSubtitle =>
-      'Chat with RemedyMate for self-care tips in Amharic or English.';
+  String get homeSubtitle => 'ሪሚዲ ሜትን በአማርኛ ወይም በእንግሊዝኛ ለራስዎ የጤና ምክር ይጠይቁ።';
 
   @override
-  String get startChat => 'Start Chat';
+  String get startChat => 'ውይይት ጀምር';
 
   @override
-  String get offline => 'Offline';
+  String get offline => 'ከመስመር ውጭ';
 
   @override
-  String get quickAccessTitle => 'Quick Access';
+  String get quickAccessTitle => 'ፈጣን መዳረሻ';
 
   @override
-  String get exploreTitle => 'Explore';
+  String get exploreTitle => 'ያስሱ';
 
   @override
-  String get popularTopicsTitle => 'Popular Topics';
+  String get popularTopicsTitle => 'ታዋቂ ርዕሶች';
 
   @override
-  String get localTipsTitle => 'Local Tips';
+  String get localTipsTitle => 'የአካባቢ ምክሮች';
 
   @override
-  String get quickActionSymptomsTitle => 'Check My Symptoms';
+  String get quickActionSymptomsTitle => 'ምልክቶቼን ይመርምሩ';
 
   @override
-  String get quickActionSymptomsSubtitle => 'Start chat flow';
+  String get quickActionSymptomsSubtitle => 'የውይይት ፍሰት ይጀምሩ';
 
   @override
-  String get quickActionLibraryTitle => 'Offline Library';
+  String get quickActionLibraryTitle => 'ከመስመር ውጭ ላይብረሪ';
 
   @override
-  String get quickActionLibrarySubtitle => 'Cached topics';
+  String get quickActionLibrarySubtitle => 'የተቀመጡ ርዕሶች';
 
   @override
-  String get quickActionSavedTitle => 'Saved Sessions';
+  String get quickActionSavedTitle => 'የተቀመጡ ክፍለ ጊዜዎች';
 
   @override
-  String get quickActionSavedSubtitle => 'Last 10 chats';
+  String get quickActionSavedSubtitle => '10 የመጨረሻ ውይይቶች';
 
   @override
-  String get quickActionEmergencyTitle => 'Emergency Help';
+  String get quickActionEmergencyTitle => 'ድንገተኛ እርዳታ';
 
   @override
-  String get quickActionEmergencySubtitle => 'Urgent assistance';
+  String get quickActionEmergencySubtitle => 'አስቸኳይ እርዳታ';
 
   @override
-  String get popularTopicCold => 'Cold';
+  String get popularTopicCold => 'ውሃ በሽታ';
 
   @override
-  String get popularTopicHeadache => 'Headache';
+  String get popularTopicHeadache => 'ራስ ህመም';
 
   @override
-  String get popularTopicHeartburn => 'Heartburn';
+  String get popularTopicHeartburn => 'የልብ ቃጠሎ';
 
   @override
-  String get popularTopicMotionSickness => 'Motion Sicknes';
+  String get popularTopicMotionSickness => 'የእንቅስቃሴ በሽታ';
 
   @override
-  String get localTipRemedies => 'Safe home remedies';
+  String get localTipRemedies => 'ደህና የቤት መድሀኒቶች';
 
   @override
-  String get localTipWarnings => 'Important warnings';
+  String get localTipWarnings => 'አስፈላጊ ማስጠንቀቂያዎች';
 
   @override
-  String get disclaimerText =>
-      'RemedyMate gives general info only. Not medical advice.';
+  String get disclaimerText => 'ሪሚዲ ሜት አጠቃላይ መረጃ ብቻ ይሰጣል። የህክምና ምክር አይደለም።';
 
   @override
-  String get learnMore => 'Learn More';
+  String get learnMore => 'ተጨማሪ ይማሩ';
+
+  @override
+  String get online => 'በመስመር ላይ';
+
+  @override
+  String get safetyInfoTitle => 'አስፈላጊ የደህንነት መረጃ';
+
+  @override
+  String get safetyInfoPoint1 =>
+      'ሪሚዲ ሜት የአርቲፊሻል ኢንተሊጀንስ የተመሰረተ የጤና መረጃ መሳሪያ ሲሆን አጠቃላይ መመሪያ ብቻ ይሰጣል።';
+
+  @override
+  String get safetyInfoPoint2 =>
+      'ይህ መተግበሪያ የሙያ የህክምና ምክር፣ ምርመራ ወይም ሕክምናን አይተካይም።';
+
+  @override
+  String get safetyInfoPoint3 => 'ሁልጊዜ ለየተሟላ የጤና አገልጋዮች ምክር ይጠይቁ።';
+
+  @override
+  String get safetyInfoPoint4 =>
+      'በድንገተኛ ሁኔታዎች ወዲያውኑ የአካባቢዎን ድንገተኛ አገልግሎት ይደውሉ።';
+
+  @override
+  String get safetyInfoAction => 'ተረድቻለሁ';
+
+  @override
+  String get emergencyTitle => 'የድንገተኛ ቁጥሮች';
+
+  @override
+  String get emergencyServices => 'የድንገተኛ አገልግሎቶች';
+
+  @override
+  String get poisonControl => 'የመርዝ ቁጥጥር';
+
+  @override
+  String get mentalHealthCrisis => 'የአእምሮ ጤና አስቸኳይ ሁኔታ';
+
+  @override
+  String get callAction => 'ይደውሉ';
+
+  @override
+  String get closeAction => 'ዝጋ';
+
+  @override
+  String get symptomCheckerTitle => 'የምልክት መርመራ';
+
+  @override
+  String get symptomCheckerGreeting =>
+      'ሰላም! እኔ ሪሚዲ ሜት ነኝ። ምልክቶችዎን ለመረዳት እና ደህና የሆነ የራስዎን ዕይታ መመሪያ ለመስጠት እችላለሁ። ዛሬ ምን ዓይነት ምልክቶች አሉዎት?';
+
+  @override
+  String get symptomCheckerHint => 'ምልክቶችዎን ይግለጹ...';
+
+  @override
+  String get today => 'ዛሬ';
+
+  @override
+  String get yesterday => 'ትናንት';
+
+  @override
+  String get oneWeek => '1 ሳምንት';
+
+  @override
+  String get severePain => 'ጠንካራ ህመም';
 }
