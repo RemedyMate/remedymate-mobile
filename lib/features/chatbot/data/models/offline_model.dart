@@ -1,5 +1,5 @@
 import '../../domain/entities/offline_topic_entity.dart';
-import 'guide_model.dart';
+import 'chat_message_model.dart';
 
 class OfflineTopicModel extends OfflineTopicEntity {
   const OfflineTopicModel({
@@ -37,15 +37,15 @@ class TranslationsModel extends Translations {
 
   factory TranslationsModel.fromJson(Map<String, dynamic> json) {
     return TranslationsModel(
-      en: GuideModel.fromJson(json['en']).toEntity(),
-      amh: GuideModel.fromJson(json['amh']).toEntity(),
+      en: GuideMessageModel.fromJson(json['en']).toEntity(),
+      amh: GuideMessageModel.fromJson(json['amh']).toEntity(),
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'en': (en as GuideModel).toJson(),
-      'amh': (amh as GuideModel).toJson(),
+      'en': (en as GuideMessageModel).toJson(),
+      'amh': (amh as GuideMessageModel).toJson(),
     };
   }
 
