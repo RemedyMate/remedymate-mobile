@@ -559,6 +559,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Severe pain'**
   String get severePain;
+
+  /// Label for red flag status
+  ///
+  /// In en, this message translates to:
+  /// **'red'**
+  String get flagred;
+
+  /// Label for yellow flag status
+  ///
+  /// In en, this message translates to:
+  /// **'yellow'**
+  String get flagyellow;
+
+  /// Label for green flag status
+  ///
+  /// In en, this message translates to:
+  /// **'green'**
+  String get flaggreen;
+
+  /// Label for general flag status
+  ///
+  /// In en, this message translates to:
+  /// **'general'**
+  String get flaggeneral;
+
+  /// Message displayed when the user is offline
+  ///
+  /// In en, this message translates to:
+  /// **'You are offline. Some features may be limited.'**
+  String get offlineMessage;
 }
 
 class _AppLocalizationsDelegate

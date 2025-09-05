@@ -5,6 +5,7 @@ import 'app.dart';
 import 'core/l10n/arb/app_localizations.dart';
 import 'core/navigation/app_router.dart';
 import 'dependency_injection.dart' as di;
+import 'features/chatbot/domain/usecases/answer_follow_up.dart';
 import 'features/chatbot/domain/usecases/start_chat_usecase.dart';
 import 'features/chatbot/presentation/bloc/chatbot_bloc.dart';
 
@@ -47,12 +48,12 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-
     final appRouter = router(onLocaleChanged);
     return BlocProvider(
-      create: (context) =>
-          ChatbotBloc(startChatUseCase: di.sl<StartChatUseCase>())
-            ..add(LoadChatSessions()),
+      create: (context) => ChatbotBloc(
+        startChatUseCase: di.sl<StartChatUseCase>(),
+        answerFollowUpUseCase: di.sl<AnswerFollowUpUseCase>(),
+      )..add(LoadChatSessions()),
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: 'ChatBot',

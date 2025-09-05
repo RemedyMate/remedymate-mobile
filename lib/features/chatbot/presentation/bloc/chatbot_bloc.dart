@@ -54,27 +54,4 @@ class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
       (message) => emit(FollowUpLoaded(message)),
     );
   }
-
-  Future<void> _onAnswerFollowup(
-    AnswerFollowUpEvent event,
-    Emitter<ChatbotState> emit,
-  ) async {
-    emit(ChatbotLoading());
-
-    final result = await startChatUseCase(event.answer, event.conversationId);
-
-    result.fold(
-      (failure) => emit(ChatbotError(failure.message)),
-      (guide) => guide.fold(
-        (guideEntity) => emit(GuideLoaded(guideEntity)),
-        (followUpMessage) => emit(
-          FollowUpLoaded(
-            followUpMessage.question,
-            followUpMessage.conversationId,
-          ),
-        ),
-      ),
-    );
-  }
-
 }

@@ -309,4 +309,26 @@
     "@severePain": {
         "description": "ለጠንካራ ህመም ምልክት መለያ"
     }
+    ,
+    "flagred": "ቀይ",
+    "@flagred": {
+        "description": "የቀይ ባንዲራ ሁነታ መለያ"
+    },
+    "flagyellow": "ቢጫ",
+    "@flagyellow": {
+        "description": "የቢጫ ባንዲራ ሁነታ መለያ"
+    },
+    "flaggreen": "አረንጓዴ",
+    "@flaggreen": {
+        "description": "የአረንጓዴ ባንዲራ ሁነታ መለያ"
+    },
+    "flaggeneral": "አጠቃላይ",
+    "@flaggeneral": {
+        "description": "የአጠቃላይ ባንዲራ ሁነታ መለያ"
+    }
+    ,
+    "offlineMessage": "ከመስመር ውጭ ነዎት። አንዳንድ ባህሪዎች ሊገደቡ ይችላሉ።",
+    "@offlineMessage": {
+        "description": "ተጠቃሚው ከመስመር ውጭ ሲሆን የሚታየው መልእክት"
+    }
 }

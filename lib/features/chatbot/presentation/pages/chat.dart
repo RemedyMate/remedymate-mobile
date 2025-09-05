@@ -26,6 +26,8 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
   final ScrollController _scrollController = ScrollController();
   final List<Widget> _messages = [];
 
+  Locale _currentLocale = const Locale('en'); // Tracks the current locale
+
   FollowUpMessage? _lastFollowUpMessage; // Tracks the current follow-up
 
   @override
@@ -115,15 +117,14 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
 
   void toggleLanguage() {
     setState(() {
-      if (language == 'EN ↔ Ahm') {
-        language = 'Ahm ↔ EN';
-        widget.onLocaleChanged(const Locale('am'));
+      if (_currentLocale.languageCode == 'en') {
+        _currentLocale = const Locale('am');
+        widget.onLocaleChanged(_currentLocale);
       } else {
-        language = 'EN ↔ Ahm';
-        widget.onLocaleChanged(const Locale('en'));
+        _currentLocale = const Locale('en');
+        widget.onLocaleChanged(_currentLocale);
       }
     });
-    debugPrint('Language toggled: $language');
   }
 
   @override

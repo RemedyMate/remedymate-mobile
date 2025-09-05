@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../features/chatbot/presentation/pages/chat.dart';
+import '../../features/chatbot/presentation/pages/chat_session.dart';
 import '../../features/chatbot/presentation/pages/chatbot_home_page.dart';
 import '../../features/chatbot/presentation/pages/shell_page.dart';
 import '../../features/onboarding/pages/setting_page.dart';
@@ -26,7 +26,7 @@ GoRouter router(void Function(Locale) onLocaleChanged) {
             routes: [
               GoRoute(
                 path: '/chats',
-                builder: (context, state) => SymptomCheckerPage(onLocaleChanged: onLocaleChanged),
+                builder: (context, state) => const ChatHistoryPage(),
               ),
             ],
           ),
@@ -49,6 +49,10 @@ GoRouter router(void Function(Locale) onLocaleChanged) {
             ],
           ),
         ],
+      ),
+      GoRoute(
+        path: '/chat_sessions',
+        builder: (context, state) => const ChatHistoryPage(),
       ),
     ],
   );

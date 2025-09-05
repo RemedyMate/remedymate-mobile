@@ -245,4 +245,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get severePain => 'Severe pain';
+
+  @override
+  String get flagred => 'red';
+
+  @override
+  String get flagyellow => 'yellow';
+
+  @override
+  String get flaggreen => 'green';
+
+  @override
+  String get flaggeneral => 'general';
+
+  @override
+  String get offlineMessage => 'You are offline. Some features may be limited.';
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_text_styles.dart';
@@ -143,7 +144,9 @@ class ChatbotHomePage extends StatelessWidget {
                       icon: Icons.chat_bubble_outline,
                       iconContainerColor: AppColors.background,
                       iconColor: AppColors.greenTriage,
-                      onTap: () {},
+                      onTap: () {
+                        context.go('/chat_sessions');
+                      },
                     ),
                     QuickAccessCard(
                       title: l10n.quickActionEmergencyTitle,

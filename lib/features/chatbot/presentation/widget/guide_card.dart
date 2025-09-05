@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../core/l10n/arb/app_localizations.dart';
 import '../../domain/entities/chat_message.dart';
 
 class GuidanceCard extends StatelessWidget {
@@ -7,8 +8,6 @@ class GuidanceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-
     return Card(
       color: Colors.white,
       margin: const EdgeInsets.symmetric(vertical: 8),
@@ -95,19 +94,19 @@ class GuidanceCard extends StatelessWidget {
     switch (flag.toUpperCase()) {
       case 'RED':
         bg = Colors.red;
-        text = l10n.flagRed; // localized
+        text = l10n.flagred; // localized
         break;
       case 'YELLOW':
         bg = const Color(0xFFF59E0B);
-        text = l10n.flagYellow; // localized
+        text = l10n.flagyellow; // localized
         break;
       case 'GREEN':
         bg = Colors.green;
-        text = l10n.flagGreen; // localized
+        text = l10n.flaggreen; // localized
         break;
       default:
         bg = Colors.grey;
-        text = l10n.flagGeneral; // localized
+        text = l10n.flaggeneral; // localized
     }
 
     return Container(

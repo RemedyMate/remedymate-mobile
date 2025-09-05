@@ -117,7 +117,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get startChat => 'ውይይት ጀምር';
 
   @override
-  String get offline => 'ኦፍላይን';
+  String get offline => 'ከመስመር ውጭ';
 
   @override
   String get quickAccessTitle => 'ፈጣን መዳረሻ';
@@ -242,4 +242,19 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get severePain => 'ጠንካራ ህመም';
+
+  @override
+  String get flagred => 'ቀይ';
+
+  @override
+  String get flagyellow => 'ቢጫ';
+
+  @override
+  String get flaggreen => 'አረንጓዴ';
+
+  @override
+  String get flaggeneral => 'አጠቃላይ';
+
+  @override
+  String get offlineMessage => 'ከመስመር ውጭ ነዎት። አንዳንድ ባህሪዎች ሊገደቡ ይችላሉ።';
 }

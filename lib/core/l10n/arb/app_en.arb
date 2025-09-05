@@ -318,6 +318,25 @@
   "severePain": "Severe pain",
   "@severePain": {
     "description": "Label for severe pain symptom"
+  },
+  "flagred": "red",
+  "@flagred": {
+    "description": "Label for red flag status"
+  },
+  "flagyellow": "yellow",
+  "@flagyellow": {
+    "description": "Label for yellow flag status"
+  },
+  "flaggreen": "green",
+  "@flaggreen": {
+    "description": "Label for green flag status"
+  },
+  "flaggeneral": "general",
+  "@flaggeneral": {
+    "description": "Label for general flag status"
+  },
+  "offlineMessage": "You are offline. Some features may be limited.",
+  "@offlineMessage": {
+    "description": "Message displayed when the user is offline"
   }
-
 }
