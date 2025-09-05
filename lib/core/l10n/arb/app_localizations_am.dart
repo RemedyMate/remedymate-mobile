@@ -12,19 +12,19 @@ class AppLocalizationsAm extends AppLocalizations {
   String get settings => 'ቅንብሮች';
 
   @override
-  String get guestUser => 'የእንግዳ ተጠቃሚ';
+  String get guestUser => 'እንግዳ ተጠቃሚ';
 
   @override
-  String get anonymousSession => 'ያልታወቀ ክፍለ ጊዜ';
+  String get anonymousSession => 'የማይታወቅ ክፍለ ጊዜ';
 
   @override
-  String get editProfile => 'መገለጫ አስተካክል';
+  String get editProfile => 'መገለጫ አርትዕ';
 
   @override
   String get account => 'መለያ';
 
   @override
-  String get manageProfile => 'መገለጫ አስተዳድር';
+  String get manageProfile => 'መገለጫ አስተዳደር';
 
   @override
   String get manageProfileSubtitle => 'መረጃዎን ያዘምኑ';
@@ -39,7 +39,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get notifications => 'ማሳወቂያዎች';
 
   @override
-  String get notificationsSubtitle => 'ማንቂያዎችን ያቀናብሩ';
+  String get notificationsSubtitle => 'ማሳወቂያዎችን ያስተዳድሩ';
 
   @override
   String get preferences => 'ምርጫዎች';
@@ -51,31 +51,31 @@ class AppLocalizationsAm extends AppLocalizations {
   String get languageSubtitle => 'እንግሊዝኛ ↔ አማርኛ';
 
   @override
-  String get textSize => 'የጽሁፍ መጠን';
+  String get textSize => 'የጽሑፍ መጠን';
 
   @override
-  String get textSizeSubtitle => 'ንባቡን ያስተካክሉ';
+  String get textSizeSubtitle => 'ንባብን ለማሻሻል';
 
   @override
-  String get offlineMode => 'የከፍተኛ መጠቀሚያ ሁነታ';
+  String get offlineMode => 'ከመስመር ውጭ ሁነታ';
 
   @override
-  String get offlineModeSubtitle => 'ይዘቱን በአካባቢ ያከማቹ';
+  String get offlineModeSubtitle => 'ይዘቶችን በአካባቢ ያስቀምጡ';
 
   @override
   String get support => 'ድጋፍ';
 
   @override
-  String get faq => 'የተደጋጋሚ ጥያቄዎች እና የእርዳታ ማዕከል';
+  String get faq => 'ተደጋጋሚ ጥያቄዎች';
 
   @override
-  String get faqSubtitle => 'የተደጋጋሚ ጥያቄዎች';
+  String get faqSubtitle => 'የተለመዱ ጥያቄዎች';
 
   @override
-  String get contactSupport => 'ድጋፍ ያግኙ';
+  String get contactSupport => 'ድጋፍን ያነጋግሩ';
 
   @override
-  String get contactSupportSubtitle => 'ከቡድናችን ድጋፍ ይውሰዱ';
+  String get contactSupportSubtitle => 'ከቡድናችን ድጋፍ ያግኙ';
 
   @override
   String get emergencyHelp => 'ድንገተኛ እርዳታ';
@@ -84,22 +84,22 @@ class AppLocalizationsAm extends AppLocalizations {
   String get emergencyHelpSubtitle => 'አስቸኳይ እርዳታ';
 
   @override
-  String get about => 'ስለ';
+  String get about => 'ስለ እኛ';
 
   @override
-  String get terms => 'ውሎች እና የግላዊነት ፖሊሲ';
+  String get terms => 'የአገልግሎት ውሎች እና የግላዊነት ፖሊሲ';
 
   @override
-  String get termsSubtitle => 'የህግ መረጃ';
+  String get termsSubtitle => 'ህጋዊ መረጃ';
 
   @override
   String get versionInfo => 'የስሪት መረጃ';
 
   @override
-  String get versionInfoSubtitle => 'RemedyMate v2.1.0';
+  String get versionInfoSubtitle => 'RemedyMate ስሪት 2.1.0';
 
   @override
-  String get signOut => 'ውጣ';
+  String get signOut => 'ዘግተው ይውጡ';
 
   @override
   String get appName => 'ሪሚዲ ሜት';
@@ -117,7 +117,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get startChat => 'ውይይት ጀምር';
 
   @override
-  String get offline => 'ከመስመር ውጭ';
+  String get offline => 'ኦፍላይን';
 
   @override
   String get quickAccessTitle => 'ፈጣን መዳረሻ';
@@ -207,13 +207,13 @@ class AppLocalizationsAm extends AppLocalizations {
   String get emergencyTitle => 'የድንገተኛ ቁጥሮች';
 
   @override
-  String get emergencyServices => 'የድንገተኛ አገልግሎቶች';
+  String get emergencyServices => 'አስቸኳይ አገልግሎቶች';
 
   @override
-  String get poisonControl => 'የመርዝ ቁጥጥር';
+  String get poisonControl => 'የተፈሰሰ ንጥረ ነገር መቆጣጠሪያ';
 
   @override
-  String get mentalHealthCrisis => 'የአእምሮ ጤና አስቸኳይ ሁኔታ';
+  String get mentalHealthCrisis => 'የአእምሮ ጤና ከባድ ሁኔታ';
 
   @override
   String get callAction => 'ይደውሉ';
@@ -256,7 +256,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get flaggeneral => 'አጠቃላይ';
 
   @override
-  String get offlineMessage => 'ከመስመር ውጭ ነዎት። አንዳንድ ባህሪዎች ሊገደቡ ይችላሉ።';
+  String get offlineMessage => 'ከመስመር ውጭ — በጥቂት መምሪያ ላይ መጠቀም';
 
   @override
   String get availableOffline => 'ከመስመር ውጭ ይገኛል';
