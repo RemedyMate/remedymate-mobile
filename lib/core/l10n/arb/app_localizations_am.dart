@@ -117,7 +117,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get startChat => 'ውይይት ጀምር';
 
   @override
-  String get offline => 'ከመስመር ውጭ';
+  String get offline => 'ኦፍላይን';
 
   @override
   String get quickAccessTitle => 'ፈጣን መዳረሻ';

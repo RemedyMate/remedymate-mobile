@@ -127,6 +127,7 @@
   },
 
   "signOut": "Sign Out",
+
   "@signOut": {
     "description": "Label for signing out"
   },

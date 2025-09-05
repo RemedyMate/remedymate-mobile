@@ -3,6 +3,8 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/l10n/arb/app_localizations.dart';
 
+import '../../../../core/l10n/arb/app_localizations.dart';
+
 class SafetyInformationModal extends StatelessWidget {
   const SafetyInformationModal({super.key});
 

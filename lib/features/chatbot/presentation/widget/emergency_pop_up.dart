@@ -4,6 +4,8 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/l10n/arb/app_localizations.dart';
 
+import '../../../../core/l10n/arb/app_localizations.dart';
+
 class EmergencyModal {
   static const List<Map<String, String>> emergencyNumbers = [
     {'key': 'emergencyServices', 'number': '911', 'color': 'red'},

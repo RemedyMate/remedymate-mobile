@@ -7,6 +7,8 @@ class GuidanceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Card(
       color: Colors.white,
       margin: const EdgeInsets.symmetric(vertical: 8),
@@ -17,7 +19,7 @@ class GuidanceCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Flag status banner
-            _buildFlagBanner(guide.flag),
+            _buildFlagBanner(context, guide.flag),
 
             const SizedBox(height: 12),
 
@@ -85,26 +87,27 @@ class GuidanceCard extends StatelessWidget {
     );
   }
 
-  Widget _buildFlagBanner(String flag) {
+  Widget _buildFlagBanner(BuildContext context, String flag) {
+    final l10n = AppLocalizations.of(context)!;
     Color bg;
     String text;
 
     switch (flag.toUpperCase()) {
       case 'RED':
         bg = Colors.red;
-        text = 'Critical — Seek immediate medical attention';
+        text = l10n.flagRed; // localized
         break;
       case 'YELLOW':
         bg = const Color(0xFFF59E0B);
-        text = 'Monitor closely\nWatch for worsening symptoms';
+        text = l10n.flagYellow; // localized
         break;
       case 'GREEN':
         bg = Colors.green;
-        text = 'Mild symptoms — Safe to self-manage';
+        text = l10n.flagGreen; // localized
         break;
       default:
         bg = Colors.grey;
-        text = 'General guidance';
+        text = l10n.flagGeneral; // localized
     }
 
     return Container(

@@ -8,11 +8,14 @@ import '../../domain/entities/chat_message.dart';
 import '../bloc/chatbot_bloc.dart';
 import '../widget/bot_response.dart';
 import '../widget/guide_card.dart';
+import '../widget/material.dart';
 import '../widget/offline_mode.dart';
 import '../widget/quick_chip.dart';
 
 class SymptomCheckerPage extends StatefulWidget {
-  const SymptomCheckerPage({super.key});
+  final void Function(Locale) onLocaleChanged;
+
+  const SymptomCheckerPage({super.key, required this.onLocaleChanged});
 
   @override
   State<SymptomCheckerPage> createState() => _SymptomCheckerPageState();
@@ -101,6 +104,26 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
     }
 
     _controller.clear();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // Assign toggle function to section_tiles
+    toggleLanguageFunc = toggleLanguage;
+  }
+
+  void toggleLanguage() {
+    setState(() {
+      if (language == 'EN ↔ Ahm') {
+        language = 'Ahm ↔ EN';
+        widget.onLocaleChanged(const Locale('am'));
+      } else {
+        language = 'EN ↔ Ahm';
+        widget.onLocaleChanged(const Locale('en'));
+      }
+    });
+    debugPrint('Language toggled: $language');
   }
 
   @override
