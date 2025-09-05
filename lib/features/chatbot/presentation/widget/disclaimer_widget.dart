@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/l10n/arb/app_localizations.dart';
+import 'safety_information_modal.dart';
 
 class DisclaimerWidget extends StatelessWidget {
   const DisclaimerWidget({super.key});
@@ -40,7 +41,7 @@ class DisclaimerWidget extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    debugPrint('Learn More about disclaimer tapped');
+                    SafetyInformationModal.show(context);
                   },
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,

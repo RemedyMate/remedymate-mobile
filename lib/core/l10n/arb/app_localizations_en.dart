@@ -182,74 +182,32 @@ class AppLocalizationsEn extends AppLocalizations {
   String get learnMore => 'Learn More';
 
   @override
-  String get aiChatSessions => 'AI Chat Sessions';
+  String get online => 'Online';
 
   @override
-  String get chatHistory => 'Chat History';
+  String get safetyInfoTitle => 'Important Safety Information';
 
   @override
-  String get enAmToggle => 'EN ↔ AM';
+  String get safetyInfoPoint1 =>
+      'RemedyMate is an AI-powered health information tool designed to provide general guidance only.';
 
   @override
-  String get symptomChecker => 'Symptom Checker';
+  String get safetyInfoPoint2 =>
+      'This app does NOT replace professional medical advice, diagnosis, or treatment.';
 
   @override
-  String get welcomeMessage =>
-      'Hello! I\'m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?';
+  String get safetyInfoPoint3 =>
+      'Always consult with qualified healthcare providers for medical concerns.';
 
   @override
-  String get quickChipToday => 'Today';
+  String get safetyInfoPoint4 =>
+      'In emergencies, call local emergency services immediately.';
 
   @override
-  String get quickChipYesterday => 'Yesterday';
+  String get safetyInfoAction => 'I Understand';
 
   @override
-  String get quickChipOneWeek => '1 Week';
-
-  @override
-  String get quickChipSeverePain => 'Severe pain';
-
-  @override
-  String get typeYourMessage => 'Type your message...';
-
-  @override
-  String get send => 'SEND';
-
-  @override
-  String get offlineMessage => 'Offline — using limited guidance';
-
-  @override
-  String get back => 'Back';
-
-  @override
-  String get selfCareSteps => '✔ Self-Care Steps';
-
-  @override
-  String get otcReliefOptions => '💊 OTC Relief Options';
-
-  @override
-  String get seekMedicalCareIf => '🚨 Seek Medical Care If';
-
-  @override
-  String get flagRed => 'Critical — Seek immediate medical attention';
-
-  @override
-  String get flagYellow => 'Monitor closely\nWatch for worsening symptoms';
-
-  @override
-  String get flagGreen => 'Mild symptoms — Safe to self-manage';
-
-  @override
-  String get flagGeneral => 'General guidance';
-
-  @override
-  String get emergencyNumbers => 'Emergency Numbers';
-
-  @override
-  String get call => 'Call';
-
-  @override
-  String get close => 'Close';
+  String get emergencyTitle => 'Emergency Numbers';
 
   @override
   String get emergencyServices => 'Emergency Services';
@@ -261,5 +219,30 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mentalHealthCrisis => 'Mental Health Crisis';
 
   @override
-  String get importantSafetyInfo => 'Important Safety Information';
+  String get callAction => 'Call';
+
+  @override
+  String get closeAction => 'Close';
+
+  @override
+  String get symptomCheckerTitle => 'Symptom Checker';
+
+  @override
+  String get symptomCheckerGreeting =>
+      'Hello! I’m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?';
+
+  @override
+  String get symptomCheckerHint => 'Describe your symptoms...';
+
+  @override
+  String get today => 'Today';
+
+  @override
+  String get yesterday => 'Yesterday';
+
+  @override
+  String get oneWeek => '1 Week';
+
+  @override
+  String get severePain => 'Severe pain';
 }

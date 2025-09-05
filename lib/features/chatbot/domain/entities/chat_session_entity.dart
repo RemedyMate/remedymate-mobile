@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'message_entity.dart';
+import 'chat_message.dart';
 
 class ChatSession {
   final String id;
@@ -9,7 +9,7 @@ class ChatSession {
   final Color statusColor;
   final String timeStamp;
   final bool isCompleted;
-  final List<MessageEntity> messages;
+  final List<ChatMessage> messages;
 
   const ChatSession({
     required this.id,

@@ -44,7 +44,7 @@ class _SettingPageState extends State<SettingPage> {
   // Toggle language
   void toggleLanguage() {
     setState(() {
-      if (language == 'EN ↔ Ahm') {
+      if (Localizations.localeOf(context).languageCode == 'en') {
         language = 'Ahm ↔ EN';
         widget.onLocaleChanged(const Locale('am'));
       } else {

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/l10n/arb/app_localizations.dart';
 import '../bloc/chatbot_bloc.dart';
 import '../widget/disclaimer_widget.dart';
+import '../widget/emergency_pop_up.dart';
 import '../widget/home_header.dart';
 import '../widget/quick_access_card.dart';
 
@@ -26,12 +28,13 @@ class ChatbotHomePage extends StatelessWidget {
                 const HomeHeader(),
                 const SizedBox(height: 16),
                 Container(
+                  alignment: Alignment.center,
                   height: 250,
-                  decoration: BoxDecoration(
-                    color: AppColors.drawerBackground,
-                    borderRadius: BorderRadius.circular(12),
+                  child: Lottie.asset(
+                    'assets/lottie/home_file.json',
+                    fit: BoxFit.contain,
+                    repeat: true, // Keeps animating
                   ),
-                  child: const Center(child: Text('Home photo placeholder')),
                 ),
                 const SizedBox(height: 16),
                 Center(
@@ -53,70 +56,58 @@ class ChatbotHomePage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 24),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.primaryDeepBlue,
-                          foregroundColor: AppColors.white,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 48,
-                            vertical: 16,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Align(
+                            alignment: Alignment.center,
+                            child: Container(
+                              padding: const EdgeInsets.all(16),
+                              decoration: BoxDecoration(
+                                color: AppColors.white,
+                                shape: BoxShape.circle,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.1),
+                                    blurRadius: 4,
+                                    offset: const Offset(0, 2),
+                                  ),
+                                ],
+                              ),
+                              child: const Icon(
+                                Icons.mic_none,
+                                color: AppColors.primaryDeepBlue,
+                                size: 20,
+                              ),
+                            ),
                           ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
+
+                          const SizedBox(width: 20),
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.primaryDeepBlue,
+                              foregroundColor: AppColors.white,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 48,
+                                vertical: 16,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              textStyle: AppTextStyles.bodyText.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            child: Text(l10n.startChat),
                           ),
-                          textStyle: AppTextStyles.bodyText.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        child: Text(l10n.startChat),
+                        ],
                       ),
                     ],
                   ),
                 ),
                 const SizedBox(height: 16),
-                SizedBox(
-                  height: 40,
-                  child: Stack(
-                    children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: const BoxDecoration(
-                            color: AppColors.drawerBackground,
-                            shape: BoxShape.circle,
-                          ),
-                          child: const Icon(
-                            Icons.mic_none,
-                            color: Colors.black54,
-                            size: 20,
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 6,
-                          ),
-                          decoration: BoxDecoration(
-                            color: AppColors.greenTriage,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Text(
-                            l10n.offline,
-                            style: const TextStyle(
-                              color: AppColors.white,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+
                 const SizedBox(height: 16),
                 Text(l10n.quickAccessTitle, style: AppTextStyles.sectionHeader),
                 const SizedBox(height: 12),
@@ -134,7 +125,9 @@ class ChatbotHomePage extends StatelessWidget {
                       icon: Icons.medical_services_outlined,
                       iconContainerColor: AppColors.background,
                       iconColor: AppColors.redTriage,
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, '/symptom_checker');
+                      },
                     ),
                     QuickAccessCard(
                       title: l10n.quickActionLibraryTitle,
@@ -163,7 +156,9 @@ class ChatbotHomePage extends StatelessWidget {
                       iconColor: AppColors.white,
                       titleColor: AppColors.redTriage,
                       subtitleColor: AppColors.redTriage.withValues(alpha: 0.8),
-                      onTap: () {},
+                      onTap: () {
+                        EmergencyModal.show(context);
+                      },
                     ),
                   ],
                 ),

@@ -440,167 +440,125 @@ abstract class AppLocalizations {
   /// **'Learn More'**
   String get learnMore;
 
-  /// No description provided for @aiChatSessions.
+  /// Status indicator for online mode
   ///
   /// In en, this message translates to:
-  /// **'AI Chat Sessions'**
-  String get aiChatSessions;
+  /// **'Online'**
+  String get online;
 
-  /// No description provided for @chatHistory.
+  /// Title for the important safety information section
   ///
   /// In en, this message translates to:
-  /// **'Chat History'**
-  String get chatHistory;
+  /// **'Important Safety Information'**
+  String get safetyInfoTitle;
 
-  /// No description provided for @enAmToggle.
+  /// First point in the safety information section
   ///
   /// In en, this message translates to:
-  /// **'EN ↔ AM'**
-  String get enAmToggle;
+  /// **'RemedyMate is an AI-powered health information tool designed to provide general guidance only.'**
+  String get safetyInfoPoint1;
 
-  /// No description provided for @symptomChecker.
+  /// Second point in the safety information section
   ///
   /// In en, this message translates to:
-  /// **'Symptom Checker'**
-  String get symptomChecker;
+  /// **'This app does NOT replace professional medical advice, diagnosis, or treatment.'**
+  String get safetyInfoPoint2;
 
-  /// No description provided for @welcomeMessage.
+  /// Third point in the safety information section
   ///
   /// In en, this message translates to:
-  /// **'Hello! I\'m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?'**
-  String get welcomeMessage;
+  /// **'Always consult with qualified healthcare providers for medical concerns.'**
+  String get safetyInfoPoint3;
 
-  /// No description provided for @quickChipToday.
+  /// Fourth point in the safety information section
   ///
   /// In en, this message translates to:
-  /// **'Today'**
-  String get quickChipToday;
+  /// **'In emergencies, call local emergency services immediately.'**
+  String get safetyInfoPoint4;
 
-  /// No description provided for @quickChipYesterday.
+  /// Button label to acknowledge safety information
   ///
   /// In en, this message translates to:
-  /// **'Yesterday'**
-  String get quickChipYesterday;
+  /// **'I Understand'**
+  String get safetyInfoAction;
 
-  /// No description provided for @quickChipOneWeek.
-  ///
-  /// In en, this message translates to:
-  /// **'1 Week'**
-  String get quickChipOneWeek;
-
-  /// No description provided for @quickChipSeverePain.
-  ///
-  /// In en, this message translates to:
-  /// **'Severe pain'**
-  String get quickChipSeverePain;
-
-  /// No description provided for @typeYourMessage.
-  ///
-  /// In en, this message translates to:
-  /// **'Type your message...'**
-  String get typeYourMessage;
-
-  /// No description provided for @send.
-  ///
-  /// In en, this message translates to:
-  /// **'SEND'**
-  String get send;
-
-  /// No description provided for @offlineMessage.
-  ///
-  /// In en, this message translates to:
-  /// **'Offline — using limited guidance'**
-  String get offlineMessage;
-
-  /// No description provided for @back.
-  ///
-  /// In en, this message translates to:
-  /// **'Back'**
-  String get back;
-
-  /// No description provided for @selfCareSteps.
-  ///
-  /// In en, this message translates to:
-  /// **'✔ Self-Care Steps'**
-  String get selfCareSteps;
-
-  /// No description provided for @otcReliefOptions.
-  ///
-  /// In en, this message translates to:
-  /// **'💊 OTC Relief Options'**
-  String get otcReliefOptions;
-
-  /// No description provided for @seekMedicalCareIf.
-  ///
-  /// In en, this message translates to:
-  /// **'🚨 Seek Medical Care If'**
-  String get seekMedicalCareIf;
-
-  /// No description provided for @flagRed.
-  ///
-  /// In en, this message translates to:
-  /// **'Critical — Seek immediate medical attention'**
-  String get flagRed;
-
-  /// No description provided for @flagYellow.
-  ///
-  /// In en, this message translates to:
-  /// **'Monitor closely\nWatch for worsening symptoms'**
-  String get flagYellow;
-
-  /// No description provided for @flagGreen.
-  ///
-  /// In en, this message translates to:
-  /// **'Mild symptoms — Safe to self-manage'**
-  String get flagGreen;
-
-  /// No description provided for @flagGeneral.
-  ///
-  /// In en, this message translates to:
-  /// **'General guidance'**
-  String get flagGeneral;
-
-  /// No description provided for @emergencyNumbers.
+  /// Title for the emergency numbers section
   ///
   /// In en, this message translates to:
   /// **'Emergency Numbers'**
-  String get emergencyNumbers;
+  String get emergencyTitle;
 
-  /// No description provided for @call.
-  ///
-  /// In en, this message translates to:
-  /// **'Call'**
-  String get call;
-
-  /// No description provided for @close.
-  ///
-  /// In en, this message translates to:
-  /// **'Close'**
-  String get close;
-
-  /// No description provided for @emergencyServices.
+  /// Label for emergency services
   ///
   /// In en, this message translates to:
   /// **'Emergency Services'**
   String get emergencyServices;
 
-  /// No description provided for @poisonControl.
+  /// Label for poison control
   ///
   /// In en, this message translates to:
   /// **'Poison Control'**
   String get poisonControl;
 
-  /// No description provided for @mentalHealthCrisis.
+  /// Label for mental health crisis
   ///
   /// In en, this message translates to:
   /// **'Mental Health Crisis'**
   String get mentalHealthCrisis;
 
-  /// No description provided for @importantSafetyInfo.
+  /// Button label to initiate a call
   ///
   /// In en, this message translates to:
-  /// **'Important Safety Information'**
-  String get importantSafetyInfo;
+  /// **'Call'**
+  String get callAction;
+
+  /// Button label to close a dialog or screen
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get closeAction;
+
+  /// Title for the symptom checker section
+  ///
+  /// In en, this message translates to:
+  /// **'Symptom Checker'**
+  String get symptomCheckerTitle;
+
+  /// Greeting message shown at the start of the symptom checker
+  ///
+  /// In en, this message translates to:
+  /// **'Hello! I’m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?'**
+  String get symptomCheckerGreeting;
+
+  /// Hint text for the symptom description input field
+  ///
+  /// In en, this message translates to:
+  /// **'Describe your symptoms...'**
+  String get symptomCheckerHint;
+
+  /// Label for today's date
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get today;
+
+  /// Label for yesterday's date
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get yesterday;
+
+  /// Label for a one week time period
+  ///
+  /// In en, this message translates to:
+  /// **'1 Week'**
+  String get oneWeek;
+
+  /// Label for severe pain symptom
+  ///
+  /// In en, this message translates to:
+  /// **'Severe pain'**
+  String get severePain;
 }
 
 class _AppLocalizationsDelegate
