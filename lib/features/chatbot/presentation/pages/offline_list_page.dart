@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constants/app_colors.dart';
-import '../../../../core/l10n/arb/app_localizations.dart';
-import '../../../../core/l10n/arb/app_localizations_am.dart';
 import '../widget/app_bar.dart';
 import '../widget/offline_guide.dart';
 
