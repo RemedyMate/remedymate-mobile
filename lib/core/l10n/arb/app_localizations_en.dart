@@ -260,4 +260,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get offlineMessage => 'You are offline. Some features may be limited.';
+
+  @override
+  String get availableOffline => 'Available offline';
+
+  @override
+  String get importantSafetyInfo => 'Important Safety Information';
 }

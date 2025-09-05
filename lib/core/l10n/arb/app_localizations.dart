@@ -506,7 +506,15 @@ abstract class AppLocalizations {
   /// **'Mental Health Crisis'**
   String get mentalHealthCrisis;
 
+
   /// Button label to initiate a call
+  /// No description provided for @availableOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Available offline'**
+  String get availableOffline;
+
+  /// No description provided for @importantSafetyInfo.
   ///
   /// In en, this message translates to:
   /// **'Call'**

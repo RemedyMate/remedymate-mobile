@@ -257,4 +257,10 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get offlineMessage => 'ከመስመር ውጭ ነዎት። አንዳንድ ባህሪዎች ሊገደቡ ይችላሉ።';
+
+  @override
+  String get availableOffline => 'ከመስመር ውጭ ይገኛል';
+
+  @override
+  String get importantSafetyInfo => 'አስፈላጊ የደህንነት መረጃ';
 }

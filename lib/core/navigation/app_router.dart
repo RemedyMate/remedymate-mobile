@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import '../../features/chatbot/presentation/pages/chat.dart';
 import '../../features/chatbot/presentation/pages/chat_session.dart';
 import '../../features/chatbot/presentation/pages/chatbot_home_page.dart';
+import '../../features/chatbot/presentation/pages/offline_list_page.dart';
 import '../../features/chatbot/presentation/pages/shell_page.dart';
 import '../../features/onboarding/pages/setting_page.dart';
 
@@ -15,6 +16,7 @@ GoRouter router(void Function(Locale) onLocaleChanged) {
           return ShellPage(navigationShell: navigationShell);
         },
         branches: [
+          // 0 → Home
           StatefulShellBranch(
             routes: [
               GoRoute(
@@ -23,23 +25,27 @@ GoRouter router(void Function(Locale) onLocaleChanged) {
               ),
             ],
           ),
+          // 1 → Chats
           StatefulShellBranch(
             routes: [
               GoRoute(
                 path: '/chats',
-                builder: (context, state) => SymptomCheckerPage(onLocaleChanged: onLocaleChanged,),
+
+                builder: (context, state) =>
+                    SymptomCheckerPage(onLocaleChanged: onLocaleChanged),
               ),
             ],
           ),
+          // 2 → Library
           StatefulShellBranch(
             routes: [
               GoRoute(
                 path: '/library',
-                builder: (context, state) =>
-                    const Center(child: Text('Library Page')),
+                builder: (context, state) => const OfflineLibraryPage(),
               ),
             ],
           ),
+          // 3 → Settings
           StatefulShellBranch(
             routes: [
               GoRoute(
