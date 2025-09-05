@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/l10n/arb/app_localizations.dart';
+
 class EmergencyModal {
   static const List<Map<String, String>> emergencyNumbers = [
     {'title': 'Emergency Services', 'number': '911', 'color': 'red'},
@@ -25,9 +27,9 @@ class EmergencyModal {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      'Emergency Numbers',
-                      style: TextStyle(
+                    Text(
+                      AppLocalizations.of(context)!.emergencyNumbers,
+                      style: const TextStyle(
                         color: Colors.red,
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
@@ -71,9 +73,9 @@ class EmergencyModal {
                           // You can integrate `url_launcher` here for calling
                           debugPrint('Calling ${item['number']}');
                         },
-                        child: const Text(
-                          'Call',
-                          style: TextStyle(color: Colors.white),
+                        child: Text(
+                          AppLocalizations.of(context)!.call,
+                          style: const TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
@@ -94,9 +96,9 @@ class EmergencyModal {
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    child: const Text(
-                      'Close',
-                      style: TextStyle(color: Colors.white),
+                    child: Text(
+                      AppLocalizations.of(context)!.close,
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
                 ),

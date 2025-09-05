@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
-// ignore: depend_on_referenced_packages
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/l10n/arb/app_localizations.dart';
 import '../bloc/chatbot_bloc.dart';
 import '../widget/bot_response.dart';
 import '../widget/guide_card.dart';
+import '../widget/material.dart';
 import '../widget/offline_mode.dart';
 import '../widget/quick_chip.dart';
 
 class SymptomCheckerPage extends StatefulWidget {
-  const SymptomCheckerPage({super.key});
+  final void Function(Locale) onLocaleChanged;
+
+  const SymptomCheckerPage({super.key, required this.onLocaleChanged});
 
   @override
   State<SymptomCheckerPage> createState() => _SymptomCheckerPageState();
@@ -18,6 +21,7 @@ class SymptomCheckerPage extends StatefulWidget {
 
 class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
   final TextEditingController _controller = TextEditingController();
+  String language = 'EN ↔ Ahm';
 
   @override
   void dispose() {
@@ -26,11 +30,106 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    // Assign toggle function to section_tiles
+    toggleLanguageFunc = toggleLanguage;
+  }
+
+  void toggleLanguage() {
+    setState(() {
+      if (language == 'EN ↔ Ahm') {
+        language = 'Ahm ↔ EN';
+        widget.onLocaleChanged(const Locale('am'));
+      } else {
+        language = 'EN ↔ Ahm';
+        widget.onLocaleChanged(const Locale('en'));
+      }
+    });
+    debugPrint('Language toggled: $language');
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Symptom Checker'),
-      ),
+          automaticallyImplyLeading: false,
+          backgroundColor: AppColors.appBarColor,
+          title: Row(
+            children: [
+              // Back arrow
+              IconButton(
+                icon: const Icon(Icons.arrow_back_ios, color: AppColors.drawerTextColor),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+
+              Container(
+                padding: const EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                  color: AppColors.greenTriage,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Icon(Icons.check, color: AppColors.primaryDeepBlue)
+              ),
+              const SizedBox(width: 6),
+              // Title
+              Text(
+                AppLocalizations.of(context)!.symptomChecker,
+                style: const TextStyle(color: AppColors.drawerTextColor, fontSize: 20),
+              ),
+
+              const Spacer(), // Push buttons to the right
+
+              // Offline button (smaller)
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: AppColors.amberTriage,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero, // remove extra padding
+                    minimumSize: const Size(40, 20), // make button smaller
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: Text(
+                    AppLocalizations.of(context)!.offline,
+                    style: const TextStyle(color: AppColors.drawerTextColor, fontSize: 12),
+                  ),
+                ),
+              ),
+
+              const SizedBox(width: 8),
+
+              // EN <-> AM button (smaller)
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: AppColors.primaryDeepBlue,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    toggleLanguage();
+                  },
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                    minimumSize: const Size(40, 20),
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: Text(
+                    AppLocalizations.of(context)!.enAmToggle,
+                    style: const TextStyle(color: AppColors.drawerBackground, fontSize: 12),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       body: Container(
         color: AppColors.background,
         child: Column(
@@ -48,8 +147,8 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
               child: BlocBuilder<ChatbotBloc, ChatbotState>(
                 builder: (context, state) {
                   if (state is ChatbotInitial) {
-                    return const BotMessage(
-                      'Hello! I’m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?',
+                    return BotMessage(
+                      AppLocalizations.of(context)!.welcomeMessage,
                     );
                   }
 
@@ -95,10 +194,10 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
                   Wrap(
                     spacing: 8,
                     children: [
-                      QuickChip('Today', controller: _controller),
-                      QuickChip('Yesterday', controller: _controller),
-                      QuickChip('1 Week', controller: _controller),
-                      QuickChip('Severe pain', controller: _controller),
+                      QuickChip(AppLocalizations.of(context)!.quickChipToday, controller: _controller),
+                      QuickChip(AppLocalizations.of(context)!.quickChipYesterday, controller: _controller),
+                      QuickChip(AppLocalizations.of(context)!.quickChipOneWeek, controller: _controller),
+                      QuickChip(AppLocalizations.of(context)!.quickChipSeverePain, controller: _controller),
                     ],
                   ),
                   const SizedBox(height: 8),
@@ -112,7 +211,7 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
                               onTap: () {},
                               child: const Icon(Icons.mic),
                             ),
-                            hintText: 'Describe your symptoms...',
+                            hintText: AppLocalizations.of(context)!.typeYourMessage,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),

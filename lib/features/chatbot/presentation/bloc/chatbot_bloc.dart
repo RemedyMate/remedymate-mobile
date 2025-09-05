@@ -16,6 +16,7 @@ class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
   ChatbotBloc({required this.startChatUseCase}) : super(ChatbotInitial()) {
     on<StartChatEvent>(_onGetGuidanceCard);
     on<LoadChatSessions>(_onLoadChatSessions);
+    on<AnswerFollowUpEvent>(_onAnswerFollowup);
   }
 
   Future<void> _onGetGuidanceCard(
@@ -85,4 +86,27 @@ class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
 
     emit(ChatSessionLoaded(sessions));
   }
+
+  Future<void> _onAnswerFollowup(
+    AnswerFollowUpEvent event,
+    Emitter<ChatbotState> emit,
+  ) async {
+    emit(ChatbotLoading());
+
+    final result = await startChatUseCase(event.answer, event.conversationId);
+
+    result.fold(
+      (failure) => emit(ChatbotError(failure.message)),
+      (guide) => guide.fold(
+        (guideEntity) => emit(GuideLoaded(guideEntity)),
+        (followUpMessage) => emit(
+          FollowUpLoaded(
+            followUpMessage.question,
+            followUpMessage.conversationId,
+          ),
+        ),
+      ),
+    );
+  }
+
 }
