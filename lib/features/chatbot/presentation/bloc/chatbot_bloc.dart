@@ -2,9 +2,9 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/constants/app_colors.dart';
+import '../../domain/entities/chat_message.dart';
 import '../../domain/entities/chat_session_entity.dart';
-import '../../domain/entities/guide_entity.dart';
+import '../../domain/usecases/answer_follow_up.dart';
 import '../../domain/usecases/start_chat_usecase.dart';
 
 part 'chatbot_event.dart';
@@ -12,77 +12,46 @@ part 'chatbot_state.dart';
 
 class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
   final StartChatUseCase startChatUseCase;
+  final AnswerFollowUpUseCase answerFollowUpUseCase;
 
-  ChatbotBloc({required this.startChatUseCase}) : super(ChatbotInitial()) {
-    on<StartChatEvent>(_onGetGuidanceCard);
-    on<LoadChatSessions>(_onLoadChatSessions);
+  ChatbotBloc({
+    required this.startChatUseCase,
+    required this.answerFollowUpUseCase,
+  }) : super(ChatbotInitial()) {
+    on<StartChatEvent>(_onStartChatEvent);
+    on<AnswerFollowUpEvent>(_onAnswerFollowUpEvent);
   }
 
-  Future<void> _onGetGuidanceCard(
+  Future<void> _onStartChatEvent(
     StartChatEvent event,
     Emitter<ChatbotState> emit,
   ) async {
     emit(ChatbotLoading());
-
     final result = await startChatUseCase(event.symptoms, event.language);
-
     result.fold(
-      (failure) => emit(ChatbotError(failure.message)),
-      (guide) => guide.fold(
-        (guideEntity) => emit(GuideLoaded(guideEntity)),
-        (followUpMessage) => emit(
-          FollowUpLoaded(
-            followUpMessage.question,
-            followUpMessage.conversationId,
-          ),
-        ),
-      ),
+      (failure) => emit(ChatbotError(failure.toString())),
+      (message) => emit(FollowUpLoaded(message)),
     );
   }
 
-  Future<void> _onLoadChatSessions(
-    ChatbotEvent event,
+  Future<void> _onAnswerFollowUpEvent(
+    AnswerFollowUpEvent event,
     Emitter<ChatbotState> emit,
   ) async {
-    emit(ChatSessionLoading());
+    emit(ChatbotLoading());
+    // Create FollowUpAnswerMessage entity
+    final followUpMessage = FollowUpAnswerMessage(
+      conversationId: event.conversationId,
+      answer: event.answer,
+      language: event.language,
+      timestamp: DateTime.now(),
+      followUpId: event.followUpId,
+    );
 
-    await Future.delayed(const Duration(seconds: 1));
-
-    const sessions = [
-      ChatSession(
-        id: '1',
-        title: 'Chest Pain Assessment',
-        status: 'High',
-        statusColor: AppColors.redTriage,
-        timeStamp: '2024-10-01 10:00 AM',
-        messages: [],
-      ),
-      ChatSession(
-        id: '1',
-        title: 'Headache Evaluation',
-        status: 'Open',
-        statusColor: AppColors.greenTriage,
-        timeStamp: '2024-10-02 02:30 PM',
-        messages: [],
-      ),
-      ChatSession(
-        id: '3',
-        title: 'Medication Side Effects',
-        status: 'Low',
-        statusColor: AppColors.amberTriage,
-        timeStamp: '2024-10-03 11:15 AM',
-        messages: [],
-      ),
-      ChatSession(
-        id: '4',
-        title: 'Digestive Issues',
-        status: 'Low',
-        statusColor: AppColors.greenTriage,
-        timeStamp: '2024-10-04 09:45 AM',
-        messages: [],
-      ),
-    ];
-
-    emit(ChatSessionLoaded(sessions));
+    final result = await answerFollowUpUseCase(followUpMessage);
+    result.fold(
+      (failure) => emit(ChatbotError(failure.toString())),
+      (message) => emit(FollowUpLoaded(message)),
+    );
   }
 }

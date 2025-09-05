@@ -12,7 +12,16 @@ class StartChatEvent extends ChatbotEvent {
 class AnswerFollowUpEvent extends ChatbotEvent {
   final String conversationId;
   final String answer;
-  AnswerFollowUpEvent(this.conversationId, this.answer);
+  final String language;
+  final String followUpId;
+  AnswerFollowUpEvent({
+    required this.conversationId,
+    required this.answer,
+    required this.language,
+    required this.followUpId,
+  });
 }
 
 class LoadChatSessions extends ChatbotEvent {}
+
+class LoadHomePageData extends ChatbotEvent {}

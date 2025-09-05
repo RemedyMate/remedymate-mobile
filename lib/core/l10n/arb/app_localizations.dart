@@ -98,191 +98,497 @@ abstract class AppLocalizations {
     Locale('en'),
   ];
 
-  /// No description provided for @settings.
+  /// Label for the settings section
   ///
   /// In en, this message translates to:
   /// **'Settings'**
   String get settings;
 
-  /// No description provided for @guestUser.
+  /// Label for a guest user
   ///
   /// In en, this message translates to:
   /// **'Guest User'**
   String get guestUser;
 
-  /// No description provided for @anonymousSession.
+  /// Label for an anonymous session
   ///
   /// In en, this message translates to:
   /// **'Anonymous Session'**
   String get anonymousSession;
 
-  /// No description provided for @editProfile.
+  /// Label for editing user profile
   ///
   /// In en, this message translates to:
   /// **'Edit Profile'**
   String get editProfile;
 
-  /// No description provided for @account.
+  /// Header for the account section
   ///
   /// In en, this message translates to:
   /// **'Account'**
   String get account;
 
-  /// No description provided for @manageProfile.
+  /// Label for managing user profile
   ///
   /// In en, this message translates to:
   /// **'Manage Profile'**
   String get manageProfile;
 
-  /// No description provided for @manageProfileSubtitle.
+  /// Subtitle for managing user profile
   ///
   /// In en, this message translates to:
   /// **'Update your information'**
   String get manageProfileSubtitle;
 
-  /// No description provided for @savedSessions.
+  /// Label for saved chat sessions
   ///
   /// In en, this message translates to:
   /// **'Saved Sessions'**
   String get savedSessions;
 
-  /// No description provided for @savedSessionsSubtitle.
+  /// Subtitle for saved chat sessions
   ///
   /// In en, this message translates to:
   /// **'View chat history'**
   String get savedSessionsSubtitle;
 
-  /// No description provided for @notifications.
+  /// Label for notifications
   ///
   /// In en, this message translates to:
   /// **'Notifications'**
   String get notifications;
 
-  /// No description provided for @notificationsSubtitle.
+  /// Subtitle for notifications management
   ///
   /// In en, this message translates to:
   /// **'Manage alerts'**
   String get notificationsSubtitle;
 
-  /// No description provided for @preferences.
+  /// Header for the preferences section
   ///
   /// In en, this message translates to:
   /// **'Preferences'**
   String get preferences;
 
-  /// No description provided for @language.
+  /// Label for language selection
   ///
   /// In en, this message translates to:
   /// **'Language'**
   String get language;
 
-  /// No description provided for @languageSubtitle.
+  /// Subtitle for language selection, showing current languages
   ///
   /// In en, this message translates to:
   /// **'English ↔ Amharic'**
   String get languageSubtitle;
 
-  /// No description provided for @textSize.
+  /// Label for text size adjustment
   ///
   /// In en, this message translates to:
   /// **'Text Size'**
   String get textSize;
 
-  /// No description provided for @textSizeSubtitle.
+  /// Subtitle for text size adjustment
   ///
   /// In en, this message translates to:
   /// **'Adjust readability'**
   String get textSizeSubtitle;
 
-  /// No description provided for @offlineMode.
+  /// Label for offline mode setting
   ///
   /// In en, this message translates to:
   /// **'Offline Mode'**
   String get offlineMode;
 
-  /// No description provided for @offlineModeSubtitle.
+  /// Subtitle for offline mode, explaining its function
   ///
   /// In en, this message translates to:
   /// **'Cache content locally'**
   String get offlineModeSubtitle;
 
-  /// No description provided for @support.
+  /// Header for the support section
   ///
   /// In en, this message translates to:
   /// **'Support'**
   String get support;
 
-  /// No description provided for @faq.
+  /// Label for FAQ and Help Center
   ///
   /// In en, this message translates to:
   /// **'FAQ & Help Center'**
   String get faq;
 
-  /// No description provided for @faqSubtitle.
+  /// Subtitle for FAQ, indicating common questions
   ///
   /// In en, this message translates to:
   /// **'Common questions'**
   String get faqSubtitle;
 
-  /// No description provided for @contactSupport.
+  /// Label for contacting support
   ///
   /// In en, this message translates to:
   /// **'Contact Support'**
   String get contactSupport;
 
-  /// No description provided for @contactSupportSubtitle.
+  /// Subtitle for contacting support
   ///
   /// In en, this message translates to:
   /// **'Get help from our team'**
   String get contactSupportSubtitle;
 
-  /// No description provided for @emergencyHelp.
+  /// Label for emergency help
   ///
   /// In en, this message translates to:
   /// **'Emergency Help'**
   String get emergencyHelp;
 
-  /// No description provided for @emergencyHelpSubtitle.
+  /// Subtitle for emergency help
   ///
   /// In en, this message translates to:
   /// **'Urgent assistance'**
   String get emergencyHelpSubtitle;
 
-  /// No description provided for @about.
+  /// Header for the about section
   ///
   /// In en, this message translates to:
   /// **'About'**
   String get about;
 
-  /// No description provided for @terms.
+  /// Label for terms and privacy policy
   ///
   /// In en, this message translates to:
   /// **'Terms & Privacy Policy'**
   String get terms;
 
-  /// No description provided for @termsSubtitle.
+  /// Subtitle for terms and privacy policy
   ///
   /// In en, this message translates to:
   /// **'Legal information'**
   String get termsSubtitle;
 
-  /// No description provided for @versionInfo.
+  /// Label for version information
   ///
   /// In en, this message translates to:
   /// **'Version Info'**
   String get versionInfo;
 
-  /// No description provided for @versionInfoSubtitle.
+  /// Subtitle for version information, showing app version
   ///
   /// In en, this message translates to:
   /// **'RemedyMate v2.1.0'**
   String get versionInfoSubtitle;
 
-  /// No description provided for @signOut.
+  /// Label for signing out
   ///
   /// In en, this message translates to:
   /// **'Sign Out'**
   String get signOut;
+
+  /// The name of the application
+  ///
+  /// In en, this message translates to:
+  /// **'RemedyMate'**
+  String get appName;
+
+  /// Text for language switch button, indicating English and Amharic
+  ///
+  /// In en, this message translates to:
+  /// **'EN ↔ Amh'**
+  String get languageSwitch;
+
+  /// Title displayed on the home screen
+  ///
+  /// In en, this message translates to:
+  /// **'Safe, Simple Health Guidance at Home'**
+  String get homeTitle;
+
+  /// Subtitle displayed on the home screen
+  ///
+  /// In en, this message translates to:
+  /// **'Chat with RemedyMate for self-care tips in Amharic or English.'**
+  String get homeSubtitle;
+
+  /// Button label to start a chat
+  ///
+  /// In en, this message translates to:
+  /// **'Start Chat'**
+  String get startChat;
+
+  /// Status indicator for offline mode
+  ///
+  /// In en, this message translates to:
+  /// **'Offline'**
+  String get offline;
+
+  /// Title for the quick access section
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Access'**
+  String get quickAccessTitle;
+
+  /// Title for the explore section
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get exploreTitle;
+
+  /// Title for the popular topics section
+  ///
+  /// In en, this message translates to:
+  /// **'Popular Topics'**
+  String get popularTopicsTitle;
+
+  /// Title for the local tips section
+  ///
+  /// In en, this message translates to:
+  /// **'Local Tips'**
+  String get localTipsTitle;
+
+  /// Title for the 'Check My Symptoms' quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Check My Symptoms'**
+  String get quickActionSymptomsTitle;
+
+  /// Subtitle for the 'Check My Symptoms' quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Start chat flow'**
+  String get quickActionSymptomsSubtitle;
+
+  /// Title for the 'Offline Library' quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Offline Library'**
+  String get quickActionLibraryTitle;
+
+  /// Subtitle for the 'Offline Library' quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Cached topics'**
+  String get quickActionLibrarySubtitle;
+
+  /// Title for the 'Saved Sessions' quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Saved Sessions'**
+  String get quickActionSavedTitle;
+
+  /// Subtitle for the 'Saved Sessions' quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Last 10 chats'**
+  String get quickActionSavedSubtitle;
+
+  /// Title for the 'Emergency Help' quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency Help'**
+  String get quickActionEmergencyTitle;
+
+  /// Subtitle for the 'Emergency Help' quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Urgent assistance'**
+  String get quickActionEmergencySubtitle;
+
+  /// Popular topic: Cold
+  ///
+  /// In en, this message translates to:
+  /// **'Cold'**
+  String get popularTopicCold;
+
+  /// Popular topic: Headache
+  ///
+  /// In en, this message translates to:
+  /// **'Headache'**
+  String get popularTopicHeadache;
+
+  /// Popular topic: Heartburn
+  ///
+  /// In en, this message translates to:
+  /// **'Heartburn'**
+  String get popularTopicHeartburn;
+
+  /// Popular topic: Motion Sickness
+  ///
+  /// In en, this message translates to:
+  /// **'Motion Sicknes'**
+  String get popularTopicMotionSickness;
+
+  /// Local tip: Safe home remedies
+  ///
+  /// In en, this message translates to:
+  /// **'Safe home remedies'**
+  String get localTipRemedies;
+
+  /// Local tip: Important warnings
+  ///
+  /// In en, this message translates to:
+  /// **'Important warnings'**
+  String get localTipWarnings;
+
+  /// Disclaimer text regarding medical advice
+  ///
+  /// In en, this message translates to:
+  /// **'RemedyMate gives general info only. Not medical advice.'**
+  String get disclaimerText;
+
+  /// Button label to learn more
+  ///
+  /// In en, this message translates to:
+  /// **'Learn More'**
+  String get learnMore;
+
+  /// Status indicator for online mode
+  ///
+  /// In en, this message translates to:
+  /// **'Online'**
+  String get online;
+
+  /// Title for the important safety information section
+  ///
+  /// In en, this message translates to:
+  /// **'Important Safety Information'**
+  String get safetyInfoTitle;
+
+  /// First point in the safety information section
+  ///
+  /// In en, this message translates to:
+  /// **'RemedyMate is an AI-powered health information tool designed to provide general guidance only.'**
+  String get safetyInfoPoint1;
+
+  /// Second point in the safety information section
+  ///
+  /// In en, this message translates to:
+  /// **'This app does NOT replace professional medical advice, diagnosis, or treatment.'**
+  String get safetyInfoPoint2;
+
+  /// Third point in the safety information section
+  ///
+  /// In en, this message translates to:
+  /// **'Always consult with qualified healthcare providers for medical concerns.'**
+  String get safetyInfoPoint3;
+
+  /// Fourth point in the safety information section
+  ///
+  /// In en, this message translates to:
+  /// **'In emergencies, call local emergency services immediately.'**
+  String get safetyInfoPoint4;
+
+  /// Button label to acknowledge safety information
+  ///
+  /// In en, this message translates to:
+  /// **'I Understand'**
+  String get safetyInfoAction;
+
+  /// Title for the emergency numbers section
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency Numbers'**
+  String get emergencyTitle;
+
+  /// Label for emergency services
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency Services'**
+  String get emergencyServices;
+
+  /// Label for poison control
+  ///
+  /// In en, this message translates to:
+  /// **'Poison Control'**
+  String get poisonControl;
+
+  /// Label for mental health crisis
+  ///
+  /// In en, this message translates to:
+  /// **'Mental Health Crisis'**
+  String get mentalHealthCrisis;
+
+  /// Button label to initiate a call
+  ///
+  /// In en, this message translates to:
+  /// **'Call'**
+  String get callAction;
+
+  /// Button label to close a dialog or screen
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get closeAction;
+
+  /// Title for the symptom checker section
+  ///
+  /// In en, this message translates to:
+  /// **'Symptom Checker'**
+  String get symptomCheckerTitle;
+
+  /// Greeting message shown at the start of the symptom checker
+  ///
+  /// In en, this message translates to:
+  /// **'Hello! I’m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?'**
+  String get symptomCheckerGreeting;
+
+  /// Hint text for the symptom description input field
+  ///
+  /// In en, this message translates to:
+  /// **'Describe your symptoms...'**
+  String get symptomCheckerHint;
+
+  /// Label for today's date
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get today;
+
+  /// Label for yesterday's date
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get yesterday;
+
+  /// Label for a one week time period
+  ///
+  /// In en, this message translates to:
+  /// **'1 Week'**
+  String get oneWeek;
+
+  /// Label for severe pain symptom
+  ///
+  /// In en, this message translates to:
+  /// **'Severe pain'**
+  String get severePain;
+
+  /// Label for red flag status
+  ///
+  /// In en, this message translates to:
+  /// **'red'**
+  String get flagred;
+
+  /// Label for yellow flag status
+  ///
+  /// In en, this message translates to:
+  /// **'yellow'**
+  String get flagyellow;
+
+  /// Label for green flag status
+  ///
+  /// In en, this message translates to:
+  /// **'green'**
+  String get flaggreen;
+
+  /// Label for general flag status
+  ///
+  /// In en, this message translates to:
+  /// **'general'**
+  String get flaggeneral;
+
+  /// Message displayed when the user is offline
+  ///
+  /// In en, this message translates to:
+  /// **'You are offline. Some features may be limited.'**
+  String get offlineMessage;
 }
 
 class _AppLocalizationsDelegate

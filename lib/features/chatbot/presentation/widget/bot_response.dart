@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class BotMessage extends StatelessWidget {
   final String text;
-  const BotMessage(this.text, {super.key});
+  final bool isError;
+  const BotMessage(this.text, {this.isError = false, super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -100,4 +100,164 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get signOut => 'Sign Out';
+
+  @override
+  String get appName => 'RemedyMate';
+
+  @override
+  String get languageSwitch => 'EN ↔ Amh';
+
+  @override
+  String get homeTitle => 'Safe, Simple Health Guidance at Home';
+
+  @override
+  String get homeSubtitle =>
+      'Chat with RemedyMate for self-care tips in Amharic or English.';
+
+  @override
+  String get startChat => 'Start Chat';
+
+  @override
+  String get offline => 'Offline';
+
+  @override
+  String get quickAccessTitle => 'Quick Access';
+
+  @override
+  String get exploreTitle => 'Explore';
+
+  @override
+  String get popularTopicsTitle => 'Popular Topics';
+
+  @override
+  String get localTipsTitle => 'Local Tips';
+
+  @override
+  String get quickActionSymptomsTitle => 'Check My Symptoms';
+
+  @override
+  String get quickActionSymptomsSubtitle => 'Start chat flow';
+
+  @override
+  String get quickActionLibraryTitle => 'Offline Library';
+
+  @override
+  String get quickActionLibrarySubtitle => 'Cached topics';
+
+  @override
+  String get quickActionSavedTitle => 'Saved Sessions';
+
+  @override
+  String get quickActionSavedSubtitle => 'Last 10 chats';
+
+  @override
+  String get quickActionEmergencyTitle => 'Emergency Help';
+
+  @override
+  String get quickActionEmergencySubtitle => 'Urgent assistance';
+
+  @override
+  String get popularTopicCold => 'Cold';
+
+  @override
+  String get popularTopicHeadache => 'Headache';
+
+  @override
+  String get popularTopicHeartburn => 'Heartburn';
+
+  @override
+  String get popularTopicMotionSickness => 'Motion Sicknes';
+
+  @override
+  String get localTipRemedies => 'Safe home remedies';
+
+  @override
+  String get localTipWarnings => 'Important warnings';
+
+  @override
+  String get disclaimerText =>
+      'RemedyMate gives general info only. Not medical advice.';
+
+  @override
+  String get learnMore => 'Learn More';
+
+  @override
+  String get online => 'Online';
+
+  @override
+  String get safetyInfoTitle => 'Important Safety Information';
+
+  @override
+  String get safetyInfoPoint1 =>
+      'RemedyMate is an AI-powered health information tool designed to provide general guidance only.';
+
+  @override
+  String get safetyInfoPoint2 =>
+      'This app does NOT replace professional medical advice, diagnosis, or treatment.';
+
+  @override
+  String get safetyInfoPoint3 =>
+      'Always consult with qualified healthcare providers for medical concerns.';
+
+  @override
+  String get safetyInfoPoint4 =>
+      'In emergencies, call local emergency services immediately.';
+
+  @override
+  String get safetyInfoAction => 'I Understand';
+
+  @override
+  String get emergencyTitle => 'Emergency Numbers';
+
+  @override
+  String get emergencyServices => 'Emergency Services';
+
+  @override
+  String get poisonControl => 'Poison Control';
+
+  @override
+  String get mentalHealthCrisis => 'Mental Health Crisis';
+
+  @override
+  String get callAction => 'Call';
+
+  @override
+  String get closeAction => 'Close';
+
+  @override
+  String get symptomCheckerTitle => 'Symptom Checker';
+
+  @override
+  String get symptomCheckerGreeting =>
+      'Hello! I’m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?';
+
+  @override
+  String get symptomCheckerHint => 'Describe your symptoms...';
+
+  @override
+  String get today => 'Today';
+
+  @override
+  String get yesterday => 'Yesterday';
+
+  @override
+  String get oneWeek => '1 Week';
+
+  @override
+  String get severePain => 'Severe pain';
+
+  @override
+  String get flagred => 'red';
+
+  @override
+  String get flagyellow => 'yellow';
+
+  @override
+  String get flaggreen => 'green';
+
+  @override
+  String get flaggeneral => 'general';
+
+  @override
+  String get offlineMessage => 'You are offline. Some features may be limited.';
 }
