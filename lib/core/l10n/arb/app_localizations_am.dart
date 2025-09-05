@@ -39,7 +39,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get notifications => 'ማሳወቂያዎች';
 
   @override
-  String get notificationsSubtitle => 'ማሳወቂያዎችን ያስተዳድሩ';
+  String get notificationsSubtitle => 'ማንቂያዎችን ያቀናብሩ';
 
   @override
   String get preferences => 'ምርጫዎች';
@@ -51,31 +51,31 @@ class AppLocalizationsAm extends AppLocalizations {
   String get languageSubtitle => 'እንግሊዝኛ ↔ አማርኛ';
 
   @override
-  String get textSize => 'የጽሑፍ መጠን';
+  String get textSize => 'የጽሁፍ መጠን';
 
   @override
-  String get textSizeSubtitle => 'ንባብን ለማሻሻል';
+  String get textSizeSubtitle => 'ንባቡን ያስተካክሉ';
 
   @override
   String get offlineMode => 'ከመስመር ውጭ ሁነታ';
 
   @override
-  String get offlineModeSubtitle => 'ይዘቶችን በአካባቢ ያስቀምጡ';
+  String get offlineModeSubtitle => 'ይዘቱን በአካባቢ ያከማቹ';
 
   @override
   String get support => 'ድጋፍ';
 
   @override
-  String get faq => 'ተደጋጋሚ ጥያቄዎች';
+  String get faq => 'የተደጋጋሚ ጥያቄዎች እና የእርዳታ ማዕከል';
 
   @override
-  String get faqSubtitle => 'የተለመዱ ጥያቄዎች';
+  String get faqSubtitle => 'የተደጋጋሚ ጥያቄዎች';
 
   @override
-  String get contactSupport => 'ድጋፍን ያነጋግሩ';
+  String get contactSupport => 'ድጋፍ ያግኙ';
 
   @override
-  String get contactSupportSubtitle => 'ከቡድናችን ድጋፍ ያግኙ';
+  String get contactSupportSubtitle => 'ከቡድናችን ድጋፍ ይውሰዱ';
 
   @override
   String get emergencyHelp => 'ድንገተኛ እርዳታ';
@@ -87,19 +87,19 @@ class AppLocalizationsAm extends AppLocalizations {
   String get about => 'ስለ እኛ';
 
   @override
-  String get terms => 'የአገልግሎት ውሎች እና የግላዊነት ፖሊሲ';
+  String get terms => 'ውሎች እና የግላዊነት ፖሊሲ';
 
   @override
-  String get termsSubtitle => 'ህጋዊ መረጃ';
+  String get termsSubtitle => 'የህግ መረጃ';
 
   @override
   String get versionInfo => 'የስሪት መረጃ';
 
   @override
-  String get versionInfoSubtitle => 'RemedyMate ስሪት 2.1.0';
+  String get versionInfoSubtitle => 'ሪሚዲ ሜት v2.1.0';
 
   @override
-  String get signOut => 'ዘግተው ይውጡ';
+  String get signOut => 'ውጣ';
 
   @override
   String get appName => 'ሪሚዲ ሜት';
@@ -117,7 +117,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get startChat => 'ውይይት ጀምር';
 
   @override
-  String get offline => 'ኦፍላይን';
+  String get offline => 'ከመስመር ውጭ';
 
   @override
   String get quickAccessTitle => 'ፈጣን መዳረሻ';
@@ -207,13 +207,13 @@ class AppLocalizationsAm extends AppLocalizations {
   String get emergencyTitle => 'የድንገተኛ ቁጥሮች';
 
   @override
-  String get emergencyServices => 'አስቸኳይ አገልግሎቶች';
+  String get emergencyServices => 'የድንገተኛ አገልግሎቶች';
 
   @override
-  String get poisonControl => 'የተፈሰሰ ንጥረ ነገር መቆጣጠሪያ';
+  String get poisonControl => 'የመርዝ ቁጥጥር';
 
   @override
-  String get mentalHealthCrisis => 'የአእምሮ ጤና ከባድ ሁኔታ';
+  String get mentalHealthCrisis => 'የአእምሮ ጤና አስቸኳይ ሁኔታ';
 
   @override
   String get callAction => 'ይደውሉ';
@@ -256,11 +256,42 @@ class AppLocalizationsAm extends AppLocalizations {
   String get flaggeneral => 'አጠቃላይ';
 
   @override
-  String get offlineMessage => 'ከመስመር ውጭ — በጥቂት መምሪያ ላይ መጠቀም';
+  String get offlineMessage => 'ከመስመር ውጭ ነዎት። አንዳንድ ባህሪዎች ሊገደቡ ይችላሉ።';
 
   @override
   String get availableOffline => 'ከመስመር ውጭ ይገኛል';
 
   @override
   String get importantSafetyInfo => 'አስፈላጊ የደህንነት መረጃ';
+
+  @override
+  String get aiChatSessions => 'የ AI ውይይት ክፍሎች';
+
+  @override
+  String get chatHistory => 'የውይይት ታሪክ';
+
+  @override
+  String get enAmToggle => 'እንግ ↔ አማ';
+
+  @override
+  String get welcomeMessage =>
+      'ሰላም! እኔ ሪሚዲ ሜት ነኝ። ምልክቶችዎን ለመረዳት እና ደህና የሆነ የራስዎን ዕይታ መመሪያ ለመስጠት እችላለሁ። ዛሬ ምን ዓይነት ምልክቶች አሉዎት?';
+
+  @override
+  String get typeYourMessage => 'መልእክትዎን ይተይቡ...';
+
+  @override
+  String get send => 'ላክ';
+
+  @override
+  String get back => 'ተመለስ';
+
+  @override
+  String get selfCareSteps => '✔ ራስ-እንክብካቤ ደረጃዎች';
+
+  @override
+  String get otcReliefOptions => '💊 የውጭ መድሃኒቶች አማራጮች';
+
+  @override
+  String get seekMedicalCareIf => '🚨 ሕክምና ማግኘት ካስፈለገ';
 }
