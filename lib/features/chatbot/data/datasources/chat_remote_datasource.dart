@@ -1,14 +1,9 @@
-import 'dart:convert';
-
 import 'package:dartz/dartz.dart';
-import 'package:http/http.dart' as http;
 
 import '../../../../core/api/api_client.dart';
 import '../../../../core/api/api_exceptions.dart';
 import '../../../../core/error/failures.dart';
-import '../../domain/entities/offline_topic_entity.dart';
 import '../models/chat_message_model.dart';
-import '../models/offline_model.dart';
 
 abstract class ChatRemoteDatasource {
   Future<Either<Failure, ChatMessageModel>> startChat(

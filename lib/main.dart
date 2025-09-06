@@ -6,7 +6,6 @@ import 'core/l10n/arb/app_localizations.dart';
 import 'core/navigation/app_router.dart';
 import 'dependency_injection.dart' as di;
 import 'features/chatbot/domain/usecases/answer_follow_up.dart';
-import 'features/chatbot/domain/usecases/fetch_topics.dart';
 import 'features/chatbot/domain/usecases/start_chat_usecase.dart';
 import 'features/chatbot/presentation/bloc/chatbot_bloc.dart';
 
