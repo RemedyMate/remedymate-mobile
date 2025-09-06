@@ -45,9 +45,9 @@ class GuideMessageModel extends ChatMessageModel {
   Map<String, dynamic> toJson() => {
     'type': 'guide',
     'flag': flag,
-    'selfCare': selfCare,
-    'otc': otc,
-    'medical': medical,
+    'self_care': selfCare,
+    'otc_categories': otc,
+    'seek_care_if': medical,
     'timestamp': timestamp.toIso8601String(),
   };
 

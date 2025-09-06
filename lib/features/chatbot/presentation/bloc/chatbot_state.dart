@@ -35,3 +35,12 @@ class ChatSessionLoaded extends ChatbotState {
   @override
   List<Object?> get props => [sessions];
 }
+
+class LoadedOfflineLibrary extends ChatbotState {
+  final ChatMessage guide;
+
+  LoadedOfflineLibrary(this.guide);
+
+  @override
+  List<Object?> get props => [guide];
+}
