@@ -7,7 +7,6 @@ class ApiException implements Exception {
 
   ApiException(this.message, {this.statusCode, this.details});
 
-  /// Build from a Dio error (network, timeout, bad response, etc.)
   factory ApiException.fromDioError(DioException e) {
     switch (e.type) {
       case DioExceptionType.connectionTimeout:

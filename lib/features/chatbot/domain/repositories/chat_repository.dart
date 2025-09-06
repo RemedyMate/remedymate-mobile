@@ -11,4 +11,6 @@ abstract class ChatRepository {
   Future<Either<Failure, ChatMessage>> answerFollowUp(
     FollowUpAnswerMessage message,
   );
+
+  // Future<Either<Failure, List<OfflineTopicEntity>>> fetchTopics();
 }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../domain/entities/chat_message.dart';
 import '../../domain/entities/chat_session_entity.dart';
+import '../../domain/entities/offline_topic_entity.dart';
 import '../../domain/usecases/answer_follow_up.dart';
 import '../../domain/usecases/start_chat_usecase.dart';
 
@@ -13,13 +14,16 @@ part 'chatbot_state.dart';
 class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
   final StartChatUseCase startChatUseCase;
   final AnswerFollowUpUseCase answerFollowUpUseCase;
+  // final FetchTopicsUsecase fetchTopicsUsecase;
 
   ChatbotBloc({
     required this.startChatUseCase,
     required this.answerFollowUpUseCase,
+    // required this.fetchTopicsUsecase
   }) : super(ChatbotInitial()) {
     on<StartChatEvent>(_onStartChatEvent);
     on<AnswerFollowUpEvent>(_onAnswerFollowUpEvent);
+    // on<LoadOfflineEvent>(_onFetchTopics);
   }
 
   Future<void> _onStartChatEvent(
@@ -54,4 +58,17 @@ class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
       (message) => emit(FollowUpLoaded(message)),
     );
   }
+
+  // Future<void> _onFetchTopics(
+  //   LoadOfflineEvent event,
+  //   Emitter<ChatbotState> emit,
+  // ) async {
+  //   emit(ChatbotLoading());
+  //   final result = await fetchTopicsUsecase();
+  //   result.fold(
+  //     (failure) => emit(ChatbotError(failure.toString())),
+  //     (topics) => emit(LoadedOfflineLibrary(topics)),
+  //   );
+  // }
+  
 }

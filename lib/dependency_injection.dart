@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:http/http.dart' as http;
 
 // Data sources
 import 'core/api/api_client.dart';
@@ -23,6 +24,7 @@ void init() {
   // ----------------------
   // Register your ApiClient here (replace ApiClient() with your actual implementation)
   sl.registerLazySingleton<ApiClient>(() => ApiClient());
+  sl.registerLazySingleton<http.Client>(() => http.Client());
 
   // ----------------------
   // Data sources
@@ -30,7 +32,6 @@ void init() {
   sl.registerLazySingleton<ChatRemoteDatasource>(
     () => ChatRemoteDatasourceImpl(apiClient: sl()),
   );
-
   // ----------------------
   // Repositories
   // ----------------------

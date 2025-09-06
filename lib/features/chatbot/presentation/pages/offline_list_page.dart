@@ -2,43 +2,21 @@ import 'package:flutter/material.dart';
 
 import '../widget/app_bar.dart';
 import '../widget/offline_guide.dart';
+import '../widget/offline_mock.dart';
 
 class OfflineLibraryPage extends StatelessWidget {
   const OfflineLibraryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final guides = [
-      {
-        'title': 'Indigestion',
-        'description':
-            'Learn how to manage indigestion symptoms and when to seek medical care.',
-      },
-      {
-        'title': 'Headache',
-        'description':
-            'Understand different types of headaches and effective management strategies.',
-      },
-      {
-        'title': 'Fever',
-        'description':
-            'Learn how to manage fever symptoms and recognize when medical attention is needed.',
-      },
-      {
-        'title': 'Cough',
-        'description':
-            'Understand different types of coughs and effective treatment methods.',
-      },
-    ];
-
+    final topics = mockOfflineTopics;
     return Scaffold(
       appBar: const RemedyAppBar(),
       body: ListView.builder(
         padding: const EdgeInsets.all(12),
-        itemCount: guides.length,
+        itemCount: topics.length,
         itemBuilder: (context, index) {
-          final guide = guides[index];
-          return OfflineAvailable(guide: guide);
+          return OfflineAvailable(topic: topics[index]);
         },
       ),
     );
