@@ -22,6 +22,7 @@ class _ChatSessionDetailPageState extends State<ChatSessionDetailPage> {
   final TextEditingController _controller = TextEditingController();
   final ScrollController _scrollController = ScrollController();
   final List<Widget> _chatBubbles = [];
+  String heading = '';
 
   FollowUpMessage? _lastFollowUpMessage;
   bool _showInputField = true;
@@ -137,7 +138,7 @@ class _ChatSessionDetailPageState extends State<ChatSessionDetailPage> {
           onPressed: () => context.go('/chat_sessions'),
         ),
         title: Text(
-          'History page', // TODO: localize
+          heading,
           style: AppTextStyles.headlineSmall.copyWith(
             color: AppColors.primaryDeepBlue,
           ),
@@ -155,6 +156,9 @@ class _ChatSessionDetailPageState extends State<ChatSessionDetailPage> {
                   _chatBubbles.clear();
                   for (final msg in state.messages) {
                     if (msg is FollowUpAnswerMessage) {
+                      if (heading.isEmpty) {
+                        heading = msg.answer;
+                      }
                       _addUserMessage(msg.answer);
                     } else if (msg is FollowUpMessage) {
                       _lastFollowUpMessage = msg;

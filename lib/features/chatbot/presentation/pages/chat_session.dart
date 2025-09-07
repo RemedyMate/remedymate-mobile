@@ -45,14 +45,44 @@ class ChatHistoryPage extends StatelessWidget {
         backgroundColor: AppColors.white, // Use white for app bar background
         elevation: 2, // Added elevation for a more defined look
         actions: [
-          // Offline status / button
-          // Re-imagined as a simple status text or a chip, not a TextButton inside AppBar actions
+          // Clear Sessions button
+          IconButton(
+            icon: const Icon(Icons.delete_outline, color: AppColors.errorRed),
+            tooltip: 'Clear all sessions',
+            onPressed: () {
+              // Show confirmation dialog before clearing
+              showDialog(
+                context: context,
+                builder: (ctx) => AlertDialog(
+                  title: const Text('Confirm'),
+                  content: const Text(
+                    'Are you sure you want to clear all chat sessions?',
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.of(ctx).pop(),
+                      child: const Text('Cancel'),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        context.read<ChatbotBloc>().add(ClearAllSessionEvent());
+                        context.go('/home');
+                      },
+                      child: const Text(
+                        'Clear',
+                        style: TextStyle(color: AppColors.errorRed),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+          // Offline status chip
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: Chip(
-              backgroundColor: AppColors.warningAmber.withOpacity(
-                0.15,
-              ), // Softer background
+              backgroundColor: AppColors.warningAmber.withOpacity(0.15),
               label: Text(
                 l10n.offline,
                 style: AppTextStyles.labelSmall.copyWith(
@@ -64,10 +94,7 @@ class ChatHistoryPage extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
-              padding: const EdgeInsets.symmetric(
-                horizontal: 8,
-                vertical: 0,
-              ), // Adjust padding
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
             ),
           ),
         ],
