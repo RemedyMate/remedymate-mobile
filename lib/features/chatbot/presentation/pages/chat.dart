@@ -7,9 +7,11 @@ import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/l10n/arb/app_localizations.dart';
 import '../../domain/entities/chat_message.dart';
 import '../bloc/chatbot_bloc.dart';
+import '../widget/app_bar.dart';
 import '../widget/bot_response.dart';
 import '../widget/guide_card.dart';
-import '../widget/material.dart'; // Assuming this defines `toggleLanguageFunc`
+import '../widget/material.dart';
+import '../widget/offline_mode.dart'; // Assuming this defines `toggleLanguageFunc`
 
 class SymptomCheckerPage extends StatefulWidget {
   final void Function(Locale) onLocaleChanged;
@@ -147,30 +149,22 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: AppColors.lightBackground,
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios_rounded, // Modern back icon
-            color: AppColors.primaryDeepBlue,
-            size: 28,
-          ),
-          onPressed: () {
-            context.go('/home');
-          },
-        ),
-        title: Text(
-          l10n.symptomCheckerTitle,
-          style: AppTextStyles.headlineSmall.copyWith(
-            color: AppColors.primaryDeepBlue,
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: AppColors.lightBackground,
-        elevation: 2, // Added elevation for a more defined look
-      ),
-      body: Column(
-        children: [
+
+
+      appBar: const RemedyAppBar(),
+      body: Container(
+        color: AppColors.background,
+        child: Column(
+          children: [
+            // Offline banner
+            Container(
+              width: double.infinity,
+              color: AppColors.amberTriage,
+              padding: const EdgeInsets.all(8),
+              child: const OfflineMode(),
+            ),
+
+          // Chat messages
           Expanded(
             child: BlocListener<ChatbotBloc, ChatbotState>(
               listener: (context, state) {
@@ -228,7 +222,7 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
           ),
         ],
       ),
-    );
+    ));
   }
 
   Widget _buildChatInputField(BuildContext context, AppLocalizations l10n) {
@@ -255,7 +249,7 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
               shape: BoxShape.circle,
             ),
             padding: const EdgeInsets.all(8),
-            child: Icon(
+            child: const Icon(
               Icons.mic_rounded, // Rounded mic icon
               color: AppColors.primaryDeepBlue,
               size: 24,
@@ -311,7 +305,7 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
           elevation: 5,
         ),
         onPressed: _startNewChat,
-        child: Text(
+        child: const Text(
           'Start new chat', // Localized text for button
           style: AppTextStyles.buttonText, // Consistent button text style
         ),

@@ -589,6 +589,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You are offline. Some features may be limited.'**
   String get offlineMessage;
+
+  /// No description provided for @availableOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Available offline'**
+  String get availableOffline;
+
+  /// No description provided for @importantSafetyInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Important Safety Information'**
+  String get importantSafetyInfo;
 }
 
 class _AppLocalizationsDelegate

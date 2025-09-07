@@ -280,6 +280,7 @@
     "description": "Label for poison control"
   },
   "mentalHealthCrisis": "Mental Health Crisis",
+  
   "@mentalHealthCrisis": {
     "description": "Label for mental health crisis"
   },
@@ -338,5 +339,8 @@
   "offlineMessage": "You are offline. Some features may be limited.",
   "@offlineMessage": {
     "description": "Message displayed when the user is offline"
-  }
+  },
+
+  "availableOffline": "Available offline",
+  "importantSafetyInfo": "Important Safety Information"
 }

@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'guide_entity.dart';
+import 'chat_message.dart';
 
 class OfflineTopicEntity extends Equatable {
   final String topicKey;
@@ -16,8 +16,8 @@ class OfflineTopicEntity extends Equatable {
 }
 
 class Translations extends Equatable{
-  final GuideEntity en;
-  final GuideEntity amh;
+  final GuideMessage en;
+  final GuideMessage amh;
 
   const Translations({
     required this.en,
