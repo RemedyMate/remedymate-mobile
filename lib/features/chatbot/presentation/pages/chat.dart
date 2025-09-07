@@ -255,7 +255,7 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 5),
           ),
@@ -270,7 +270,7 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
               shape: BoxShape.circle,
             ),
             padding: const EdgeInsets.all(8),
-            child: Icon(
+            child: const Icon(
               Icons.mic_rounded, // Rounded mic icon
               color: AppColors.primaryDeepBlue,
               size: 24,
@@ -326,10 +326,7 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
           elevation: 5,
         ),
         onPressed: _startNewChat,
-        child: Text(
-          'Start new chat', // Localized text for button
-          style: AppTextStyles.buttonText, // Consistent button text style
-        ),
+        child: Text(l10n.startNewChat, style: AppTextStyles.buttonText),
       ),
     );
   }

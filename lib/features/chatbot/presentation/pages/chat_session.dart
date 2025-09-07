@@ -82,7 +82,7 @@ class ChatHistoryPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: Chip(
-              backgroundColor: AppColors.warningAmber.withOpacity(0.15),
+              backgroundColor: AppColors.warningAmber.withValues(alpha: 0.15),
               label: Text(
                 l10n.offline,
                 style: AppTextStyles.labelSmall.copyWith(
@@ -90,7 +90,7 @@ class ChatHistoryPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              side: BorderSide(color: AppColors.warningAmber, width: 1),
+              side: const BorderSide(color: AppColors.warningAmber, width: 1),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -145,7 +145,7 @@ class ChatHistoryPage extends StatelessWidget {
         backgroundColor: AppColors.primaryDeepBlue,
         icon: const Icon(Icons.add, color: Colors.white),
         label: Text(
-          'New Chat',
+          '',
           style: AppTextStyles.header.copyWith(color: Colors.white),
         ),
       ),
@@ -196,8 +196,8 @@ class ChatSessionTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(16), // More rounded corners
           boxShadow: [
             BoxShadow(
-              color: AppColors.dividerGrey.withOpacity(
-                0.5,
+              color: AppColors.dividerGrey.withValues(
+                alpha: 0.5,
               ), // Softer shadow color
               spreadRadius: 1,
               blurRadius: 5, // Increased blur for a softer shadow

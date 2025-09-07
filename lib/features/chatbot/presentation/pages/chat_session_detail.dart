@@ -237,7 +237,7 @@ class _ChatSessionDetailPageState extends State<ChatSessionDetailPage> {
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 10,
             offset: const Offset(0, 5),
           ),
@@ -302,7 +302,7 @@ class _ChatSessionDetailPageState extends State<ChatSessionDetailPage> {
           elevation: 5,
         ),
         onPressed: _startNewChat,
-        child: Text('Start new chat', style: AppTextStyles.buttonText),
+        child: Text(l10n.startNewChat, style: AppTextStyles.buttonText),
       ),
     );
   }

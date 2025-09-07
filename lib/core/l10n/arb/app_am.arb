@@ -325,10 +325,13 @@
     "flaggeneral": "አጠቃላይ",
     "@flaggeneral": {
         "description": "የአጠቃላይ ባንዲራ ሁነታ መለያ"
-    }
-    ,
+    },
     "offlineMessage": "ከመስመር ውጭ ነዎት። አንዳንድ ባህሪዎች ሊገደቡ ይችላሉ።",
     "@offlineMessage": {
         "description": "ተጠቃሚው ከመስመር ውጭ ሲሆን የሚታየው መልእክት"
+    },
+    "startNewChat": "አዲስ ውይይት ጀምር",
+    "@startNewChat": {
+        "description": "አዲስ ውይይት ለማስጀመር የቁልፍ መለያ"
     }
 }

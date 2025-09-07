@@ -260,4 +260,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get offlineMessage => 'You are offline. Some features may be limited.';
+
+  @override
+  String get startNewChat => 'Start new chat';
 }

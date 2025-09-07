@@ -19,19 +19,10 @@ sealed class ChatMessageModel extends Equatable {
     if (json.containsKey('question')) {
       return FollowUpMessageModel.fromJson(json);
     }
-    if (json.containsKey('remedy')) {
-      print(
-        'json contains remedy: ${(json['remedy']['guidance_card'] != null)}',
-      );
-    }
     if (json.containsKey('remedy') &&
         (json['remedy']['guidance_card'] != null)) {
-      print('++++++++++++++++++++ going as guidance +++++++++++++++++= $json');
       return GuideMessageModel.fromJson(json);
     }
-    print(
-      '++++++++++++++++++++ going as follow up answer +++++++++++++++++= $json',
-    );
     return FollowUpAnswerMessageModel(
       language: json['language'],
       conversationId: json['conversation_id'],

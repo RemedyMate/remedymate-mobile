@@ -338,5 +338,9 @@
   "offlineMessage": "You are offline. Some features may be limited.",
   "@offlineMessage": {
     "description": "Message displayed when the user is offline"
+  },
+  "startNewChat": "Start new chat",
+  "@startNewChat": {
+    "description": "Button label to start a new chat session"
   }
 }

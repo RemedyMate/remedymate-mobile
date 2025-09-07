@@ -589,6 +589,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You are offline. Some features may be limited.'**
   String get offlineMessage;
+
+  /// Button label to start a new chat session
+  ///
+  /// In en, this message translates to:
+  /// **'Start new chat'**
+  String get startNewChat;
 }
 
 class _AppLocalizationsDelegate

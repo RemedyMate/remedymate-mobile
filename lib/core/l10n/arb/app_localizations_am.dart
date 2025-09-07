@@ -257,4 +257,7 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get offlineMessage => 'ከመስመር ውጭ ነዎት። አንዳንድ ባህሪዎች ሊገደቡ ይችላሉ።';
+
+  @override
+  String get startNewChat => 'አዲስ ውይይት ጀምር';
 }
