@@ -35,3 +35,8 @@ class ChatSessionLoaded extends ChatbotState {
   @override
   List<Object?> get props => [sessions];
 }
+
+class ConversationLoaded extends ChatbotState {
+  final List<ChatMessage> messages;
+  ConversationLoaded(this.messages);
+}

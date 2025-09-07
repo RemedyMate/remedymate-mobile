@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/constants/app_colors.dart';
+
 class BotMessage extends StatelessWidget {
   final String text;
   final bool isError;
@@ -13,7 +15,7 @@ class BotMessage extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 4),
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColors.lightPrimary,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Text(text),

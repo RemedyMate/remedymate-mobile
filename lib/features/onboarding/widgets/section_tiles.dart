@@ -1,133 +1,121 @@
+// section_tiles.dart (Updated version with fix)
 import 'package:flutter/material.dart';
+import '../../../../core/constants/app_colors.dart';
+import '../../../../core/constants/app_text_styles.dart';
+import '../../../../core/l10n/arb/app_localizations.dart'; // Import AppLocalizations
 
-import '../../../core/constants/app_colors.dart';
+// Global function placeholder (consider making it part of a service or BLoC)
+VoidCallback? toggleLanguageFunc;
 
-/// Section Title Widget
-Widget sectionTitle(String title, double fontSize) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(vertical: 4),
-    child: Text(
-      title,
-      style: TextStyle(
-        fontSize: fontSize,
-        fontWeight: FontWeight.bold,
-        color: AppColors.border,
-      ),
-    ),
-  );
-}
-
-/// Accepts a textStyle for dynamic font sizing
 Widget buildTile(
   IconData icon,
   String title,
   String subtitle, {
-  Color? textColor,
-  Color? iconColor,
   VoidCallback? onTap,
-  required TextStyle textStyle,
+  TextStyle? titleStyle,
+  TextStyle? subtitleStyle,
+  Color? iconColor,
+  Color? textColor,
 }) {
   return ListTile(
-    contentPadding: EdgeInsets.zero,
-    leading: Icon(icon, color: iconColor ?? AppColors.border),
+    leading: Icon(icon, color: iconColor ?? AppColors.primaryDeepBlue),
     title: Text(
       title,
-      style: textStyle.copyWith(
-        fontWeight: FontWeight.w500,
-        color: textColor ?? AppColors.black,
-      ),
+      style:
+          titleStyle ??
+          AppTextStyles.bodyMedium.copyWith(
+            color: textColor ?? AppColors.textDark,
+          ),
     ),
     subtitle: Text(
       subtitle,
-      style: const TextStyle(fontSize: 13, color: AppColors.border),
+      style:
+          subtitleStyle ??
+          AppTextStyles.labelMedium.copyWith(color: AppColors.textLightGrey),
     ),
-    trailing: const Icon(Icons.chevron_right, color: AppColors.border),
-    onTap: onTap ?? () => debugPrint('$title clicked'),
+    trailing: onTap != null
+        ? const Icon(
+            Icons.arrow_forward_ios_rounded,
+            size: 18,
+            color: AppColors.lightBackground,
+          )
+        : null,
+    onTap: onTap,
   );
 }
 
-/// Switch List Tile
 Widget switchTile(
   IconData icon,
   String title,
   String subtitle,
   bool value,
   ValueChanged<bool> onChanged, {
-  double? fontSize,
+  TextStyle? titleStyle,
+  TextStyle? subtitleStyle,
+  Color? iconColor,
+  Color? textColor,
 }) {
   return SwitchListTile(
-    contentPadding: EdgeInsets.zero,
-    secondary: Icon(icon, color: AppColors.border),
+    secondary: Icon(icon, color: iconColor ?? AppColors.primaryDeepBlue),
     title: Text(
       title,
-      style: TextStyle(fontWeight: FontWeight.w500, fontSize: fontSize),
+      style:
+          titleStyle ??
+          AppTextStyles.bodyMedium.copyWith(
+            color: textColor ?? AppColors.textDark,
+          ),
     ),
     subtitle: Text(
       subtitle,
-      style: const TextStyle(fontSize: 13, color: AppColors.border),
+      style:
+          subtitleStyle ??
+          AppTextStyles.labelMedium.copyWith(color: AppColors.textLightGrey),
     ),
     value: value,
     onChanged: onChanged,
-    // activeColor: AppColors.background, // Thumb color when ON
-    activeTrackColor: AppColors.primaryDeepBlue, // Track color when ON
+    activeColor: AppColors.primaryBlue,
   );
 }
 
-/// Text Size Option Tile
-Widget textSizeTile({
+Widget sectionTitle(String title, TextStyle style) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+    child: Text(title, style: style),
+  );
+}
+
+// FIX: Added BuildContext context as a parameter
+Widget textSizeTile(
+  BuildContext context, { // <-- Added BuildContext here
   required String selectedSize,
-  required Function(String) onChanged,
+  required ValueChanged<String> onChanged,
 }) {
   return ListTile(
-    contentPadding: EdgeInsets.zero,
-    leading: const Icon(Icons.text_fields, color: AppColors.border),
-    title: const Text(
-      'Text Size',
-      style: TextStyle(fontWeight: FontWeight.w500),
+    leading: Icon(Icons.format_size, color: AppColors.primaryDeepBlue),
+    title: Text(
+      AppLocalizations.of(
+        context,
+      )!.textSize, // <-- Now correctly uses the passed context
+      style: AppTextStyles.bodyMedium.copyWith(color: AppColors.textDark),
     ),
-    subtitle: const Text(
-      'Adjust readability',
-      style: TextStyle(fontSize: 13, color: AppColors.border),
-    ),
-    trailing: Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        sizeChip('Small', selectedSize, onChanged),
-        const SizedBox(width: 6),
-        sizeChip('Medium', selectedSize, onChanged),
-        const SizedBox(width: 6),
-        sizeChip('Large', selectedSize, onChanged),
-      ],
-    ),
-  );
-}
-
-/// Size Chip for text size selection
-Widget sizeChip(String label, String selectedSize, Function(String) onChanged) {
-  final selected = selectedSize == label;
-  return GestureDetector(
-    onTap: () {
-      onChanged(label);
-      debugPrint('Text size changed: $label');
-    },
-    child: Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      decoration: BoxDecoration(
-        color: selected ? AppColors.primaryDeepBlue : AppColors.border,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Text(
-        label,
-        style: TextStyle(
-          fontSize: 13,
-          color: selected ? AppColors.drawerBackground : AppColors.black,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
+    trailing: DropdownButton<String>(
+      value: selectedSize,
+      onChanged: (String? newValue) {
+        if (newValue != null) {
+          onChanged(newValue);
+        }
+      },
+      items: <String>['Small', 'Medium', 'Large'].map<DropdownMenuItem<String>>(
+        (String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value, style: AppTextStyles.bodyMedium),
+          );
+        },
+      ).toList(),
+      style: AppTextStyles.bodyMedium.copyWith(color: AppColors.primaryBlue),
+      underline: Container(height: 0),
+      iconEnabledColor: AppColors.primaryBlue,
     ),
   );
 }
-
-/// Optional: Global function for language toggle.
-/// Assign from your SettingPage if needed
-void Function()? toggleLanguageFunc;

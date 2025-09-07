@@ -25,3 +25,12 @@ class AnswerFollowUpEvent extends ChatbotEvent {
 class LoadChatSessions extends ChatbotEvent {}
 
 class LoadHomePageData extends ChatbotEvent {}
+
+class LoadConversation extends ChatbotEvent {
+  final String sessionId;
+  LoadConversation(this.sessionId);
+}
+
+class ClearAllSessionEvent extends ChatbotEvent {
+  ClearAllSessionEvent();
+}

@@ -7,13 +7,21 @@ class GuideMessage extends ChatMessage {
   final List<String> medical;
 
   const GuideMessage({
+    required String conversationId,
     required this.flag,
     required this.selfCare,
     required this.otc,
     required this.medical,
     required DateTime timestamp,
-  }) : super(timestamp);
+  }) : super(timestamp, conversationId);
 
   @override
-  List<Object?> get props => [flag, selfCare, otc, medical, timestamp];
+  List<Object?> get props => [
+    conversationId,
+    flag,
+    selfCare,
+    otc,
+    medical,
+    timestamp,
+  ];
 }

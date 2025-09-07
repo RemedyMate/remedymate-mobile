@@ -2,13 +2,15 @@ import 'package:dartz/dartz.dart';
 import '../../../../core/error/failures.dart';
 import '../../domain/entities/chat_message.dart';
 import '../../domain/repositories/chat_repository.dart';
+import '../datasources/chat_local_datasource.dart';
 import '../datasources/chat_remote_datasource.dart';
 import '../models/chat_message_model.dart';
 
 class ChatRepositoryImpl implements ChatRepository {
   final ChatRemoteDatasource dataSource;
+  final ChatLocalDatasource localDatasource;
 
-  ChatRepositoryImpl(this.dataSource);
+  ChatRepositoryImpl(this.dataSource, this.localDatasource);
 
   @override
   Future<Either<Failure, ChatMessage>> startChat(
@@ -17,11 +19,27 @@ class ChatRepositoryImpl implements ChatRepository {
   ) async {
     try {
       final result = await dataSource.startChat(symptoms, language);
-      return result.fold(
-        (failure) => Left(failure),
-        (message) => Right(message.toEntity()),
-      );
+      return result.fold((failure) => Left(failure), (message) async {
+        print(
+          '++++++++++++++++++++ the message is here +++++++++++++++++= $message',
+        );
+        // Save to local cache
+        final model = FollowUpAnswerMessageModel(
+          language: language,
+          conversationId: message.conversationId,
+          followUpId: '0',
+          answer: symptoms,
+          timestamp: message.timestamp,
+        );
+        await localDatasource.addMessage(message.conversationId, [model]);
+        await localDatasource.addMessage(message.conversationId, [message]);
+
+        return Right(message.toEntity());
+      });
     } catch (e) {
+      print(
+        '++++++++++++++++++++ the error is here puprica +++++++++++++++++=',
+      );
       return Left(ServerFailure(e.toString()));
     }
   }
@@ -39,12 +57,42 @@ class ChatRepositoryImpl implements ChatRepository {
         timestamp: message.timestamp,
       );
       final result = await dataSource.answerFollowUp(model);
-      return result.fold(
-        (failure) => Left(failure),
-        (message) => Right(message.toEntity()),
-      );
+      return result.fold((failure) => Left(failure), (message) async {
+        // Save to local cache
+        print(
+          '++++++++++++++++++++ the message is here +++++++++++++++++= $message',
+        );
+        await localDatasource.addMessage(message.conversationId, [model]);
+        await localDatasource.addMessage(message.conversationId, [message]);
+        return Right(message.toEntity());
+      });
     } catch (e) {
       return Left(ServerFailure(e.toString()));
     }
+  }
+
+  @override
+  Future<List<ChatMessage>> getConversation(String sessionId) async {
+    final cached = await localDatasource.get(sessionId);
+    return cached?.map((m) => m.toEntity()).toList() ?? [];
+  }
+
+  @override
+  Future<List<List<ChatMessage>>> getAllConversations() async {
+    print(
+      '++++++++++++++++++++ getting all cached conversations +++++++++++++++++=',
+    );
+    final cached = await localDatasource.getAll();
+    print(
+      '++++++++++++++++++++ the cached conversations are here +++++++++++++++++= $cached',
+    );
+    return cached
+        .map((conversation) => conversation.map((m) => m.toEntity()).toList())
+        .toList();
+  }
+
+  @override
+  Future<void> clearAllSessions() {
+    return localDatasource.clearAllSessions();
   }
 }

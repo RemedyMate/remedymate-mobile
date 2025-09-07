@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import '../../domain/entities/chat_message.dart';
 import '../../domain/entities/chat_session_entity.dart';
 import '../../domain/usecases/answer_follow_up.dart';
+import '../../domain/usecases/clear_session.dart';
+import '../../domain/usecases/get_all_conversation.dart';
+import '../../domain/usecases/get_conversation.dart';
 import '../../domain/usecases/start_chat_usecase.dart';
 
 part 'chatbot_event.dart';
@@ -13,15 +16,69 @@ part 'chatbot_state.dart';
 class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
   final StartChatUseCase startChatUseCase;
   final AnswerFollowUpUseCase answerFollowUpUseCase;
+  final GetAllConversations getAllConversations;
+  final GetConversation getConversation;
+  final ClearSession clearSession;
 
   ChatbotBloc({
     required this.startChatUseCase,
     required this.answerFollowUpUseCase,
+    required this.getAllConversations,
+    required this.getConversation,
+    required this.clearSession,
   }) : super(ChatbotInitial()) {
     on<StartChatEvent>(_onStartChatEvent);
     on<AnswerFollowUpEvent>(_onAnswerFollowUpEvent);
-  }
+    on<LoadChatSessions>((event, emit) async {
+      emit(ChatSessionLoading());
+      try {
+        final sessionsResult = await getAllConversations();
+        sessionsResult.fold(
+          (failure) => emit(ChatbotError(failure.toString())),
+          (sessions) {
+            final entities = List.generate(sessions.length, (index) {
+              return ChatSession(
+                id: index.toString(),
+                title: 'Session ${index + 1}', // or extract from first message
+                status: 'Completed', // or compute based on messages
+                statusColor: Colors.green,
+                timeStamp: 'now',
+                messages: sessions[index],
+              );
+            });
+            emit(ChatSessionLoaded(entities));
+          },
+        );
+      } catch (e) {
+        emit(ChatbotError(e.toString()));
+      }
+    });
 
+    on<LoadConversation>((event, emit) async {
+      emit(ChatSessionLoading());
+      try {
+        final messagesResult = await getConversation(event.sessionId);
+        messagesResult.fold(
+          (failure) => emit(ChatbotError(failure.toString())),
+          (messages) => emit(ConversationLoaded(messages)),
+        );
+      } catch (e) {
+        emit(ChatbotError(e.toString()));
+      }
+    });
+    on<ClearAllSessionEvent>((event, emit) async {
+      emit(ChatSessionLoading());
+      try {
+        final result = await clearSession();
+        result.fold(
+          (failure) => emit(ChatbotError(failure.toString())),
+          (_) => emit(ChatbotError('All sessions cleared')),
+        );
+      } catch (e) {
+        emit(ChatbotError(e.toString()));
+      }
+    });
+  }
   Future<void> _onStartChatEvent(
     StartChatEvent event,
     Emitter<ChatbotState> emit,

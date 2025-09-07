@@ -1,12 +1,13 @@
-/// Defines the behavior when cache reaches max size.
 enum EvictionPolicy { fifo, lru }
 
-class CachePolicy {
+class CachePolicy<K> {
   final int maxItems;
   final EvictionPolicy evictionPolicy;
+  final List<K> keys;
 
-  const CachePolicy({
-    this.maxItems = 10,
-    this.evictionPolicy = EvictionPolicy.fifo,
-  });
+  CachePolicy({
+    required this.maxItems,
+    required this.evictionPolicy,
+    List<K>? keys,
+  }) : keys = keys ?? [];
 }

@@ -11,4 +11,7 @@ abstract class ChatRepository {
   Future<Either<Failure, ChatMessage>> answerFollowUp(
     FollowUpAnswerMessage message,
   );
+  Future<List<ChatMessage>> getConversation(String sessionId);
+  Future<List<List<ChatMessage>>> getAllConversations();
+  Future<void> clearAllSessions();
 }

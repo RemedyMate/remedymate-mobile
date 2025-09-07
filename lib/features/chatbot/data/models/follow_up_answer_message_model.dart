@@ -1,19 +1,17 @@
 part of 'chat_message_model.dart';
 
 class FollowUpAnswerMessageModel extends ChatMessageModel {
-  final String conversationId;
   final String followUpId;
   final String answer;
   final String language;
-  final DateTime timestamp;
 
   const FollowUpAnswerMessageModel({
     required this.language,
-    required this.conversationId,
+    required String conversationId,
     required this.followUpId,
     required this.answer,
-    required this.timestamp,
-  });
+    required DateTime timestamp,
+  }) : super(timestamp, conversationId);
 
   @override
   Map<String, dynamic> toJson() => {

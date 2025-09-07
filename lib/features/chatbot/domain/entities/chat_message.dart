@@ -6,9 +6,10 @@ part 'guide_message.dart';
 
 sealed class ChatMessage extends Equatable {
   final DateTime timestamp;
+  final String conversationId;
 
-  const ChatMessage(this.timestamp);
+  const ChatMessage(this.timestamp, this.conversationId);
 
   @override
-  List<Object?> get props => [timestamp];
+  List<Object?> get props => [timestamp, conversationId];
 }
