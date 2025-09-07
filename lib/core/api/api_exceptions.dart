@@ -39,7 +39,6 @@ class ApiException implements Exception {
         return ApiException.fromResponse(e.response);
 
       case DioExceptionType.unknown:
-        print('Unknown error: ${e.message}');
         // Could be socket issues, JSON issues, etc.
         return ApiException(
           e.message ?? 'Unknown error',

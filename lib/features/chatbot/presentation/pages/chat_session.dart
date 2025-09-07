@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/constants/app_colors.dart';
-import '../../../../core/constants/app_text_styles.dart'; // Import the new text styles
-import '../../../../core/l10n/arb/app_localizations.dart';
+import '../../../../core/constants/app_text_styles.dart';
 import '../bloc/chatbot_bloc.dart';
 import '../widget/app_bar.dart';
 import '../widget/chat_session_tile.dart';
@@ -14,7 +13,6 @@ class ChatHistoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
 

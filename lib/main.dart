@@ -3,9 +3,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 import 'app.dart';
 import 'dependency_injection.dart' as di;
-import 'features/chatbot/domain/usecases/answer_follow_up.dart';
-import 'features/chatbot/domain/usecases/start_chat_usecase.dart';
-import 'features/chatbot/presentation/bloc/chatbot_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
