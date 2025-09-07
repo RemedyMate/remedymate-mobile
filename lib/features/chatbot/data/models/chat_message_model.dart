@@ -6,7 +6,10 @@ part 'follow_up_message_model.dart';
 part 'guide_message_model.dart';
 
 sealed class ChatMessageModel extends Equatable {
-  const ChatMessageModel();
+  final String conversationId;
+  final DateTime timestamp;
+
+  const ChatMessageModel(this.timestamp, this.conversationId);
 
   /// Convert to domain entity
   ChatMessage toEntity();
@@ -16,14 +19,26 @@ sealed class ChatMessageModel extends Equatable {
     if (json.containsKey('question')) {
       return FollowUpMessageModel.fromJson(json);
     }
-
+    if (json.containsKey('remedy')) {
+      print(
+        'json contains remedy: ${(json['remedy']['guidance_card'] != null)}',
+      );
+    }
     if (json.containsKey('remedy') &&
-        json['remedy'] is Map<String, dynamic> &&
         (json['remedy']['guidance_card'] != null)) {
+      print('++++++++++++++++++++ going as guidance +++++++++++++++++= $json');
       return GuideMessageModel.fromJson(json);
     }
-
-    throw Exception('Unknown message structure: $json');
+    print(
+      '++++++++++++++++++++ going as follow up answer +++++++++++++++++= $json',
+    );
+    return FollowUpAnswerMessageModel(
+      language: json['language'],
+      conversationId: json['conversation_id'],
+      followUpId: '0',
+      answer: json['answer'],
+      timestamp: DateTime.now(),
+    );
   }
 
   Map<String, dynamic> toJson();

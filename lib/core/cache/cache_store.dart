@@ -4,4 +4,7 @@ abstract class CacheStore<K, V> {
   Future<void> remove(K key);
   Future<List<V>> getAll();
   Future<void> clear();
+  Future<String> addMessage(K key, V message);
+  Future<void> removeMessage(K key, String messageId);
+  Future<void> clearMessages(K key);
 }

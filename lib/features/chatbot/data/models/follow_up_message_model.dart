@@ -1,23 +1,24 @@
 part of 'chat_message_model.dart';
 
 class FollowUpMessageModel extends ChatMessageModel {
-  final String conversationId;
   final String question;
   final String heading;
   final String subHeading;
   final String followUpId;
-  final DateTime timestamp;
 
   const FollowUpMessageModel({
-    required this.conversationId,
+    required String conversationId,
     required this.question,
     required this.heading,
     required this.subHeading,
     required this.followUpId,
-    required this.timestamp,
-  });
+    required DateTime timestamp,
+  }) : super(timestamp, conversationId);
 
   factory FollowUpMessageModel.fromJson(Map<String, dynamic> json) {
+    print(
+      '++++++++++++++++++++ the json is here pull +++++++++++++++++= $json',
+    );
     return FollowUpMessageModel(
       conversationId: json['conversation_id'],
       question: json['question']['text'],
@@ -27,15 +28,13 @@ class FollowUpMessageModel extends ChatMessageModel {
       timestamp: DateTime.now(),
     );
   }
-
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'followUp',
-    'conversationId': conversationId,
-    'question': question,
+    'type': 'follow_up', // match what your factory is checking for
+    'conversation_id': conversationId,
     'heading': heading,
-    'subHeading': subHeading,
-    'followUpId': followUpId,
+    'subheading': subHeading,
+    'question': {'id': followUpId, 'text': question},
     'timestamp': timestamp.toIso8601String(),
   };
 
