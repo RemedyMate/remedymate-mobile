@@ -136,7 +136,7 @@ class ChatbotHomePage extends StatelessWidget {
                         iconContainerColor: AppColors.background,
                         iconColor: AppColors.redTriage,
                         onTap: () {
-                          Navigator.pushNamed(context, '/symptom_checker');
+                          context.go('/chat');
                         },
                       ),
                       QuickAccessCard(
@@ -154,7 +154,6 @@ class ChatbotHomePage extends StatelessWidget {
                         iconContainerColor: AppColors.background,
                         iconColor: AppColors.greenTriage,
                         onTap: () {
-                          context.read<ChatbotBloc>().add(LoadChatSessions());
                           context.go('/chat_sessions');
                         },
                       ),

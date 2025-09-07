@@ -67,7 +67,13 @@ GoRouter router(void Function(Locale) onLocaleChanged) {
       ),
       GoRoute(
         path: '/chat_details',
-        builder: (context, state) => const ChatSessionDetailPage(),
+        builder: (context, state) {
+          final conversationId = state.extra as String?;
+          if (conversationId == null) {
+            return const Center(child: Text('No conversationId provided'));
+          }
+          return ChatSessionDetailPage(conversationId: conversationId);
+        },
       ),
     ],
   );

@@ -14,6 +14,11 @@ class ChatHistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    // Optionally trigger loading of sessions when the page is built
+    // This ensures sessions are loaded when navigating to this page
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<ChatbotBloc>().add(LoadChatSessions());
+    });
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -148,8 +153,7 @@ class ChatSessionTile extends StatelessWidget {
     return InkWell(
       // Use InkWell for better tap feedback
       onTap: () {
-        context.read<ChatbotBloc>().add(LoadConversation(session.id));
-        context.go('/chat_details'); // Navigate to chat details
+        context.go('/chat_details', extra: session.id);
       },
       child: Container(
         margin: const EdgeInsets.symmetric(

@@ -36,7 +36,11 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
     toggleLanguageFunc = toggleLanguage;
     // Initial bot greeting
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _addBotMessage(AppLocalizations.of(context)!.symptomCheckerGreeting);
+      _addBotMessage(
+        '',
+        AppLocalizations.of(context)!.symptomCheckerGreeting,
+        '',
+      );
     });
   }
 
@@ -48,9 +52,21 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
   }
 
   // Helper to add bot messages
-  void _addBotMessage(String text, {bool isError = false}) {
+  void _addBotMessage(
+    String heading,
+    String subHeading,
+    String text, {
+    bool isError = false,
+  }) {
     setState(() {
-      _chatBubbles.add(BotMessage(text, isError: isError));
+      _chatBubbles.add(
+        BotMessage(
+          heading: heading,
+          subheading: subHeading,
+          question: text,
+          isError: isError,
+        ),
+      );
     });
     _scrollToBottom();
   }
@@ -111,7 +127,6 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
           language: l10n.localeName,
         ),
       );
-      _lastFollowUpMessage = null; // Reset after sending
     } else {
       context.read<ChatbotBloc>().add(StartChatEvent(input, l10n.localeName));
     }
@@ -176,13 +191,13 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
               listener: (context, state) {
                 if (state is ChatbotInitial) {
                   _lastFollowUpMessage = null;
-                  _addBotMessage(l10n.symptomCheckerGreeting);
+                  _addBotMessage('', '', l10n.symptomCheckerGreeting);
                 } else if (state is FollowUpLoaded) {
                   final msg = state.message;
 
                   if (msg is FollowUpMessage) {
                     _lastFollowUpMessage = msg;
-                    _addBotMessage(msg.question);
+                    _addBotMessage(msg.heading, msg.subHeading, msg.question);
                   } else if (msg is GuideMessage) {
                     _lastFollowUpMessage = null;
                     setState(() {
@@ -192,7 +207,7 @@ class _SymptomCheckerPageState extends State<SymptomCheckerPage> {
                     _scrollToBottom();
                   }
                 } else if (state is ChatbotError) {
-                  _addBotMessage(state.message, isError: true);
+                  _addBotMessage('', '', state.message, isError: true);
                 }
               },
               child: ListView.builder(

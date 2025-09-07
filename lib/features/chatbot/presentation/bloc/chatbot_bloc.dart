@@ -33,22 +33,29 @@ class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
       emit(ChatSessionLoading());
       try {
         final sessionsResult = await getAllConversations();
-        sessionsResult.fold(
-          (failure) => emit(ChatbotError(failure.toString())),
-          (sessions) {
-            final entities = List.generate(sessions.length, (index) {
-              return ChatSession(
-                id: sessions[index].first.conversationId,
-                title: 'Session ${index + 1}', // or extract from first message
-                status: 'Completed', // or compute based on messages
-                statusColor: Colors.green,
-                timeStamp: 'now',
-                messages: sessions[index],
-              );
-            });
-            emit(ChatSessionLoaded(entities));
-          },
-        );
+        sessionsResult.fold((failure) => emit(ChatbotError(failure.toString())), (
+          sessions,
+        ) {
+          final entities = List.generate(sessions.length, (index) {
+            return ChatSession(
+              id: sessions[index].first.conversationId,
+              // if the first messsage is followupandwermessage extract the answer else use session index
+              title: sessions[index].first is FollowUpAnswerMessage
+                  ? (sessions[index].first as FollowUpAnswerMessage).answer
+                  : 'Session ${index + 1}', // Extract from first message
+              //check if the list contains GuideMessage and set the status complete and incomplete
+              status: sessions[index].any((msg) => msg is GuideMessage)
+                  ? 'Completed'
+                  : 'Incomplete',
+              statusColor: sessions[index].any((msg) => msg is GuideMessage)
+                  ? Colors.green
+                  : Colors.red,
+              timeStamp: 'now',
+              messages: sessions[index],
+            );
+          });
+          emit(ChatSessionLoaded(entities));
+        });
       } catch (e) {
         emit(ChatbotError(e.toString()));
       }
