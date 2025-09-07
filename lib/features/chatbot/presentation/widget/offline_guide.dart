@@ -26,24 +26,7 @@ class OfflineAvailable extends StatelessWidget {
           guide['title']!,
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
-        subtitle: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 4),
-            Text(guide['description']!),
-            const SizedBox(height: 6),
-            Row(
-              children: [
-                const Icon(Icons.circle, color: AppColors.greenTriage, size: 12),
-                const SizedBox(width: 6),
-                Text(
-                  AppLocalizations.of(context)!.availableOffline,
-                  style: const TextStyle(fontSize: 12, color: Colors.grey),
-                ),
-              ],
-            ),
-          ],
-        ),
+        
         trailing: const Icon(Icons.arrow_forward_ios, size: 16),
         onTap: () {
     

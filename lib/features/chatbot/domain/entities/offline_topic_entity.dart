@@ -4,10 +4,18 @@ import 'chat_message.dart';
 
 class OfflineTopicEntity extends Equatable {
   final String topicKey;
+  final String englishName;
+  final String amharicName;
+  final String enDescription;
+  final String amDescription;
   final Translations translations;
 
   const OfflineTopicEntity({
     required this.topicKey,
+    required this.englishName,
+    required this.amharicName,
+    required this.amDescription,
+    required this.enDescription,
     required this.translations
   });
 
