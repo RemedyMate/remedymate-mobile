@@ -16,31 +16,28 @@ class HiveCacheStore<K> implements CacheStore<K, List<ChatMessageModel>> {
     final saved = _box.get('__cache_keys__') as List<dynamic>?;
     if (saved != null) {
       debugPrint('[_loadKeys] - Found raw saved keys (List<dynamic>): $saved');
-
-      // Add this line to explicitly check the result of cast<K>()
       final List<K> castedKeys = saved.cast<K>();
       debugPrint('[_loadKeys] - Result of saved.cast<K>(): $castedKeys');
 
-      policy.keys
-        ..clear()
-        ..addAll(castedKeys); // Use the explicitly casted list
+      // Merge instead of clearing
+      for (final key in castedKeys) {
+        if (!policy.keys.contains(key)) {
+          policy.keys.add(key);
+        }
+      }
 
-      debugPrint(
-        '[_loadKeys] - policy.keys after clear and add: ${policy.keys}',
-      );
+      debugPrint('[_loadKeys] - policy.keys after merge: ${policy.keys}');
     } else {
       debugPrint(
         '[_loadKeys] - No saved keys found. policy.keys remains: ${policy.keys}',
       );
     }
-    return policy.keys
-        .cast<
-          K
-        >(); // This cast might also be problematic, let's keep it for now but focus above
+    return policy.keys.cast<K>();
   }
 
   Future<void> _saveKeys() async {
-    await _box.put('__cache_keys__', policy.keys);
+    // Always persist the whole current key list
+    await _box.put('__cache_keys__', policy.keys.toList());
     debugPrint('[_saveKeys] - saving keys to Hive: ${policy.keys}');
   }
 

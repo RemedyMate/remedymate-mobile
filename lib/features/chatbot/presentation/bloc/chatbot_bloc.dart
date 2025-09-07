@@ -38,7 +38,7 @@ class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
           (sessions) {
             final entities = List.generate(sessions.length, (index) {
               return ChatSession(
-                id: index.toString(),
+                id: sessions[index].first.conversationId,
                 title: 'Session ${index + 1}', // or extract from first message
                 status: 'Completed', // or compute based on messages
                 statusColor: Colors.green,
