@@ -34,3 +34,4 @@ class LoadConversation extends ChatbotEvent {
 class ClearAllSessionEvent extends ChatbotEvent {
   ClearAllSessionEvent();
 }
+class LoadOfflineEvent extends ChatbotEvent {}

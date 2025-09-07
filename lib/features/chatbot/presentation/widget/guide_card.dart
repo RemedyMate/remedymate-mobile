@@ -100,12 +100,8 @@ class GuidanceCard extends StatelessWidget {
         bg = const Color(0xFFF59E0B);
         text = l10n.flagyellow; // localized
         break;
-      case 'GREEN':
-        bg = Colors.green;
-        text = l10n.flaggreen; // localized
-        break;
       default:
-        bg = Colors.grey;
+        bg = Colors.green;
         text = l10n.flaggeneral; // localized
     }
 

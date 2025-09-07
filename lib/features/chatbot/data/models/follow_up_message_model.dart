@@ -16,9 +16,7 @@ class FollowUpMessageModel extends ChatMessageModel {
   }) : super(timestamp, conversationId);
 
   factory FollowUpMessageModel.fromJson(Map<String, dynamic> json) {
-    print(
-      '++++++++++++++++++++ the json is here pull +++++++++++++++++= $json',
-    );
+    
     return FollowUpMessageModel(
       conversationId: json['conversation_id'],
       question: json['question']['text'],

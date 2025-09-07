@@ -40,3 +40,12 @@ class ConversationLoaded extends ChatbotState {
   final List<ChatMessage> messages;
   ConversationLoaded(this.messages);
 }
+
+class LoadedOfflineLibrary extends ChatbotState {
+  final List<OfflineTopicEntity> topics;
+
+  LoadedOfflineLibrary(this.topics);
+
+  @override
+  List<Object?> get props => [topics];
+}

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../domain/entities/chat_message.dart';
 import '../../domain/entities/chat_session_entity.dart';
+import '../../domain/entities/offline_topic_entity.dart';
 import '../../domain/usecases/answer_follow_up.dart';
 import '../../domain/usecases/clear_session.dart';
 import '../../domain/usecases/get_all_conversation.dart';
@@ -111,4 +112,17 @@ class ChatbotBloc extends Bloc<ChatbotEvent, ChatbotState> {
       (message) => emit(FollowUpLoaded(message)),
     );
   }
+
+  // Future<void> _onFetchTopics(
+  //   LoadOfflineEvent event,
+  //   Emitter<ChatbotState> emit,
+  // ) async {
+  //   emit(ChatbotLoading());
+  //   final result = await fetchTopicsUsecase();
+  //   result.fold(
+  //     (failure) => emit(ChatbotError(failure.toString())),
+  //     (topics) => emit(LoadedOfflineLibrary(topics)),
+  //   );
+  // }
+  
 }

@@ -413,7 +413,7 @@ abstract class AppLocalizations {
   /// Popular topic: Motion Sickness
   ///
   /// In en, this message translates to:
-  /// **'Motion Sicknes'**
+  /// **'Motion Sickness'**
   String get popularTopicMotionSickness;
 
   /// Local tip: Safe home remedies
@@ -527,7 +527,7 @@ abstract class AppLocalizations {
   /// Greeting message shown at the start of the symptom checker
   ///
   /// In en, this message translates to:
-  /// **'Hello! I’m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?'**
+  /// **'Hello! I\'m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?'**
   String get symptomCheckerGreeting;
 
   /// Hint text for the symptom description input field
@@ -589,6 +589,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You are offline. Some features may be limited.'**
   String get offlineMessage;
+
+  /// Label indicating content is available offline
+  ///
+  /// In en, this message translates to:
+  /// **'Available offline'**
+  String get availableOffline;
+
+  /// Label for important safety information
+  ///
+  /// In en, this message translates to:
+  /// **'Important Safety Information'**
+  String get importantSafetyInfo;
+
+  /// Label for AI chat sessions
+  ///
+  /// In en, this message translates to:
+  /// **'AI Chat Sessions'**
+  String get aiChatSessions;
+
+  /// Label for chat history
+  ///
+  /// In en, this message translates to:
+  /// **'Chat History'**
+  String get chatHistory;
+
+  /// Label for English-Amharic toggle
+  ///
+  /// In en, this message translates to:
+  /// **'EN ↔ Amh'**
+  String get enAmToggle;
+
+  /// Welcome message from the AI assistant
+  ///
+  /// In en, this message translates to:
+  /// **'Hello! I\'m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?'**
+  String get welcomeMessage;
+
+  /// Placeholder text for message input field
+  ///
+  /// In en, this message translates to:
+  /// **'Type your message...'**
+  String get typeYourMessage;
+
+  /// Button label to send a message
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get send;
+
+  /// Button label to go back
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get back;
+
+  /// Label for self-care steps section
+  ///
+  /// In en, this message translates to:
+  /// **'✔ Self-care steps'**
+  String get selfCareSteps;
+
+  /// Label for over-the-counter relief options
+  ///
+  /// In en, this message translates to:
+  /// **'💊 OTC relief options'**
+  String get otcReliefOptions;
+
+  /// Label for when to seek medical care
+  ///
+  /// In en, this message translates to:
+  /// **'🚨 Seek medical care if'**
+  String get seekMedicalCareIf;
 }
 
 class _AppLocalizationsDelegate

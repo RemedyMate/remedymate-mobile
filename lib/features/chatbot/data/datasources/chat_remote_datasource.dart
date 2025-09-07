@@ -13,9 +13,11 @@ abstract class ChatRemoteDatasource {
   Future<Either<Failure, ChatMessageModel>> answerFollowUp(
     FollowUpAnswerMessageModel message,
   );
+  // Future<List<OfflineTopicEntity>> fetchTopics();
 }
 
 class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
+  // final http.Client httpClient;
   final ApiClient apiClient;
 
   ChatRemoteDatasourceImpl({required this.apiClient});
@@ -25,21 +27,15 @@ class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
     String symptoms,
     String language,
   ) async {
-    print('Starting chat with symptoms: $symptoms, language: $language');
     try {
       final response = await apiClient.post('/conversation/', {
         'symptom': symptoms,
         'language': language,
       });
-      print(
-        '++++++++++++++++++++ the response is here +++++++++++++++++= $response',
-      );
       return Right(ChatMessageModel.fromJson(response));
     } on ApiException catch (e) {
-      print('here getting error: ${e.message}');
       return Left(ServerFailure(e.message));
     } catch (e) {
-      print('++++++++++++++++++++ the error is here +++++++++++++++++=');
       return Left(UnexpectedFailure(e.toString()));
     }
   }
@@ -62,4 +58,20 @@ class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
       return Left(UnexpectedFailure(e.toString()));
     }
   }
+
+// @override
+// Future<List<OfflineTopicEntity>> fetchTopics() async {
+//   try {
+//     final response = await httpClient.get(Uri.parse('https://remedymate-backend.onrender.com/api/v1/conversation/offline-topics'));
+//     if (response.statusCode == 200) {
+//         final List<dynamic> jsonData = json.decode(response.body);
+//         return jsonData.map((item) => OfflineTopicModel.fromJson(item)).toList();
+//       } else {
+//         throw Exception('Failed to load offline topics: ${response.statusCode}');
+//       }
+//     } catch (e) {
+//       print(e);
+//       throw Exception('Failed to fetch offline topics: $e');
+//     }
+//   }
 }

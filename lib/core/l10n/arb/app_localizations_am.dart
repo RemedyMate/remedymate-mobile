@@ -12,19 +12,19 @@ class AppLocalizationsAm extends AppLocalizations {
   String get settings => 'ቅንብሮች';
 
   @override
-  String get guestUser => 'የእንግዳ ተጠቃሚ';
+  String get guestUser => 'እንግዳ ተጠቃሚ';
 
   @override
-  String get anonymousSession => 'ያልታወቀ ክፍለ ጊዜ';
+  String get anonymousSession => 'የማይታወቅ ክፍለ ጊዜ';
 
   @override
-  String get editProfile => 'መገለጫ አስተካክል';
+  String get editProfile => 'መገለጫ አርትዕ';
 
   @override
   String get account => 'መለያ';
 
   @override
-  String get manageProfile => 'መገለጫ አስተዳድር';
+  String get manageProfile => 'መገለጫ አስተዳደር';
 
   @override
   String get manageProfileSubtitle => 'መረጃዎን ያዘምኑ';
@@ -57,7 +57,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get textSizeSubtitle => 'ንባቡን ያስተካክሉ';
 
   @override
-  String get offlineMode => 'የከፍተኛ መጠቀሚያ ሁነታ';
+  String get offlineMode => 'ከመስመር ውጭ ሁነታ';
 
   @override
   String get offlineModeSubtitle => 'ይዘቱን በአካባቢ ያከማቹ';
@@ -84,7 +84,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get emergencyHelpSubtitle => 'አስቸኳይ እርዳታ';
 
   @override
-  String get about => 'ስለ';
+  String get about => 'ስለ እኛ';
 
   @override
   String get terms => 'ውሎች እና የግላዊነት ፖሊሲ';
@@ -96,7 +96,7 @@ class AppLocalizationsAm extends AppLocalizations {
   String get versionInfo => 'የስሪት መረጃ';
 
   @override
-  String get versionInfoSubtitle => 'RemedyMate v2.1.0';
+  String get versionInfoSubtitle => 'ሪሚዲ ሜት v2.1.0';
 
   @override
   String get signOut => 'ውጣ';
@@ -257,4 +257,41 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get offlineMessage => 'ከመስመር ውጭ ነዎት። አንዳንድ ባህሪዎች ሊገደቡ ይችላሉ።';
+
+  @override
+  String get availableOffline => 'ከመስመር ውጭ ይገኛል';
+
+  @override
+  String get importantSafetyInfo => 'አስፈላጊ የደህንነት መረጃ';
+
+  @override
+  String get aiChatSessions => 'የ AI ውይይት ክፍሎች';
+
+  @override
+  String get chatHistory => 'የውይይት ታሪክ';
+
+  @override
+  String get enAmToggle => 'እንግ ↔ አማ';
+
+  @override
+  String get welcomeMessage =>
+      'ሰላም! እኔ ሪሚዲ ሜት ነኝ። ምልክቶችዎን ለመረዳት እና ደህና የሆነ የራስዎን ዕይታ መመሪያ ለመስጠት እችላለሁ። ዛሬ ምን ዓይነት ምልክቶች አሉዎት?';
+
+  @override
+  String get typeYourMessage => 'መልእክትዎን ይተይቡ...';
+
+  @override
+  String get send => 'ላክ';
+
+  @override
+  String get back => 'ተመለስ';
+
+  @override
+  String get selfCareSteps => '✔ ራስ-እንክብካቤ ደረጃዎች';
+
+  @override
+  String get otcReliefOptions => '💊 የውጭ መድሃኒቶች አማራጮች';
+
+  @override
+  String get seekMedicalCareIf => '🚨 ሕክምና ማግኘት ካስፈለገ';
 }

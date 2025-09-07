@@ -166,7 +166,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get popularTopicHeartburn => 'Heartburn';
 
   @override
-  String get popularTopicMotionSickness => 'Motion Sicknes';
+  String get popularTopicMotionSickness => 'Motion Sickness';
 
   @override
   String get localTipRemedies => 'Safe home remedies';
@@ -229,7 +229,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get symptomCheckerGreeting =>
-      'Hello! I’m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?';
+      'Hello! I\'m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?';
 
   @override
   String get symptomCheckerHint => 'Describe your symptoms...';
@@ -260,4 +260,41 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get offlineMessage => 'You are offline. Some features may be limited.';
+
+  @override
+  String get availableOffline => 'Available offline';
+
+  @override
+  String get importantSafetyInfo => 'Important Safety Information';
+
+  @override
+  String get aiChatSessions => 'AI Chat Sessions';
+
+  @override
+  String get chatHistory => 'Chat History';
+
+  @override
+  String get enAmToggle => 'EN ↔ Amh';
+
+  @override
+  String get welcomeMessage =>
+      'Hello! I\'m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?';
+
+  @override
+  String get typeYourMessage => 'Type your message...';
+
+  @override
+  String get send => 'Send';
+
+  @override
+  String get back => 'Back';
+
+  @override
+  String get selfCareSteps => '✔ Self-care steps';
+
+  @override
+  String get otcReliefOptions => '💊 OTC relief options';
+
+  @override
+  String get seekMedicalCareIf => '🚨 Seek medical care if';
 }

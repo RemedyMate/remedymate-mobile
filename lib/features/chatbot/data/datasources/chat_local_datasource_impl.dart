@@ -110,7 +110,6 @@ class HiveCacheStore<K> implements CacheStore<K, List<ChatMessageModel>> {
       debugPrint('[get] - Key: $key. No data found.');
       return null;
     }
-    print('Raw data from Hive for key $key: $raw');
 
     final value = raw
         .map(
@@ -149,7 +148,6 @@ class HiveCacheStore<K> implements CacheStore<K, List<ChatMessageModel>> {
     debugPrint('All sessions keys are: ${policy.keys}');
     for (var key in policy.keys) {
       final raw = _box.get(key) as List<dynamic>?;
-      print('Raw data from Hive for key $key: $raw');
       if (raw != null) {
         final value = raw
             .map(
@@ -160,9 +158,6 @@ class HiveCacheStore<K> implements CacheStore<K, List<ChatMessageModel>> {
         values.add(value);
       }
     }
-    print(
-      '+++++++++++++++++++++ All cached conversations are: $values +++++++++++++++++++++',
-    );
     debugPrint('[getAll] - End. policy.keys: ${policy.keys}');
     return values;
   }

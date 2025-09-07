@@ -7,7 +7,6 @@ class ApiException implements Exception {
 
   ApiException(this.message, {this.statusCode, this.details});
 
-  /// Build from a Dio error (network, timeout, bad response, etc.)
   factory ApiException.fromDioError(DioException e) {
     switch (e.type) {
       case DioExceptionType.connectionTimeout:
@@ -40,7 +39,6 @@ class ApiException implements Exception {
         return ApiException.fromResponse(e.response);
 
       case DioExceptionType.unknown:
-        print('Unknown error: ${e.message}');
         // Could be socket issues, JSON issues, etc.
         return ApiException(
           e.message ?? 'Unknown error',

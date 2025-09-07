@@ -73,6 +73,7 @@ Widget switchTile(
     ),
     value: value,
     onChanged: onChanged,
+    // ignore: deprecated_member_use
     activeColor: AppColors.primaryBlue,
   );
 }
@@ -91,7 +92,7 @@ Widget textSizeTile(
   required ValueChanged<String> onChanged,
 }) {
   return ListTile(
-    leading: Icon(Icons.format_size, color: AppColors.primaryDeepBlue),
+    leading: const Icon(Icons.format_size, color: AppColors.primaryDeepBlue),
     title: Text(
       AppLocalizations.of(
         context,

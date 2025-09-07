@@ -31,6 +31,7 @@ class BottomNav extends StatelessWidget {
         color: AppColors.lightBackground,
         boxShadow: [
           BoxShadow(
+            // ignore: deprecated_member_use
             color: Colors.black.withOpacity(0.08),
             blurRadius: 12,
             offset: const Offset(0, -3),
@@ -61,6 +62,7 @@ class BottomNav extends StatelessWidget {
             activeIcon: Container(
               padding: const EdgeInsets.all(6),
               decoration: BoxDecoration(
+                // ignore: deprecated_member_use
                 color: AppColors.primaryDeepBlue.withOpacity(0.15),
                 shape: BoxShape.circle,
               ),

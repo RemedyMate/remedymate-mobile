@@ -1,6 +1,5 @@
 {
   "@@locale": "en",
-
   "settings": "Settings",
   "@settings": {
     "description": "Label for the settings section"
@@ -17,7 +16,6 @@
   "@editProfile": {
     "description": "Label for editing user profile"
   },
-
   "account": "Account",
   "@account": {
     "description": "Header for the account section"
@@ -46,7 +44,6 @@
   "@notificationsSubtitle": {
     "description": "Subtitle for notifications management"
   },
-
   "preferences": "Preferences",
   "@preferences": {
     "description": "Header for the preferences section"
@@ -75,7 +72,6 @@
   "@offlineModeSubtitle": {
     "description": "Subtitle for offline mode, explaining its function"
   },
-
   "support": "Support",
   "@support": {
     "description": "Header for the support section"
@@ -104,7 +100,6 @@
   "@emergencyHelpSubtitle": {
     "description": "Subtitle for emergency help"
   },
-
   "about": "About",
   "@about": {
     "description": "Header for the about section"
@@ -125,9 +120,7 @@
   "@versionInfoSubtitle": {
     "description": "Subtitle for version information, showing app version"
   },
-
   "signOut": "Sign Out",
-
   "@signOut": {
     "description": "Label for signing out"
   },
@@ -139,7 +132,6 @@
   "@languageSwitch": {
     "description": "Text for language switch button, indicating English and Amharic"
   },
-
   "homeTitle": "Safe, Simple Health Guidance at Home",
   "@homeTitle": {
     "description": "Title displayed on the home screen"
@@ -172,7 +164,6 @@
   "@localTipsTitle": {
     "description": "Title for the local tips section"
   },
-
   "quickActionSymptomsTitle": "Check My Symptoms",
   "@quickActionSymptomsTitle": {
     "description": "Title for the 'Check My Symptoms' quick action"
@@ -205,7 +196,6 @@
   "@quickActionEmergencySubtitle": {
     "description": "Subtitle for the 'Emergency Help' quick action"
   },
-
   "popularTopicCold": "Cold",
   "@popularTopicCold": {
     "description": "Popular topic: Cold"
@@ -218,11 +208,10 @@
   "@popularTopicHeartburn": {
     "description": "Popular topic: Heartburn"
   },
-  "popularTopicMotionSickness": "Motion Sicknes",
+  "popularTopicMotionSickness": "Motion Sickness",
   "@popularTopicMotionSickness": {
     "description": "Popular topic: Motion Sickness"
   },
-
   "localTipRemedies": "Safe home remedies",
   "@localTipRemedies": {
     "description": "Local tip: Safe home remedies"
@@ -295,7 +284,7 @@
   "@symptomCheckerTitle": {
     "description": "Title for the symptom checker section"
   },
-  "symptomCheckerGreeting": "Hello! I’m RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?",
+  "symptomCheckerGreeting": "Hello! I'm RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?",
   "@symptomCheckerGreeting": {
     "description": "Greeting message shown at the start of the symptom checker"
   },
@@ -338,5 +327,53 @@
   "offlineMessage": "You are offline. Some features may be limited.",
   "@offlineMessage": {
     "description": "Message displayed when the user is offline"
+  },
+  "availableOffline": "Available offline",
+  "@availableOffline": {
+    "description": "Label indicating content is available offline"
+  },
+  "importantSafetyInfo": "Important Safety Information",
+  "@importantSafetyInfo": {
+    "description": "Label for important safety information"
+  },
+  "aiChatSessions": "AI Chat Sessions",
+  "@aiChatSessions": {
+    "description": "Label for AI chat sessions"
+  },
+  "chatHistory": "Chat History",
+  "@chatHistory": {
+    "description": "Label for chat history"
+  },
+  "enAmToggle": "EN ↔ Amh",
+  "@enAmToggle": {
+    "description": "Label for English-Amharic toggle"
+  },
+  "welcomeMessage": "Hello! I'm RemedyMate. I can help you understand your symptoms and provide safe self-care guidance. What symptoms are you experiencing today?",
+  "@welcomeMessage": {
+    "description": "Welcome message from the AI assistant"
+  },
+  "typeYourMessage": "Type your message...",
+  "@typeYourMessage": {
+    "description": "Placeholder text for message input field"
+  },
+  "send": "Send",
+  "@send": {
+    "description": "Button label to send a message"
+  },
+  "back": "Back",
+  "@back": {
+    "description": "Button label to go back"
+  },
+  "selfCareSteps": "✔ Self-care steps",
+  "@selfCareSteps": {
+    "description": "Label for self-care steps section"
+  },
+  "otcReliefOptions": "💊 OTC relief options",
+  "@otcReliefOptions": {
+    "description": "Label for over-the-counter relief options"
+  },
+  "seekMedicalCareIf": "🚨 Seek medical care if",
+  "@seekMedicalCareIf": {
+    "description": "Label for when to seek medical care"
   }
 }

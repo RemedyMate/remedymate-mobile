@@ -20,9 +20,7 @@ class ChatRepositoryImpl implements ChatRepository {
     try {
       final result = await dataSource.startChat(symptoms, language);
       return result.fold((failure) => Left(failure), (message) async {
-        print(
-          '++++++++++++++++++++ the message is here +++++++++++++++++= $message',
-        );
+        
         // Save to local cache
         final model = FollowUpAnswerMessageModel(
           language: language,
@@ -37,9 +35,7 @@ class ChatRepositoryImpl implements ChatRepository {
         return Right(message.toEntity());
       });
     } catch (e) {
-      print(
-        '++++++++++++++++++++ the error is here puprica +++++++++++++++++=',
-      );
+      
       return Left(ServerFailure(e.toString()));
     }
   }
@@ -59,9 +55,7 @@ class ChatRepositoryImpl implements ChatRepository {
       final result = await dataSource.answerFollowUp(model);
       return result.fold((failure) => Left(failure), (message) async {
         // Save to local cache
-        print(
-          '++++++++++++++++++++ the message is here +++++++++++++++++= $message',
-        );
+        
         await localDatasource.addMessage(message.conversationId, [model]);
         await localDatasource.addMessage(message.conversationId, [message]);
         return Right(message.toEntity());
@@ -79,13 +73,9 @@ class ChatRepositoryImpl implements ChatRepository {
 
   @override
   Future<List<List<ChatMessage>>> getAllConversations() async {
-    print(
-      '++++++++++++++++++++ getting all cached conversations +++++++++++++++++=',
-    );
+    
     final cached = await localDatasource.getAll();
-    print(
-      '++++++++++++++++++++ the cached conversations are here +++++++++++++++++= $cached',
-    );
+    
     return cached
         .map((conversation) => conversation.map((m) => m.toEntity()).toList())
         .toList();
