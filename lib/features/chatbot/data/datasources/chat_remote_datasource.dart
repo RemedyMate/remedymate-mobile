@@ -1,9 +1,14 @@
+import 'dart:convert';
+
 import 'package:dartz/dartz.dart';
+import 'package:http/http.dart' as http;
 
 import '../../../../core/api/api_client.dart';
 import '../../../../core/api/api_exceptions.dart';
 import '../../../../core/error/failures.dart';
+import '../../domain/entities/offline_topic_entity.dart';
 import '../models/chat_message_model.dart';
+import '../models/offline_model.dart';
 
 abstract class ChatRemoteDatasource {
   Future<Either<Failure, ChatMessageModel>> startChat(
@@ -13,9 +18,11 @@ abstract class ChatRemoteDatasource {
   Future<Either<Failure, ChatMessageModel>> answerFollowUp(
     FollowUpAnswerMessageModel message,
   );
+  // Future<List<OfflineTopicEntity>> fetchTopics();
 }
 
 class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
+  // final http.Client httpClient;
   final ApiClient apiClient;
 
   ChatRemoteDatasourceImpl({required this.apiClient});
@@ -62,4 +69,20 @@ class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
       return Left(UnexpectedFailure(e.toString()));
     }
   }
+
+// @override
+// Future<List<OfflineTopicEntity>> fetchTopics() async {
+//   try {
+//     final response = await httpClient.get(Uri.parse('https://remedymate-backend.onrender.com/api/v1/conversation/offline-topics'));
+//     if (response.statusCode == 200) {
+//         final List<dynamic> jsonData = json.decode(response.body);
+//         return jsonData.map((item) => OfflineTopicModel.fromJson(item)).toList();
+//       } else {
+//         throw Exception('Failed to load offline topics: ${response.statusCode}');
+//       }
+//     } catch (e) {
+//       print(e);
+//       throw Exception('Failed to fetch offline topics: $e');
+//     }
+//   }
 }

@@ -14,24 +14,6 @@ class RemedyAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: AppColors.appBarColor,
       title: Row(
         children: [
-          if (showBackButton)
-            IconButton(
-              icon: const Icon(Icons.arrow_back_ios, color: AppColors.drawerTextColor),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-
-          Container(
-            padding: const EdgeInsets.all(4),
-            decoration: BoxDecoration(
-              color: AppColors.greenTriage,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: const Icon(Icons.check, color: AppColors.primaryDeepBlue),
-          ),
-          const SizedBox(width: 6),
-
           // Title
           const Text(
             'ChatSession',
