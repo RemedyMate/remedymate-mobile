@@ -4,6 +4,7 @@ import '../../features/chatbot/presentation/pages/chat.dart';
 import '../../features/chatbot/presentation/pages/chat_session.dart';
 import '../../features/chatbot/presentation/pages/chat_session_detail.dart';
 import '../../features/chatbot/presentation/pages/chatbot_home_page.dart';
+import '../../features/chatbot/presentation/pages/offline_list_page.dart';
 import '../../features/chatbot/presentation/pages/shell_page.dart';
 import '../../features/onboarding/pages/setting_page.dart';
 
@@ -36,8 +37,7 @@ GoRouter router(void Function(Locale) onLocaleChanged) {
             routes: [
               GoRoute(
                 path: '/library',
-                builder: (context, state) =>
-                    const Center(child: Text('Library Page')),
+                builder: (context, state) => const OfflineLibraryPage(),
               ),
             ],
           ),
